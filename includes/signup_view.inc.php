@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-function check_signup_errors()  {
-    
+function check_signup_errors()  {  
     if(isset($_SESSION['errors_signup']))   {
-        $error = $_SESSION['errors_signup'];
+        $errors = $_SESSION['errors_signup'];
 
         echo "<br>";
 
@@ -14,7 +13,7 @@ function check_signup_errors()  {
         }
         unset($_SESSION['errors_signup']);
     }
-    elseif (isset($GET["signup"]) && $GET["signup"] === "success")  {
+    elseif (isset($_GET["signup"]) && $_GET["signup"] === "success")  {
         echo '<br>';
         echo '<p class="form-success">Signup success!</p>';
     }

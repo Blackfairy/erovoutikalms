@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")   {
         if (is_username_taken($pdo, $username))    {
             $errors["username_taken"] = "Username already taken!";
         }
-        if (is_email_registered(object $pdo, string $email))    {
+        if (is_email_registered($pdo, $email))    {
             $errors["email_used"] = "Email already registered!";
         }
 
@@ -34,19 +34,13 @@ if($_SERVER["REQUEST_METHOD"] === "POST")   {
         if($errors) {
             $_SESSION["errors_signup"] = $errors;
 
-            $signupDAta = [
-                "username" => $username;
-                "email" => $email;
-            ];
-            $_SESSION["signup_data"] = $signupDAta;
-
-            header("Location: ../index.php");
+            header("Location: ../login_signup.php");
             die();
         }
         
         create_user($pdo, $username, $pwd, $email);
 
-        header("Location: ../index.php?signup=success");
+        header("Location: ../login_signup.php?signup=success");
         
         $pdo = null;
         $stmt = null;
@@ -57,6 +51,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST")   {
     }
 
 } else  {
-    header("Location: ../index.php");
+    header("Location: ../login_signup.php");
     die();
 }
