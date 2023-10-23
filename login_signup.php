@@ -1,6 +1,6 @@
 <?php
-require_once 'includes/config_session.inc.php';
-require_once 'includes/signup_view.inc.php';
+require_once ("includes/config_session.inc.php");
+require_once ("includes/signup_view.inc.php");
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -39,13 +39,14 @@ require_once 'includes/signup_view.inc.php';
               <div class="button input-box">
                 <input type="submit" value="Sumbit">
               </div>
-              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
             </div>
         </form>
       </div>
-      <form action="includes/signup.inc.php" method="post>
+     
         <div class="signup-form">
         <div class="title">Signup</div>
+            <form action="includes/signup.inc.php" method="post>  
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
@@ -57,14 +58,14 @@ require_once 'includes/signup_view.inc.php';
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="pwd" placeholder="Enter Password" required>
+                <input type="password" name="password" placeholder="Enter Password" required>
               </div>
               <div class="button input-box">
                 <input type="submit" value="Sumbit">
               </div>
               <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+              </form>
             </div>
-      </form>
       <?php
       check_signup_errors();
       ?>
