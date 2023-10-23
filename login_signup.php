@@ -15,10 +15,10 @@ require_once 'includes/signup_view.inc.php';
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="login.png" alt="">
+        <img src="image_src/login.png" alt="">
       </div>
       <div class="back">
-        <img class="backImg" src="signup.png" alt="">
+        <img class="backImg" src="image_src/signup.png" alt="">
       </div>
     </div>
     <div class="forms">
@@ -57,7 +57,7 @@ require_once 'includes/signup_view.inc.php';
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Enter Password" required>
+                <input type="password" name="pwd" placeholder="Enter Password" required>
               </div>
               <div class="button input-box">
                 <input type="submit" value="Sumbit">
@@ -87,7 +87,7 @@ require_once 'includes/signup_view.inc.php';
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('bg.gif');
+    background-image: url('image_src/bg.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
