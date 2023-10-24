@@ -1,7 +1,4 @@
-<?php
-require_once ("includes/config_session.inc.php");
-require_once ("includes/signup_view.inc.php");
-?>
+<?php require_once "controllerUserData.php"; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -43,32 +40,62 @@ require_once ("includes/signup_view.inc.php");
             </div>
         </form>
       </div>
-     
-        <div class="signup-form">
+      <form action="login_signup.php" method="POST" autocomplete="">
+        <div class="signupuser-form">
         <div class="title">Signup</div>
-            <form action="includes/signup.inc.php" method="post>  
+                         <?php
+                    if(count($errors) == 1){
+                        ?>
+                        <div class="alert alert-danger text-center">
+                            <?php
+                            foreach($errors as $showerror){
+                                echo $showerror;
+                            }
+                            ?>
+                        </div>
+                        <?php
+                    }elseif(count($errors) > 1){
+                        ?>
+                        <div class="alert alert-danger">
+                            <?php
+                            foreach($errors as $showerror){
+                                ?>
+                                <li><?php echo $showerror; ?></li>
+                                <?php
+                            }
+                            ?>
+                        </div>
+                        <?php
+                    }
+                    ?>  
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="text" name="username" placeholder="Enter Username" required>
+                <input class="form-control" type="text" name="name" placeholder="Name" required value="<?php echo $name ?>">
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" name="email" placeholder="Enter Email" required>
+                <input class="form-control" type="email" name="email" placeholder="Email Address" required value="<?php echo $email ?>">
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Enter Password" required>
+                <input class="form-control" type="password" name="password" placeholder="Password" required>
               </div>
-              <div class="button input-box">
-                <input type="submit" value="Sumbit">
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input class="form-control" type="password" name="cpassword" placeholder="Confirm password" required>
               </div>
+              <div class="form-group">
+					<label>
+						<input type="checkbox" id="accept-terms" required> By joining Erovoutika, you agree to our <br> <b>Terms of Service</b> and <b>Privacy Policy</b>
+					</label>
+					</div>
+                    <div class="button input-box">
+                        <input type="submit" name="signup" value="Create Account">
+                    </div>
               <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
               </form>
             </div>
-      <?php
-      check_signup_errors();
-      ?>
     </div>
     </div>
     </div>
