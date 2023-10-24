@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>EIRA Training Courses</title>
+    <link href="./dist/output.css" rel="stylesheet">
+<style>
+body {
+  background-color:#2B4052; 
+  font-family: 'Poppins', sans-serif; }
+body::-webkit-scrollbar {
+    width: 10px; }
+body::-webkit-scrollbar-track {
+    background: #f1f1f1; }
+body::-webkit-scrollbar-thumb {
+    background: #888; }
+body::-webkit-scrollbar-thumb:hover {
+    background: #555; }
+header {
+  background-image: url('Rectangle 62.png');
+  height: 120px;
+  background-size: cover;
+  background-repeat: no-repeat; }
+.flex-container {
+  position: absolute; 
+  align-items: center;
+  display: flex; 
+  min-height: auto;
+  min-width: auto;
+  margin-top: 20px; 
+  overflow: hidden; }
+.logo {
+  max-height: auto;
+  max-width: auto;
+  display: flex; }
+.navbar-up a {
+  margin: 15px;
+  padding: 10px;
+  text-decoration: none;
+  color: #E5E8EA;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1px; }
+.navbar-up a.icon {
+  display: none; }
+@media screen and (max-width: 600px) {
+  .navbar-up a:not(:first-child) {display: none;}
+  .navbar-up a.icon {
+    float: right;
+    display: block; }
+  }
+@media screen and (max-width: 100%) {
+  .navbar-up.responsive {position: relative;}
+  .navbar-up.responsive a.icon {
+    right: 0;
+    top: 0; }
+  .navbar-up.responsive a {
+    float: none;
+    display: block;
+    text-align: left; }
+  }
+.logout {
+  display: flex-end; }
+.navbar-mid {
+  max-width: auto;
+  max-height: auto;
+  background-color: #3F00C5;
+  margin: 5px; 
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+.navbar-mid > a {
+  padding: 23px;
+  width: 200px;
+  max-width: auto;
+  border: 1px solid #2B4052;
+  border-top: none;
+  border-bottom: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: center; }
+.user-profile {
+  display: flex;
+  flex-direction: row; }
+
+main {
+  column: 2;
+  margin: 5px;
+  position: absolute; 
+  height: 50%;
+  min-width: auto;
+  min-height: auto;
+  background-color: #0E0E0E;}
+.tracker {
+  display: flex;
+  float: left;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  min-width: auto;  
+  padding: 10px;
+  margin: 5px; }
+.tracker input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  font-size: 16px; }
+.tracker input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer; }
+.tracker ul {
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0; }
+.tracker li {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: rgba(255, 255, 255, 0.50);
+  box-sizing: border-box;
+  font-size: 16px; }
+@media screen and (max-width: 600px) {
+  .tracker {
+    width: 90%; }
+}
+.calendar {
+  display: flex;
+  flex-direction: flex-end;
+  padding: 20px;  }
+.calendar-table {
+  border-collapse: collapse; }
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd; }
+th {
+    background-color: #f2f2f2;
+    width: 100px;
+    max-width: auto;
+}
+
+@media screen and (max-width: 600px) {
+    #calendar-table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+</style>  
+</head>
+<body>
+<header>
+  <!--BANNER w/ LOGO & NAVIGATOR-->
+  <div class="flex-container">
+    <div class="logo">
+      <img src="erovoutika_logo.png">
+      <img src="eira_logo.png">
+    </div>
+    <div class="navbar-up" id="navbar">
+      <a href="#home">HOME</a>
+      <a href="#enroll">ENROLL</a>
+      <a href="#training">TRAINING</a>
+      <a href="#verification">VERIFICATION</a>
+      <a href="#reviewers">REVIEWERS</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        <script>
+          function myFunction() {
+            var x = document.getElementById("navbar");
+            if (x.nav === "navbar-up") {
+              x.nav += " responsive";
+            } else {
+              x.nav = "navbar-up";
+            }
+          }
+        </script>
+    </div>
+      <div class="logout"> 
+        <a href="#logout">LOGOUT</a>
+    </div>
+    </div>
+</header>
+
+<!--TRAINING COURSE NAVIGATOR-->
+<nav class="navbar-mid">
+    <a href="courses.html" target="_self">DASHBOARD</a>
+    <a href="certification.html" target="_self">CERTIFICATION</a>
+    <a href="codeditor.html" target="_self">CODE EDITOR</a>
+    <a href="profile.html" target="_self">PROFILE</a>
+    <a href="#search" target="_self">SEARCH</a>
+  </nav>
+
+<!--USER PROFILE-->
+<!--COURSES-->
+<div class="user-profile" id="profile">
+
+<div class="content">
+<main>
+  <article>
+  <!--TASK TRACKER-->
+    <div class="tracker">
+      <input type="text" id="activity" placeholder="Enter your activity">
+      <input type="submit" value="Add Activity" onclick="addActivity()">
+      <ul id="activityList">
+          <!-- List of activities will be displayed here -->
+      </ul>
+  </div>
+  <script>
+    function addActivity() {
+        const activityInput = document.getElementById('activity');
+        const activityList = document.getElementById('activityList');
+
+        if (activityInput.value.trim() === '') {
+            alert('Please enter your activity');
+            return;
+        }
+
+        const listItem = document.createElement('li');
+        listItem.textContent = activityInput.value.trim();
+        activityList.appendChild(listItem);
+
+        activityInput.value = '';
+    }
+  </script>
+    <!--CALENDAR OF ACTIVITIES-->
+  <div class="calendar">
+    <table id="calendar-table">
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody id="calendar-body">
+        </tbody>
+  </table>
+  </div>
+  </article>  
+</main>
+</div>
+</div>
+
+</body>
+</html>
