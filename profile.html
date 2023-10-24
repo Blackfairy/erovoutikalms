@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <title>EIRA Training Courses</title>
     <link href="./dist/output.css" rel="stylesheet">
 <style>
@@ -90,52 +87,78 @@ header {
 .user-profile {
   display: flex;
   flex-direction: row; }
-aside {
-  margin: 5px;
-  column: 1;
-  max-width: auto;
-  max-height: auto;
-  color: #FFFFFF;
-  padding: 20px;
-  overflow-x: hidden; }
-aside h3 {
-  color: #a76820;
-  font-size: 25px;
-  font-weight: bold; }
-aside ul {
-  padding: 0;
-  list-style-type: none; }
-aside li a {
-  display: block;
-  padding: 10px 20px;
-  color: #fff;
-  text-decoration: none; }
-aside li a:hover {
-  background-color: #5d73af; }
-@media screen and (max-width: 768px) {
-  #aside {
-    display: none; }
-}
+
 main {
   column: 2;
   margin: 5px;
   position: absolute; 
   height: 50%;
   min-width: auto;
-  min-height: auto; }
-.enroll-now {
+  min-height: auto;
+  background-color: #0E0E0E;}
+.tracker {
   display: flex;
   float: left;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 40%;
   min-width: auto;  
   padding: 10px;
   margin: 5px; }
-.enroll-now h2 {
-  color: #a76820;
-  font-size: 30px;
-  font-family: 'Montserrat', sans-serif;
+.tracker input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  font-size: 16px; }
+.tracker input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer; }
+.tracker ul {
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0; }
+.tracker li {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: rgba(255, 255, 255, 0.50);
+  box-sizing: border-box;
+  font-size: 16px; }
+@media screen and (max-width: 600px) {
+  .tracker {
+    width: 90%; }
+}
+.calendar {
+  display: flex;
+  flex-direction: flex-end;
+  padding: 20px;  }
+.calendar-table {
+  border-collapse: collapse; }
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd; }
+th {
+    background-color: #f2f2f2;
+    width: 100px;
+    max-width: auto;
+}
+
+@media screen and (max-width: 600px) {
+    #calendar-table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
 }
 
 </style>  
@@ -184,35 +207,53 @@ main {
 <!--USER PROFILE-->
 <!--COURSES-->
 <div class="user-profile" id="profile">
-<aside>
-    <h3>FRONT-END DEVELOPMENT BASICS AND <br> BACK-END DEVELOPMENT BASICS</h3>
-    <ul>
-        <li><a href="#">HTML</a></li>
-        <li><a href="#">CSS</a></li>
-        <li><a href="#">JAVASCRIPT</a></li>
-        <li><a href="#">PHP</a></li>
-    </ul>
-    <h3><br>TRAINING PROGRAM <br> SELF-PACED TRAINING PROGRAM</h3>
-    <ul>
-        <li><a href="#">GAME DEVELOPMENT & ANIMATION</a></li>
-        <li><a href="#">CISCO WAN TECHNOLOGY</a></li>
-        <li><a href="#">CLOUD COMPUTING</a></li>
-        <li><a href="#">MACHINE LEARNING</a></li>
-        <li><a href="#">LINUX SYSTEM ADMINISTRATION</a></li>
-        <li><a href="#">DATA ANALYTICS</a></li>
-        <li><a href="#">PLC PROGRAMMING LEVEL-1</a></li>
-        <li><a href="#">PLC PROGRAMMING LEVEL-2</a></li>
-        <li><a href="#">INNOVATION IN TELECOMMUNICATION</a></li>
-        <li><a href="#">INDUSTRIAL PNEUMATIC SYSTEM</a></li>
-    </ul>
-</aside>
+
 <div class="content">
 <main>
   <article>
-  <!--How to Enroll-->
-    <div class="enroll-now">
-      <h2>How to Enroll?</h2>
-    </div>
+  <!--TASK TRACKER-->
+    <div class="tracker">
+      <input type="text" id="activity" placeholder="Enter your activity">
+      <input type="submit" value="Add Activity" onclick="addActivity()">
+      <ul id="activityList">
+          <!-- List of activities will be displayed here -->
+      </ul>
+  </div>
+  <script>
+    function addActivity() {
+        const activityInput = document.getElementById('activity');
+        const activityList = document.getElementById('activityList');
+
+        if (activityInput.value.trim() === '') {
+            alert('Please enter your activity');
+            return;
+        }
+
+        const listItem = document.createElement('li');
+        listItem.textContent = activityInput.value.trim();
+        activityList.appendChild(listItem);
+
+        activityInput.value = '';
+    }
+  </script>
+    <!--CALENDAR OF ACTIVITIES-->
+  <div class="calendar">
+    <table id="calendar-table">
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody id="calendar-body">
+        </tbody>
+  </table>
+  </div>
   </article>  
 </main>
 </div>
