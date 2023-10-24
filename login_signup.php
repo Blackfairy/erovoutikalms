@@ -22,20 +22,35 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
-          <form action="#">
+            <h1> Welcome Back! Please login <br>to your account</h1>
+            <form class="form" action="login-user.php" method="POST" autocomplete="">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" required>
+                <input class="form-control" type="email" name="email" placeholder="Email Address" required value="<?php echo $email ?>">
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <input class="form-control" type="password" name="password" placeholder="Password" required>
               </div>
               <div class="text"><a href="#">Forgot password?</a></div>
               <div class="button input-box">
-                <input type="submit" value="Sumbit">
+                <input type="submit" name="login" value="Login">
+                
               </div>
+               <?php
+                    if(count($errors) > 0){
+                        ?>
+                        <div class="alert alert-danger text-center">
+                            <?php
+                            foreach($errors as $showerror){
+                                echo $showerror;
+                            }
+                            ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
               <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
             </div>
         </form>
