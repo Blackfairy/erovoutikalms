@@ -1,0 +1,261 @@
+ 
+ /* Sykes Helps Style Sheet*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+html{
+    font-family: 'Poppins';
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(Erovoutika_Login.png);
+	background-color: #00008B;
+    background-position: center;
+    background-size: cover;
+	max-height: 100vh; /* Limits the height to the viewport height */
+	overflow: hidden; /* Hides any overflowing content */
+}
+
+.navbar{
+    width: 1200px;
+    height: 67px;
+}
+
+.logo{
+    color: #ff7200;
+    font-size: 55px;
+    float: left;
+	margin-left: 100px;
+    padding-top: 30px;
+	border-bottom: 2px solid #ff7200;
+}
+
+.logo2{
+	margin-right: 600px;
+	margin-left: 210px;
+	padding-top: 103px;
+	border-bottom: 2px solid #ff7200;
+}
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #ff7200;
+}
+
+
+
+.srch{
+    width: 200px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #ff7200;
+    margin-top: 13px;
+    color: #fff;
+    border-right: none;
+    font-size: 16px;
+    float: left;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.btn{
+    width: 100px;
+    height: 40px;
+    background: #ff7200;
+    border: 2px solid #ff7200;
+    margin-top: 13px;
+    color: #fff;
+    font-size: 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    color: #000;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.srch:focus{
+    outline: none;
+}
+
+.content{
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    color: #fff;
+	
+}
+
+.content .par{
+    padding-left: 20px;
+    padding-bottom: 25px;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+	text-align: justify;
+	background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+	margin-right: 400px;
+	padding-right: 20px;
+	padding-top: 17px;
+	border-radius: 45px;
+}
+
+.content h1{
+    font-size: 23px;
+    padding-left: 20px;
+    margin-top: 27px;
+    letter-spacing: 2px;
+	
+}
+
+
+.content .cn a{
+    text-decoration: none;
+    color: #000;
+    transition: .3s ease;
+	font-weight: 700;
+	
+}
+
+.cn:hover{
+    background-color: #fff;
+}
+
+.content span{
+    color: #ff7200;
+   
+}
+
+.form{
+    width: 640px;
+    height: 380px;
+    position: left;
+    top: 10px;
+    left: 870px;
+    transform: translate(0%,-5%);
+    border-radius: 10px;
+    padding: 35px;
+}
+
+.form h2{
+    width: 220px;
+    text-align: center;
+    color: #ff7200;
+    font-size: 22px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 8px;
+	
+}
+
+.form input{
+    width: 350px;
+    height: 35px;
+    background: #D9D9D9;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+	border-radius: 5px;
+    color: black;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+	margin-left: -20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	
+}
+
+.form input:focus{
+    outline: none;
+}
+
+::placeholder{
+    color: #5B6454;
+	
+}
+
+.btnn{
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border-color: white;
+    margin-top: 25px;
+	margin-left: -20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
+}
+.btnn:hover{
+    background: #4477CE;
+}
+.btnn a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.form .link{
+    font-size: 17px;
+    padding-top: 70px;
+    margin-left: 20px;	
+}
+.form .link a{
+    text-decoration: none;
+    color: #5272F2;
+	margin-left: 10px;	
+	margin-top: 20px;
+	font-weight: bold;
+
+	
+}
+.form .link1 a{
+	font-size: 16px;
+    color: white;
+	margin-left: 227px;
+	text-decoration: none;
+	
+
+}
+.liw{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin-left: 160px;	
+}
+
+.content img {
+    width: 300px;
+    height: auto; 
+	margin-top: -40px;
+	margin-bottom: -20px;
+	padding-left: 15px;
+}
