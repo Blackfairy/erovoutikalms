@@ -3,7 +3,7 @@ html{
 }
 
 body{
-    background-color: #F5F5F5;
+    background-image: url('image_src/bg.gif');
     background-position: center;
     background-size: cover;
 	background-repeat: no-repeat;
