@@ -98,7 +98,7 @@ if(isset($_POST['signup'])){
                 if($status == 'verified'){
                   $_SESSION['email'] = $email;
                   $_SESSION['password'] = $password;
-                    header('location: courses.html');
+                    header('location: courses.php');
                 }else{
                     $info = "It looks like you haven't still verify your email - $email";
                     $_SESSION['info'] = $info;
@@ -209,7 +209,7 @@ if(isset($_POST['signup'])){
 }
     
    //if login now button click
-    if(isset($_POST['login-now'])){
-        header('Location: login-user.php');
+    if(isset($_POST['login'])){
+        header('Location: courses.php');
     }
 ?>
