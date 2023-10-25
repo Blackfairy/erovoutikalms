@@ -23,7 +23,7 @@
           <div class="login-form">
             <div class="title">Login</div>
             <h1> Welcome Back! Please login <br>to your account</h1>
-            <form class="form" action="login-user.php" method="POST" autocomplete="">
+            <form class="form" action="login_signup.php" method="POST" autocomplete="">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>

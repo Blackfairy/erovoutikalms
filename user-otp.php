@@ -2,7 +2,7 @@
 <?php 
 $email = $_SESSION['email'];
 if($email == false){
-  header('Location: login-user.php');
+  header('Location: login_signup.php');
 }
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ if($email == false){
         <div class="row">
             <div class="col-md-4 offset-md-4 form">
                 <form action="user-otp.php" method="POST" autocomplete="off">
-				<img src="Erovoutika_Logo.png">
+				<img src="erovoutika_logo.png">
                     <h2 class="text-center">Verify Your Account</h2>
                     <?php 
                     if(isset($_SESSION['info'])){
