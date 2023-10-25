@@ -73,7 +73,7 @@ if(isset($_POST['signup'])){
             if($update_res){
                 $_SESSION['name'] = $name;
                 $_SESSION['email'] = $email;
-                header('location: DashboardPBL.php');
+                header('location: login_signup.php');
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while updating code!";
@@ -98,7 +98,7 @@ if(isset($_POST['signup'])){
                 if($status == 'verified'){
                   $_SESSION['email'] = $email;
                   $_SESSION['password'] = $password;
-                    header('location: DashboardPBL.php');
+                    header('location: courses.html');
                 }else{
                     $info = "It looks like you haven't still verify your email - $email";
                     $_SESSION['info'] = $info;
