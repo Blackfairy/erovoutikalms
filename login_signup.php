@@ -33,7 +33,7 @@
                 <i class="fas fa-lock"></i>
                 <input class="form-control" type="password" name="password" placeholder="Password" required>
               </div>
-              <div class="text"><a href="#">Forgot password?</a></div>
+              <div class="text"><a href="forgot-password.php">Forgot password?</a></div>
               <div class="button input-box">
                 <input type="submit" name="login" value="Login">
                 

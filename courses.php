@@ -1,26 +1,4 @@
 <?php require_once "controllerUserData.php"; ?>
-<?php 
-$email = $_SESSION['email'];
-$password = $_SESSION['password'];
-if($email != false && $password != false){
-    $sql = "SELECT * FROM usertable WHERE email = '$email'";
-    $run_Sql = mysqli_query($con, $sql);
-    if($run_Sql){
-        $fetch_info = mysqli_fetch_assoc($run_Sql);
-        $status = $fetch_info['status'];
-        $code = $fetch_info['code'];
-        if($status == "verified"){
-            if($code != 0){
-                header('Location: reset-code.php');
-            }
-        }else{
-            header('Location: user-otp.php');
-        }
-    }
-}else{
-    header('Location: login_signup.php');
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -174,9 +152,9 @@ main {
       <img src="eira_logo.png">
     </div>
     <div class="navbar-up" id="navbar">
-      <a href="#home">HOME</a>
+      <a href="home.html">HOME</a>
       <a href="#enroll">ENROLL</a>
-      <a href="#training">TRAINING</a>
+      <a href="courses.php">TRAINING</a>
       <a href="#verification">VERIFICATION</a>
       <a href="#reviewers">REVIEWERS</a>
 			<a href="logout-user.php" class="navbar-up" id="navbar">Log Out</a>

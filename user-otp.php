@@ -18,7 +18,7 @@ if($email == false){
         <div class="row">
             <div class="col-md-4 offset-md-4 form">
                 <form action="user-otp.php" method="POST" autocomplete="off">
-				<img src="erovoutika_logo.png">
+				<img src="eira_logo.png">
                     <h2 class="text-center">Verify Your Account</h2>
                     <?php 
                     if(isset($_SESSION['info'])){
