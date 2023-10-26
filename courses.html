@@ -24,9 +24,9 @@ body::-webkit-scrollbar-thumb:hover {
     background: #555; }
 header {
   background-image: url('Rectangle 62.png');
-  height: 120px;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  height: 120px; }
 .flex-container {
   position: absolute; 
   align-items: center;
@@ -139,6 +139,36 @@ main {
   color: #ffffff;
   font-size: 30px;
   cursor: pointer; }
+footer {
+  background-image: url('footer.png');
+  background-size: cover;
+  background-repeat: no-repeat; 
+  height: 400px; }
+.footer-container {
+  padding: 20px;
+  max-width: 1140px;
+  align-items: center;
+  position: absolute;  }
+.footer-row {
+  padding: 0px 30px;
+  display: flex;
+  flex-wrap: nowrap;
+  min-width: auto; }
+.footer-row p {
+  padding: 10px;
+  color: white; }
+.footer-row img {
+  height: 200px;
+  width: 200px; }
+.socials {
+  padding: 50px; }
+.socials h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 600; }
+.socials a {
+  color: white;
+}
 
 </style>  
 </head>
@@ -213,7 +243,26 @@ main {
 </div>
 <!--COMPANY'S INFO-->
 <footer>
-
+    <div class="footer-container">
+      <div class="footer-row">
+        <address>
+          <p> Unit 703, PARC HOUSE II, Epifanio de los Santos Ave, <br> 
+            Makati, 1212 Metro Manila (Philippines) </p>
+          <p> erovoutika@gmail.com </p>
+          <p> 074 423 1557 </p>
+          <img src="qr.png">
+        </address>
+        <div class="socials">
+          <h2> Social Share</h2>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/erovoutika/"></a></li>
+            <li><a href="https://www.facebook.com/erovoutika/"></a></li>
+            <li><a href="https://twitter.com/erovoutika"></a></li>
+            <li><a href="https://www.instagram.com/erovoutika/?hl=en"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 </footer>
 </div>
 <script>
