@@ -177,7 +177,7 @@ header article span {
   <!--BANNER w/ LOGO & NAVIGATOR-->
   <div class="flex-container">
     <div class="logo">
-      <img src="erovoutika_logo.png" href=""  style="width:180px;">
+      <img src="image_src/erovoutika_logo.png" href=""  style="width:180px;">
       <img src="eira_logo.png">
     </div>
     <div class="navbar-up" id="navbar">
@@ -266,7 +266,7 @@ header article span {
 =======
     <header>
         <nav> 
-            <img src="eira_logo.png">
+            <img src="image_src/eira_logo.png">
             <input type="checkbox" id="active">
                 <label for="active" class="menu-btn"><i class="uil uil-bars"></i></label>
                 <div class="nav-items">
@@ -285,13 +285,13 @@ header article span {
         <section>
             <div class="slider-frame"> 
                 <div class="slide-images">
-                        <img src="training1.png">
-                        <img src="training2.png">
-                        <img src="training3.png">
-                        <img src="training4.png">
-                        <img src="training5.png">
-                        <img src="training6.png">
-                        <img src="training7.png">
+                        <img src="image_src/training1.png">
+                        <img src="image_src/training2.png">
+                        <img src="image_src/training3.png">
+                        <img src="image_src/training4.png">
+                        <img src="image_src/training5.png">
+                        <img src="image_src/training6.png">
+                        <img src="image_src/training7.png">
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@ if($email == false){
 </head>
 <body>
 <div class="logo">
-	<img src="Erovoutika_Logo.png">
+	<img src="image_src/Erovoutika_Logo.png">
 </div>
 	<div class="signup-vector">
 		<img src="Forgot password.png">
