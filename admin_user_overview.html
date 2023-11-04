@@ -12,6 +12,7 @@
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/airdatepicker/css/datepicker.min.css" rel="stylesheet">
     <link href="assets/vendor/mdtimepicker/mdtimepicker.min.css" rel="stylesheet">
+    <link href="assets/vendor/datatables/datatables.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -150,183 +151,97 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6 col-md-6 col-lg-3 mt-2">
+                        <div class="col-md-12 col-lg-12">
                             <div class="card">
-                                <div class="content">
-                                    <div class="datepicker-here" data-language="en" date-inline="true"></div>
+                                <div class="card-header">User Data Table</div>
+                                <div class="card-body">
+                                    <p class="card-title"></p>
+                                    <table class="table table-hover" id="dataTables-example" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Salary</th>
+                                                <th>Country</th>
+                                                <th>City</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Dakota Rice</td>
+                                                <td>$36,738</td>
+                                                <td>United States</td>
+                                                <td>Oud-Turnhout</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Minerva Hooper</td>
+                                                <td>$23,789</td>
+                                                <td>Curaçao</td>
+                                                <td>Sinaai-Waas</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Sage Rodriguez</td>
+                                                <td>$56,142</td>
+                                                <td>Netherlands</td>
+                                                <td>Baileux</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Philip Chaney</td>
+                                                <td>$38,735</td>
+                                                <td>Korea, South</td>
+                                                <td>Overland Park</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Doris Greene</td>
+                                                <td>$63,542</td>
+                                                <td>Malawi</td>
+                                                <td>Feldkirchen in Kärnten</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Mason Porter</td>
+                                                <td>$78,615</td>
+                                                <td>Chile</td>
+                                                <td>Gloucester</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Allisa Sanches</td>
+                                                <td>$28,615</td>
+                                                <td>Columbia</td>
+                                                <td>Nigger</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Peter Benhams</td>
+                                                <td>$33,215</td>
+                                                <td>Ecuador</td>
+                                                <td>Holster</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Bramson Adams</td>
+                                                <td>$109,222</td>
+                                                <td>Philippines</td>
+                                                <td>Camp John</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Jessie Williams</td>
+                                                <td>$55,123</td>
+                                                <td>Malaysia</td>
+                                                <td>Glosterine</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="icon-big text-center">
-                                                <i class="teal fas fa-user"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="detail">
-                                                <p class="detail-subtitle">New Enrollee</p>
-                                                <span class="number">6,267</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="footer">
-                                        <hr />
-                                        <div class="stats">
-                                            <i class="fas fa-users"></i> For this Week
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="icon-big text-center">
-                                                <i class="violet fas fa-eye"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="detail">
-                                                <p class="detail-subtitle">Page views</p>
-                                                <span class="number">28,210</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="footer">
-                                        <hr />
-                                        <div class="stats">
-                                            <i class="fas fa-stopwatch"></i> For this Month
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="icon-big text-center">
-                                                <i class="orange fas fa-envelope"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="detail">
-                                                <p class="detail-subtitle">Support Request</p>
-                                                <span class="number">75</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="footer">
-                                        <hr />
-                                        <div class="stats">
-                                            <i class="fas fa-envelope-open-text"></i> For this week
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="content">
-                                            <div class="head">
-                                                <h5 class="mb-0">Traffic Overview</h5>
-                                                <p class="text-muted">Current year website visitor data</p>
-                                            </div>
-                                            <div class="canvas-wrapper">
-                                                <canvas class="chart" id="trafficflow"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="content">
-                                            <div class="head">
-                                                <h5 class="mb-0">Enrollee Overview</h5>
-                                                <p class="text-muted">Current year enrollee data</p>
-                                            </div>
-                                            <div class="canvas-wrapper">
-                                                <canvas class="chart" id="sales"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="head">
-                                        <h5 class="mb-0">Most Visited Pages</h5>
-                                        <p class="text-muted">Current year website visitor data</p>
-                                    </div>
-                                    <div class="canvas-wrapper">
-                                        <table class="table table-striped">
-                                            <thead class="success">
-                                                <tr>
-                                                    <th>Page Name</th>
-                                                    <th class="text-end">Visitors</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>/about.html <a href="#"><i class="fas fa-link blue"></i></a></td>
-                                                    <td class="text-end">8,340</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>/special-promo.html <a href="#"><i class="fas fa-link blue"></i></a></td>
-                                                    <td class="text-end">7,280</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>/products.html <a href="#"><i class="fas fa-link blue"></i></a></td>
-                                                    <td class="text-end">6,210</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>/documentation.html <a href="#"><i class="fas fa-link blue"></i></a></td>
-                                                    <td class="text-end">5,176</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>/customer-support.html <a href="#"><i class="fas fa-link blue"></i></a></td>
-                                                    <td class="text-end">4,276</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>/index.html <a href="#"><i class="fas fa-link blue"></i></a></td>
-                                                    <td class="text-end">3,176</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>/products-pricing.html <a href="#"><i class="fas fa-link blue"></i></a></td>
-                                                    <td class="text-end">2,176</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>/product-features.html <a href="#"><i class="fas fa-link blue"></i></a></td>
-                                                    <td class="text-end">1,886</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>/contact-us.html <a href="#"><i class="fas fa-link blue"></i></a></td>
-                                                    <td class="text-end">1,509</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>/terms-and-condition.html <a href="#"><i class="fas fa-link blue"></i></a></td>
-                                                    <td class="text-end">1,100</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
             </div>
         </div>
     </div>
@@ -339,6 +254,8 @@
     <script src="assets/vendor/airdatepicker/js/datepicker.min.js"></script>
     <script src="assets/vendor/airdatepicker/js/i18n/datepicker.en.js"></script>
     <script src="assets/vendor/mdtimepicker/mdtimepicker.min.js"></script>
+    <script src="assets/vendor/datatables/datatables.min.js"></script>
+    <script src="assets/js/initiate-datatables.js"></script>
 
     <style>
 
@@ -422,7 +339,6 @@ body {
     box-shadow: none;
     border-bottom: 1px solid rgba(101, 109, 119, .16);
 }
-
 /*------------------------------------------------------------------
 [3. Navigation / #navbar] - see /components/navbar/navbar-dropdown.css
 */
@@ -609,6 +525,10 @@ a[aria-expanded="true"] {
         display: none;
     }
 }
+.table {
+    color: #fff;
+}
+
 /*------------------------------------------------------------------
 [6. Boxes / .box] 
 */
