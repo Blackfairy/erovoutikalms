@@ -1,3 +1,32 @@
+<!-- PHP code to establish connection with the localserver -->
+<?php
+
+// Username is root
+$user = 'root';
+$password = '';
+
+// Database name is geeksforgeeks
+$database = 'erovoutikalms';
+
+// Server is localhost with
+// port number 3306
+$servername='localhost:3306';
+$mysqli = new mysqli($servername, $user,
+				$password, $database);
+
+// Checking for connections
+if ($mysqli->connect_error) {
+	die('Connect Error (' .
+	$mysqli->connect_errno . ') '.
+	$mysqli->connect_error);
+}
+
+// SQL query to select data from database
+$sql = " SELECT * FROM usertable ";
+$result = $mysqli->query($sql);
+$mysqli->close();
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -33,9 +62,6 @@
                 </li>
                 <li>
                     <a href="admin_courses_overview.html"><i class="fas fa-chart-bar"></i> Courses Table</a>
-                </li>
-                <li>
-                    <a href="icons.html"><i class="fas fa-icons"></i> Icons</a>
                 </li>
                 <li>
                     <a href="#pagesmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-copy"></i> Pages</a>
@@ -106,8 +132,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 page-header">
-                            <div class="page-pretitle">Overview</div>
-                            <h2 class="page-title">Dashboard</h2>
+                            <div class="page-pretitle">Admin Overview</div>
+                            <h2 class="page-title">Users Table</h2>
                         </div>
                     </div>
                     <div class="row">
@@ -121,82 +147,30 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Name</th>
-                                                <th>Salary</th>
-                                                <th>Country</th>
-                                                <th>City</th>
+                                                <th>Email</th>
+                                                <th>Status</th>
+                                                <th>Created at</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Dakota Rice</td>
-                                                <td>$36,738</td>
-                                                <td>United States</td>
-                                                <td>Oud-Turnhout</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Minerva Hooper</td>
-                                                <td>$23,789</td>
-                                                <td>Curaçao</td>
-                                                <td>Sinaai-Waas</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sage Rodriguez</td>
-                                                <td>$56,142</td>
-                                                <td>Netherlands</td>
-                                                <td>Baileux</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Philip Chaney</td>
-                                                <td>$38,735</td>
-                                                <td>Korea, South</td>
-                                                <td>Overland Park</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Doris Greene</td>
-                                                <td>$63,542</td>
-                                                <td>Malawi</td>
-                                                <td>Feldkirchen in Kärnten</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Mason Porter</td>
-                                                <td>$78,615</td>
-                                                <td>Chile</td>
-                                                <td>Gloucester</td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>Allisa Sanches</td>
-                                                <td>$28,615</td>
-                                                <td>Columbia</td>
-                                                <td>Nigger</td>
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>Peter Benhams</td>
-                                                <td>$33,215</td>
-                                                <td>Ecuador</td>
-                                                <td>Holster</td>
-                                            </tr>
-                                            <tr>
-                                                <td>9</td>
-                                                <td>Bramson Adams</td>
-                                                <td>$109,222</td>
-                                                <td>Philippines</td>
-                                                <td>Camp John</td>
-                                            </tr>
-                                            <tr>
-                                                <td>10</td>
-                                                <td>Jessie Williams</td>
-                                                <td>$55,123</td>
-                                                <td>Malaysia</td>
-                                                <td>Glosterine</td>
-                                            </tr>
+                                            <!-- PHP CODE TO FETCH DATA FROM ROWS -->
+                                            <?php 
+                                            // LOOP TILL END OF DATA
+                                            while($rows=$result->fetch_assoc())
+                                            {
+                                        ?>
+                                        <tr>
+                                            <!-- FETCHING DATA FROM EACH
+                                                ROW OF EVERY COLUMN -->
+                                            <td><?php echo $rows['id'];?></td>
+                                            <td><?php echo $rows['name'];?></td>
+                                            <td><?php echo $rows['email'];?></td>
+                                            <td><?php echo $rows['status'];?></td>
+                                            <td><?php echo $rows['created_at'];?></td>
+                                        </tr>
+                                        <?php
+                                            }
+                                        ?>
                                         </tbody>
                                     </table>
                                 </div>
