@@ -103,11 +103,12 @@
 
 /*** Navbar Start ***/
 .navbar .navbar-nav {
-    padding: 15px 0;
+    padding: 13px 0;
 }
 
 .navbar .navbar-nav .nav-link {
     padding: 10px;
+    align-content: center;
     color: var(--bs-white);
     font-size: 18px;
     outline: none;
