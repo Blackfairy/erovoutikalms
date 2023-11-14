@@ -58,7 +58,7 @@ $mysqli->close();
                     <a href="admin_user_overview.php"><i class="fas fa-file-alt"></i> Users Table</a>
                 </li>
                 <li>
-                    <a href="admin_user_edit.php"><i class="fas fa-file-alt"></i> Users Table</a>
+                    <a href="admin_user_edit.php"><i class="fas fa-file-alt"></i> Edit Users Table</a>
                 </li>
                 <li>
                     <a href="admin_students_overview.html"><i class="fas fa-table"></i> Students Table</a>
