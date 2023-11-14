@@ -10,4 +10,108 @@
 
 @import "~bootstrap/scss/bootstrap";
 
-// Then add additional custom code here
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; }
+
+body::-webkit-scrollbar {
+    width: 10px; }
+body::-webkit-scrollbar-track {
+    background: #f1f1f1; }
+body::-webkit-scrollbar-thumb {
+    background: #888; }
+body::-webkit-scrollbar-thumb:hover {
+    background: #555; }
+
+/*TOP NAVBAR*/
+nav .topbar {
+    background-color: #0205a1;
+    height: 20%; }
+nav .topbar .top-link {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+nav .topbar .top-link a {
+    margin-right: 10px;
+    color: white; }
+#note {
+    width: 900px;
+    margin: 0 20px;
+    overflow: hidden; }
+#note small {
+    position: relative;
+    display: inline-block;
+    animation: mymove 10s infinite;
+    animation-timing-function: all; }
+@keyframes mymove {
+    from {left: -100%;}
+    to {left: 100%;} 
+}
+
+/*NAVIGATION MENU*/
+nav .navbar {
+    background-color: black;
+    position: sticky;
+    width: 100%;
+    height: 24vh;
+    z-index: 2;
+    left: 0;
+    right: 0; }
+.navbar ul {
+    width: 70%;
+    align-items: center;}
+.navbar ul li a{
+    color: bisque;
+    text-decoration: none;
+    font-size: 20px; }
+.navbar ul a i {
+    font-style: normal; }
+
+/*CAROUSEL SLIDER*/
+.carousel-inner {
+    height: 530px; }
+.carousel-content a button.carousel-content-btn1 {
+    background: #0205a1;
+    color: white;
+    opacity: 1;
+    border: 0;
+    border-radius: 20px; }
+.carousel-content a button.carousel-content-btn1:hover {
+    background: var(--bs-primary);
+    color: #ffffff;
+    border: 0;
+    opacity: 1;
+    transition: 1s;
+    border-radius: 20px; }
+.carousel-content a button.carousel-content-btn2 {
+    background: #0205a1;
+    color: white;
+    opacity: 1;
+    border: 0;
+    border-radius: 20px; }
+.carousel-content a button.carousel-content-btn2:hover {
+    background: var(--bs-primary);
+    color: var(--bs-dark);
+    border: 0;
+    opacity: 1;
+    transition: 1s;
+    border-radius: 20px; }
+figure article {
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    margin: 40px 25%;
+    top: 5%; }
+
+/*REVIEWS*/
+main article {
+    background-color: rgba(2, 5, 161, 0.91);
+    color: white;
+    top: 0;
+    left: 0;
+    right: 0; }
+main article h3 i {
+    color: darkorange; }
