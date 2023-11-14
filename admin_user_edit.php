@@ -64,7 +64,7 @@ $mysqli->close();
                     <a href="admin_students_overview.html"><i class="fas fa-table"></i> Students Table</a>
                 </li>
                 <li>
-                    <a href="admin_courses_overview.html"><i class="fas fa-chart-bar"></i> Courses Table table</a>
+                    <a href="admin_courses_overview.html"><i class="fas fa-chart-bar"></i> Courses Table</a>
                 </li>
                 <li>
                     <a href="#pagesmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-copy"></i> Pages</a>
