@@ -162,15 +162,18 @@ $mysqli->close();
                                             while($rows=$result->fetch_assoc())
                                             {
                                         ?>
+                                        <form>
                                         <tr>
                                             <!-- FETCHING DATA FROM EACH
                                                 ROW OF EVERY COLUMN -->
-                                            <td><?php echo $rows['id'];?></td>
-                                            <td><?php echo $rows['name'];?></td>
-                                            <td><?php echo $rows['email'];?></td>
-                                            <td><?php echo $rows['status'];?></td>
-                                            <td><?php echo $rows['created_at'];?></td>
+                                            
+                                            <td><input type="text" id="ID" name="userId" value = "<?php echo $rows['id'];?>" ></td>
+                                            <td><input type="text" id="ID" name="userId" value = "<?php echo $rows['name'];?>" ></td>
+                                            <td><input type="text" id="ID" name="userId" value = "<?php echo $rows['email'];?>" ></td>
+                                            <td><input type="text" id="ID" name="userId" value = "<?php echo $rows['status'];?>" ></td>
+                                            <td><input type="text" id="ID" name="userId" value = "<?php echo $rows['created_at'];?>" ></td>
                                         </tr>
+                                        </form>
                                         <?php
                                             }
                                         ?>
