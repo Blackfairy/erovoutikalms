@@ -11,561 +11,661 @@
     <link rel="icon" type="images/x-icon" href="rectangle 13.png" />
 </head> 
 <body>
-    <nav>
-            <span>EIRA</span>
-        </div>
-
-        <div class="menu-items">
-            <ul class="nav-links">
-                <li><a href="#">
-                    <i class="uil uil-estate"></i>
-                    <span class="link-name">Dashboard</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="uil uil-person"></i>
-                    <span class="link-name">Profile</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="uil uil-chart"></i>
-                    <span class="link-name">Training</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="uil uil-chart"></i>
-                    <span class="link-name">Certificates</span>
-                </a></li>
-            </ul>
-            
-            <ul class="logout-mode">
-                <li><a href="home.html">
-                    <i class="uil uil-signout"></i>
-                    <span class="link-name">Logout</span>
-                </a></li>
-
-                <li class="mode">
-                    <a href="#">
-                        <i class="uil uil-moon"></i>
-                    <span class="link-name">Dark Mode</span>
-                </a>
-
-                <div class="mode-toggle">
-                  <span class="switch"></span>
+    <div class='app'>
+        <main class='project'>
+          <div class='project-info'>
+            <h1>Homepage Design</h1>
+            <div class='project-participants'>
+              <span></span>
+              <span></span>
+              <span></span>
+              <button class='project-participants__add'>Add Participant</button>
+                
+              </div>
+          </div>
+          <div class='project-tasks'>
+            <div class='project-column'>
+              <div class='project-column-heading'>
+                <h2 class='project-column-heading__title'>Task Ready</h2><button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
+              </div>
+              <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--copyright'>Copywriting</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Konsep hero title yang menarik</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>3</span>
+                  <span><i class="fas fa-paperclip"></i>7</span>
+                  <span class='task__owner'></span>
                 </div>
-            </li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="dashboard">
-        <div class="top">
-            <i class="uil uil-bars sidebar-toggle"></i>
-
-            <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
+              </div>
+              
+                      <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--design'>UI Design</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Icon di section our services</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>2</span>
+                  <span><i class="fas fa-paperclip"></i>5</span>
+                  <span class='task__owner'></span>
+                </div>
+              </div>
+              
+                      <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--copyright'>Copywriting</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Konsep hero title yang menarik</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>2</span>
+                  <span><i class="fas fa-paperclip"></i>3</span>
+                  <span class='task__owner'></span>
+                </div>
+              </div>
             </div>
+            <div class='project-column'><div class='project-column-heading'>
+                <h2 class='project-column-heading__title'>In Progress</h2><button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
+              </div>
+                
+              <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--design'>UI Design</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Replace lorem ipsum text in the final designs</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>5</span>
+                  <span><i class="fas fa-paperclip"></i>5</span> 
+                  <span class='task__owner'></span>
+                </div>
+              </div>
+              
+              <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--illustration'>Illustration</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Create and generate the custom SVG illustrations.</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>8</span>
+                  <span><i class="fas fa-paperclip"></i>7</span>
+                  <span class='task__owner'></span>
+                </div>
+              </div>
+              
+              <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--copyright'>Copywriting</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Proof read the legal page and check for and loopholes</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>12</span>
+                  <span><i class="fas fa-paperclip"></i>11</span>
+                  <span class='task__owner'></span>
+                </div>
+              </div>
+              
+              <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--illustration'>Illustration</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Create the landing page graphics for the hero slider.</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>4</span>
+                  <span><i class="fas fa-paperclip"></i>8</span>
+                  <span class='task__owner'></span>
+                </div>
+              </div>
+              
+              </div>
+            <div class='project-column'><div class='project-column-heading'>
+                <h2 class='project-column-heading__title'>Needs Review</h2><button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
+              </div>
+                
+              <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--copyright'>Copywriting</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Check the company we copied doesn't think we copied them.</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>4</span>
+                  <span><i class="fas fa-paperclip"></i>0</span>
+                  <span class='task__owner'></span>
+                </div>
+              </div>
+              <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--design'>UI Design</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Design the about page.</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>0</span>
+                  <span><i class="fas fa-paperclip"></i>5</span>
+                  <span class='task__owner'></span>
+                </div>
+              </div>
+              <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--illustration'>Illustration</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Move that one image 5px down to make Phil Happy.</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>2</span>
+                  <span><i class="fas fa-paperclip"></i>2</span>
+                  <span class='task__owner'></span>
+                </div>
+              </div>
+              </div>
+            <div class='project-column'><div class='project-column-heading'>
+                <h2 class='project-column-heading__title'>Done</h2><button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
+              </div>
+              
+               <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--illustration'>Illustration</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Send Advert illustrations over to production company.</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>12</span>
+                  <span><i class="fas fa-paperclip"></i>5</span>
+                  <span class='task__owner'></span>
+                </div>
+              </div>
+              
+               <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--illustration'>Illustration</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Dawn wants to move the text 3px to the right.</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>3</span>
+                  <span><i class="fas fa-paperclip"></i>7</span>
+                  <span class='task__owner'></span>
+                </div>
+              </div>
+              
+               <div class='task' draggable='true'>
+                <div class='task__tags'><span class='task__tag task__tag--copyright'>Copywriting</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+                <p>Amend the contract details.</p>
+                <div class='task__stats'>
+                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+                  <span><i class="fas fa-comment"></i>8</span>
+                  <span><i class="fas fa-paperclip"></i>16</span>
+                  <span class='task__owner'></span>
+                </div>
+              </div>
+              
+              </div>
             
-            <img src="profile.png" alt="">
-        </div>
+          </div>
+        </main>
+        <aside class='task-details'>
+          <div class='tag-progress'>
+            <h2>Task Progress</h2>
+            <div class='tag-progress'>
+              <p>Copywriting <span>3/8</span></p>
+              <progress class="progress progress--copyright" max="8" value="3"> 3 </progress>
+            </div>
+            <div class='tag-progress'>
+              <p>Illustration <span>6/10</span></p>
+              <progress class="progress progress--illustration" max="10" value="6"> 6 </progress>
+            </div>
+            <div class='tag-progress'>
+              <p>UI Design <span>2/7</span></p>
+              <progress class="progress progress--design" max="7" value="2"> 2 </progress>
+            </div>
+          </div>
+          <div class='task-activity'>
+            <h2>Recent Activity</h2>
+            <ul>
+              <li>
+                <span class='task-icon task-icon--attachment'><i class="fas fa-paperclip"></i></span>
+                <b>Andrea </b>uploaded 3 documents
+                <time datetime="2021-11-24T20:00:00">Aug 10</time>
+              </li>
+                <li>
+                    <span class='task-icon task-icon--comment'><i class="fas fa-comment"></i></span>
+                <b>Karen </b> left a comment
+                <time datetime="2021-11-24T20:00:00">Aug 10</time>
+              </li>
+               <li>
+                   <span class='task-icon task-icon--edit'><i class="fas fa-pencil-alt"></i></span>
+                <b>Karen </b>uploaded 3 documents
+                <time datetime="2021-11-24T20:00:00">Aug 11</time>
+              </li>
+                <li>
+                    <span class='task-icon task-icon--attachment'><i class="fas fa-paperclip"></i></span>
+                <b>Andrea </b>uploaded 3 documents
+                <time datetime="2021-11-24T20:00:00">Aug 11</time>
+              </li>
+               <li>
+                   <span class='task-icon task-icon--comment'><i class="fas fa-comment"></i></span>
+                <b>Karen </b> left a comment
+                <time datetime="2021-11-24T20:00:00">Aug 12</time>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+ <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
 
-              </section>
-    <script>
+var dragSrcEl = null;
 
-    const body = document.querySelector("body"),
-      modeToggle = body.querySelector(".mode-toggle");
-      sidebar = body.querySelector("nav");
-      sidebarToggle = body.querySelector(".sidebar-toggle");
+function handleDragStart(e) {
+  this.style.opacity = '0.1';
+  this.style.border = '3px dashed #c4cad3';
+  
+  dragSrcEl = this;
 
-let getMode = localStorage.getItem("mode");
-if(getMode && getMode ==="dark"){
-    body.classList.toggle("dark");
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/html', this.innerHTML);
 }
 
-let getStatus = localStorage.getItem("status");
-if(getStatus && getStatus ==="close"){
-    sidebar.classList.toggle("close");
+function handleDragOver(e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
+
+  e.dataTransfer.dropEffect = 'move';
+  
+  return false;
 }
 
-modeToggle.addEventListener("click", () =>{
-    body.classList.toggle("dark");
-    if(body.classList.contains("dark")){
-        localStorage.setItem("mode", "dark");
-    }else{
-        localStorage.setItem("mode", "light");
-    }
+function handleDragEnter(e) {
+  this.classList.add('task-hover');
+}
+
+function handleDragLeave(e) {
+  this.classList.remove('task-hover');
+}
+
+function handleDrop(e) {
+  if (e.stopPropagation) {
+    e.stopPropagation(); // stops the browser from redirecting.
+  }
+  
+  if (dragSrcEl != this) {
+    dragSrcEl.innerHTML = this.innerHTML;
+    this.innerHTML = e.dataTransfer.getData('text/html');
+  }
+  
+  return false;
+}
+
+function handleDragEnd(e) {
+  this.style.opacity = '1';
+  this.style.border = 0;
+  
+  items.forEach(function (item) {
+    item.classList.remove('task-hover');
+  });
+}
+
+
+let items = document.querySelectorAll('.task'); 
+items.forEach(function(item) {
+  item.addEventListener('dragstart', handleDragStart, false);
+  item.addEventListener('dragenter', handleDragEnter, false);
+  item.addEventListener('dragover', handleDragOver, false);
+  item.addEventListener('dragleave', handleDragLeave, false);
+  item.addEventListener('drop', handleDrop, false);
+  item.addEventListener('dragend', handleDragEnd, false);
 });
+});
+ </script>
 
-sidebarToggle.addEventListener("click", () => {
-    sidebar.classList.toggle("close");
-    if(sidebar.classList.contains("close")){
-        localStorage.setItem("status", "close");
-    }else{
-        localStorage.setItem("status", "open");
-    }
-})
-    </script>
-
-    <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
-
+<style>
+:root {
+  --bg:#ebf0f7;
+  --header:#fbf4f6;
+  --text:#2e2e2f;
+  --white:#ffffff;
+  --light-grey:#c4cad3; 
+  --tag-1:#ceecfd;
+  --tag-1-text:#2e87ba;
+  --tag-2:#d6ede2;
+  --tag-2-text:#13854e;
+  --tag-3:#ceecfd;
+  --tag-3-text:#2d86ba;
+  --tag-4:#f2dcf5;
+  --tag-4-text:#a734ba;
+  --purple:#7784ee;
+}
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+  
 }
 
-:root{
-    /* ===== Colors ===== */
-    --primary-color: #0E4BF1;
-    --panel-color: #FFF;
-    --text-color: #000;
-    --black-light-color: #707070;
-    --border-color: #e6e5e5;
-    --toggle-color: #DDD;
-    --box1-color: #4DA3FF;
-    --box2-color: #FFE6AC;
-    --box3-color: #E7D1FC;
-    --title-icon-color: #fff;
+body {
+  color:var(--text);
+}
+
+@mixin display {
+  display:flex;
+  align-items:center;
+}
+
+.app {
+  background-color:var(--bg);
+  width:100%;
+  min-height:100vh;
+}
+
+h1 {
+  font-size:30px;
+}
+.project {
+  padding:2rem;
+  max-width:75%;
+  width:100%;
+  display:inline-block;
+  
+  &-info {
+    padding:2rem 0;
+    display:flex;
+    width:100%;
+    justify-content:space-between;
+    align-items:center;
+  }
+  &-participants {
+    @include display;
+    span,
+    &__add{
+      width:30px;
+      height:30px;
+      display:inline-block;
+      background:var(--purple);
+      border-radius:100rem;
+      margin:0 .2rem; 
+    }
+    &__add {
+     background:transparent;
+     border:1px dashed rgb(150,150,150);
+     font-size:0;
+     cursor:pointer;
+     position:relative;
+      
+      &:after {
+        content:'+';
+        font-size:15px;
+        color:rgb(150,150,150);
+        
+      }
+    }
+  }
+  
+  &-tasks {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    width:100%;
+    grid-column-gap:1.5rem;
+  }
+  &-column {
     
-    /* ====== Transition ====== */
-    --tran-05: all 0.5s ease;
-    --tran-03: all 0.3s ease;
-    --tran-03: all 0.2s ease;
+    &-heading {
+      margin-bottom:1rem;
+      @include display;
+      justify-content:space-between;
+      &__title {
+        font-size:20px;
+ 
+      }
+      &__options {
+        background:transparent;
+        color:var(--light-grey);
+        font-size:18px;
+        border:0;
+          cursor:pointer;
+      }
+    }
+  }
 }
 
-body{
-    min-height: 100vh;
-    background-color: var(--primary-color);
-}
-body.dark{
-    --primary-color: #3A3B3C;
-    --panel-color: #242526;
-    --text-color: #CCC;
-    --black-light-color: #CCC;
-    --border-color: #4D4C4C;
-    --toggle-color: #FFF;
-    --box1-color: #3A3B3C;
-    --box2-color: #3A3B3C;
-    --box3-color: #3A3B3C;
-    --title-icon-color: #CCC;
-}
-/* === Custom Scroll Bar CSS === */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 12px;
-    transition: all 0.3s ease;
+.task {
+  cursor:move;
+  background-color:var(--white);
+  padding:1rem;
+  border-radius:8px;
+  width:100%;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  margin-bottom:1rem;
+  border:3px dashed transparent;
+  
+  &:hover {
+     box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+    border-color:rgba(162,179,207,.2)!important;
+  }
+  
+  p {
+    font-size:15px;
+    margin:1.2rem 0;
+  }
+  &__tag {
+    border-radius:100px;
+    padding:2px 13px;
+    font-size:12px;
+    
+    &--copyright {
+      color:var(--tag-4-text);
+      background-color:var(--tag-4);
+    }
+    &--design {
+       color:var(--tag-3-text);
+      background-color:var(--tag-3);
+    }
+    &--illustration {
+      color:var(--tag-2-text);
+      background-color:var(--tag-2);
+    }
+    
+  }
+  &__tags { 
+    width:100%;
+    @include display;
+    justify-content:space-between;
+  }
+  
+  &__options {
+      background:transparent; 
+      border:0;
+    color:var(--light-grey);
+    font-size:17px;
+    }
+  
+  &__stats {
+    
+    position:relative;
+    width:100%;
+    color:var(--light-grey);
+    
+    font-size:12px;
+    span:not(:last-of-type){
+      margin-right:1rem;
+    }
+    svg {
+      margin-right:5px;
+    }
+  }
+  
+  &__owner {
+    width:25px;
+    height:25px;
+    border-radius:100rem;
+    background:var(--purple);
+    position:absolute;
+    display:inline-block;
+    right:0;
+    bottom:0;
+    
+  }
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #0b3cc1;
+.task-hover {
+border:3px dashed var(--light-grey)!important;
+}
+.task-details {
+  width:24%;
+  border-left:1px solid #d9e0e9;
+  display:inline-block;
+  height:100%;
+  vertical-align:top;
+  padding:3rem 2rem;
 }
 
-body.dark::-webkit-scrollbar-thumb:hover,
-body.dark .activity-data::-webkit-scrollbar-thumb:hover{
-    background: #3A3B3C;
+.tag-progress {
+  margin:1.5rem 0;
+  h2 {
+    font-size:16px;
+    margin-bottom:1rem;
+  }
+  p {
+    display:flex;
+    width:100%;
+    justify-content:space-between;
+    
+    span {
+      color:rgb(180,180,180);
+    }
+  }
+  .progress {
+    width:100%;
+    -webkit-appearance: none;
+    appearance: none;
+    border:none;
+    border-radius:10px;
+    height:10px;
+    
+    &::-webkit-progress-bar,
+    &::-webkit-progress-value {
+      border-radius:10px;
+    }
+    &--copyright {
+      &::-webkit-progress-bar {
+      background-color:#ecd8e6;
+    }
+    
+    &::-webkit-progress-value {
+      background:#d459e8
+    }
+    }
+    
+        &--illustration {
+      &::-webkit-progress-bar {
+      background-color:#dee7e3;
+      
+    }
+    
+    &::-webkit-progress-value {
+      background-color:#46bd84;
+    }
+    }
+    
+        &--design {
+      &::-webkit-progress-bar {
+      
+      background-color:#d8e7f4;
+    }
+    
+    &::-webkit-progress-value {
+      background-color:#08a0f7;
+    }
+    }
+    
+
+  }
 }
 
-nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 250px;
-    padding: 10px 14px;
-    background-color: var(--panel-color);
-    border-right: 1px solid var(--border-color);
-    transition: var(--tran-05);
-}
-nav.close{
-    width: 73px;
-}
-nav .logo-name{
-    display: flex;
-    align-items: center;
-}
-nav .logo-image{
-    display: flex;
-    justify-content: center;
-    min-width: 45px;
-}
-nav .logo-image img{
-    width: 40px;
-    object-fit: cover;
-    border-radius: 50%;
+.task-activity {
+   h2 {
+    font-size:16px;
+    margin-bottom:1rem;
+  }
+  
+  li {
+    list-style:none;
+    margin:1rem 0;
+    padding:0rem 1rem 1rem 3rem;
+    position:relative;
+  }
+  time {
+    display:block;
+    color:var(--light-grey);
+  }
 }
 
-nav .logo-name .logo_name{
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-left: 14px;
-    transition: var(--tran-05);
-}
-nav.close .logo_name{
-    opacity: 0;
-    pointer-events: none;
-}
-nav .menu-items{
-    margin-top: 40px;
-    height: calc(100% - 90px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.menu-items li{
-    list-style: none;
-}
-.menu-items li a{
-    display: flex;
-    align-items: center;
-    height: 50px;
-    text-decoration: none;
-    position: relative;
-}
-.nav-links li a:hover:before{
-    content: "";
-    position: absolute;
-    left: -7px;
-    height: 5px;
-    width: 5px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-}
-body.dark li a:hover:before{
-    background-color: var(--text-color);
-}
-.menu-items li a i{
-    font-size: 24px;
-    min-width: 45px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--black-light-color);
-}
-.menu-items li a .link-name{
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--black-light-color);    
-    transition: var(--tran-05);
-}
-nav.close li a .link-name{
-    opacity: 0;
-    pointer-events: none;
-}
-.nav-links li a:hover i,
-.nav-links li a:hover .link-name{
-    color: var(--primary-color);
-}
-body.dark .nav-links li a:hover i,
-body.dark .nav-links li a:hover .link-name{
-    color: var(--text-color);
-}
-.menu-items .logout-mode{
-    padding-top: 10px;
-    border-top: 1px solid var(--border-color);
-}
-.menu-items .mode{
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-}
-.menu-items .mode-toggle{
-    position: absolute;
-    right: 14px;
-    height: 50px;
-    min-width: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-.mode-toggle .switch{
-    position: relative;
-    display: inline-block;
-    height: 22px;
-    width: 40px;
-    border-radius: 25px;
-    background-color: var(--toggle-color);
-}
-.switch:before{
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 15px;
-    width: 15px;
-    background-color: var(--panel-color);
-    border-radius: 50%;
-    transition: var(--tran-03);
-}
-body.dark .switch:before{
-    left: 20px;
+.task-icon {
+  width:30px;
+  height:30px;
+  border-radius:100rem;
+  position:absolute;
+  top:0;
+  left:0;
+  @include display;
+  justify-content:center;
+  
+
+  svg {
+    font-size:12px;
+    color:var(--white);
+  }
+  &--attachment {
+    background-color:#fba63c;
+  }
+  
+  &--comment {
+    background-color:#5dc983;
+  }
+  
+  &--edit {
+    background-color:#7784ee;
+  }
+ 
 }
 
-.dashboard{
-    position: relative;
-    left: 250px;
-    background-color: var(--panel-color);
-    min-height: 100vh;
-    width: calc(100% - 250px);
-    padding: 10px 14px;
-    transition: var(--tran-05);
-}
-nav.close ~ .dashboard{
-    left: 73px;
-    width: calc(100% - 73px);
-}
-.dashboard .top{
-    position: fixed;
-    top: 0;
-    left: 250px;
-    display: flex;
-    width: calc(100% - 250px);
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 14px;
-    background-color: var(--panel-color);
-    transition: var(--tran-05);
-    z-index: 10;
-}
-nav.close ~ .dashboard .top{
-    left: 73px;
-    width: calc(100% - 73px);
-}
-.dashboard .top .sidebar-toggle{
-    font-size: 26px;
-    color: var(--text-color);
-    cursor: pointer;
-}
-.dashboard .top .search-box{
-    position: relative;
-    height: 45px;
-    max-width: 600px;
-    width: 100%;
-    margin: 0 30px;
-}
-.top .search-box input{
-    position: absolute;
-    border: 1px solid var(--border-color);
-    background-color: var(--panel-color);
-    padding: 0 25px 0 50px;
-    border-radius: 5px;
-    height: 100%;
-    width: 100%;
-    color: var(--text-color);
-    font-size: 15px;
-    font-weight: 400;
-    outline: none;
-}
-.top .search-box i{
-    position: absolute;
-    left: 15px;
-    font-size: 22px;
-    z-index: 10;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--black-light-color);
-}
-.top img{
-    width: 40px;
-    border-radius: 50%;
-}
-.dashboard .dash-content{
-    padding-top: 50px;
-}
-.dash-content .title{
-    display: flex;
-    align-items: center;
-    margin: 60px 0 30px 0;
-}
-.dash-content .title i{
-    position: relative;
-    height: 35px;
-    width: 35px;
-    background-color: var(--primary-color);
-    border-radius: 6px;
-    color: var(--title-icon-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-}
-.dash-content .title .text{
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--text-color);
-    margin-left: 10px;
-}
-.dash-content .boxes{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.dash-content .boxes .box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 12px;
-    width: calc(100% / 3 - 15px);
-    padding: 15px 20px;
-    background-color: var(--box1-color);
-    transition: var(--tran-05);
-}
-.boxes .box i{
-    font-size: 35px;
-    color: var(--text-color);
-}
-.boxes .box .text{
-    white-space: nowrap;
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--text-color);
-}
-.boxes .box .number{
-    font-size: 40px;
-    font-weight: 500;
-    color: var(--text-color);
-}
-.boxes .box.box2{
-    background-color: var(--box2-color);
-}
-.boxes .box.box3{
-    background-color: var(--box3-color);
-}
-.dash-content .activity .activity-data{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-.activity .activity-data{
-    display: flex;
-}
-.activity-data .data{
-    display: flex;
-    flex-direction: column;
-    margin: 0 15px;
-}
-.activity-data .data-title{
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--text-color);
-}
-.activity-data .data .data-list{
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: 20px;
-    white-space: nowrap;
-    color: var(--text-color);
+
+
+
+
+@media only screen and (max-width: 1300px) {
+  .project {
+    max-width:100%;
+  }
+  .task-details {
+    width:100%;
+    display:flex;
+  }
+  .tag-progress,
+  .task-activity {
+    flex-basis:50%;
+    background:var(--white);
+    padding:1rem;
+    border-radius:8px;
+    margin:1rem;
+  }
 }
 
-@media (max-width: 1000px) {
-    nav{
-        width: 73px;
-    }
-    nav.close{
-        width: 250px;
-    }
-    nav .logo_name{
-        opacity: 0;
-        pointer-events: none;
-    }
-    nav.close .logo_name{
-        opacity: 1;
-        pointer-events: auto;
-    }
-    nav li a .link-name{
-        opacity: 0;
-        pointer-events: none;
-    }
-    nav.close li a .link-name{
-        opacity: 1;
-        pointer-events: auto;
-    }
-    nav ~ .dashboard{
-        left: 73px;
-        width: calc(100% - 73px);
-    }
-    nav.close ~ .dashboard{
-        left: 250px;
-        width: calc(100% - 250px);
-    }
-    nav ~ .dashboard .top{
-        left: 73px;
-        width: calc(100% - 73px);
-    }
-    nav.close ~ .dashboard .top{
-        left: 250px;
-        width: calc(100% - 250px);
-    }
-    .activity .activity-data{
-        overflow-X: scroll;
-    }
+@media only screen and (max-width: 1000px) {
+  .project-column:nth-child(2),
+  .project-column:nth-child(3){
+    display:none;
+  }
+  .project-tasks {
+    grid-template-columns:1fr 1fr;
+  }
 }
 
-@media (max-width: 780px) {
-    .dash-content .boxes .box{
-        width: calc(100% / 2 - 15px);
-        margin-top: 15px;
-    }
-}
-@media (max-width: 560px) {
-    .dash-content .boxes .box{
-        width: 100% ;
-    }
-}
-@media (max-width: 400px) {
-    nav{
-        width: 0px;
-    }
-    nav.close{
-        width: 73px;
-    }
-    nav .logo_name{
-        opacity: 0;
-        pointer-events: none;
-    }
-    nav.close .logo_name{
-        opacity: 0;
-        pointer-events: none;
-    }
-    nav li a .link-name{
-        opacity: 0;
-        pointer-events: none;
-    }
-    nav.close li a .link-name{
-        opacity: 0;
-        pointer-events: none;
-    }
-    nav ~ .dashboard{
-        left: 0;
-        width: 100%;
-    }
-    nav.close ~ .dashboard{
-        left: 73px;
-        width: calc(100% - 73px);
-    }
-    nav ~ .dashboard .top{
-        left: 0;
-        width: 100%;
-    }
-    nav.close ~ .dashboard .top{
-        left: 0;
-        width: 100%;
-    }
-}
 
+
+@media only screen and (max-width: 600px) {
+  .project-column:nth-child(4){
+    display:none;
+  }
+  .project-tasks {
+    grid-template-columns:1fr;
+  }
+  
+  .task-details {
+    flex-wrap:wrap;
+    padding:3rem 1rem;
+  }
+  .tag-progress,
+  .task-activity {
+    flex-basis:100%;
+  }
+  h1 {
+    font-size:25px;
+  }
+}
 
 </style>
-</body>
-</html>
