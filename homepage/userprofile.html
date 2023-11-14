@@ -5,667 +5,621 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    
 
-    <title>Dashboard</title>
-    <link rel="icon" type="images/x-icon" href="rectangle 13.png" />
-</head> 
+</head>
 <body>
-    <div class='app'>
-        <main class='project'>
-          <div class='project-info'>
-            <h1>Homepage Design</h1>
-            <div class='project-participants'>
-              <span></span>
-              <span></span>
-              <span></span>
-              <button class='project-participants__add'>Add Participant</button>
+    <nav class="sidebar close">
+        <header>
+                <div class="text logo-text">
+                    <span class="name">EIRA</span>
+                    <span class="profession">Learn at your own pace</span>
+                </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-user icon' ></i>
+                            <span class="text nav-text">Profiles</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notifications</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Analytics</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-task icon' ></i>
+                            <span class="text nav-text">Task</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-cog icon' ></i>
+                            <span class="text nav-text">Settings</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
                 
-              </div>
-          </div>
-          <div class='project-tasks'>
-            <div class='project-column'>
-              <div class='project-column-heading'>
-                <h2 class='project-column-heading__title'>Task Ready</h2><button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
-              </div>
-              <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--copyright'>Copywriting</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Konsep hero title yang menarik</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>3</span>
-                  <span><i class="fas fa-paperclip"></i>7</span>
-                  <span class='task__owner'></span>
-                </div>
-              </div>
-              
-                      <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--design'>UI Design</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Icon di section our services</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>2</span>
-                  <span><i class="fas fa-paperclip"></i>5</span>
-                  <span class='task__owner'></span>
-                </div>
-              </div>
-              
-                      <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--copyright'>Copywriting</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Konsep hero title yang menarik</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>2</span>
-                  <span><i class="fas fa-paperclip"></i>3</span>
-                  <span class='task__owner'></span>
-                </div>
-              </div>
             </div>
-            <div class='project-column'><div class='project-column-heading'>
-                <h2 class='project-column-heading__title'>In Progress</h2><button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
-              </div>
-                
-              <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--design'>UI Design</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Replace lorem ipsum text in the final designs</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>5</span>
-                  <span><i class="fas fa-paperclip"></i>5</span> 
-                  <span class='task__owner'></span>
-                </div>
-              </div>
-              
-              <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--illustration'>Illustration</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Create and generate the custom SVG illustrations.</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>8</span>
-                  <span><i class="fas fa-paperclip"></i>7</span>
-                  <span class='task__owner'></span>
-                </div>
-              </div>
-              
-              <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--copyright'>Copywriting</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Proof read the legal page and check for and loopholes</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>12</span>
-                  <span><i class="fas fa-paperclip"></i>11</span>
-                  <span class='task__owner'></span>
-                </div>
-              </div>
-              
-              <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--illustration'>Illustration</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Create the landing page graphics for the hero slider.</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>4</span>
-                  <span><i class="fas fa-paperclip"></i>8</span>
-                  <span class='task__owner'></span>
-                </div>
-              </div>
-              
-              </div>
-            <div class='project-column'><div class='project-column-heading'>
-                <h2 class='project-column-heading__title'>Needs Review</h2><button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
-              </div>
-                
-              <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--copyright'>Copywriting</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Check the company we copied doesn't think we copied them.</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>4</span>
-                  <span><i class="fas fa-paperclip"></i>0</span>
-                  <span class='task__owner'></span>
-                </div>
-              </div>
-              <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--design'>UI Design</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Design the about page.</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>0</span>
-                  <span><i class="fas fa-paperclip"></i>5</span>
-                  <span class='task__owner'></span>
-                </div>
-              </div>
-              <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--illustration'>Illustration</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Move that one image 5px down to make Phil Happy.</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>2</span>
-                  <span><i class="fas fa-paperclip"></i>2</span>
-                  <span class='task__owner'></span>
-                </div>
-              </div>
-              </div>
-            <div class='project-column'><div class='project-column-heading'>
-                <h2 class='project-column-heading__title'>Done</h2><button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
-              </div>
-              
-               <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--illustration'>Illustration</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Send Advert illustrations over to production company.</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>12</span>
-                  <span><i class="fas fa-paperclip"></i>5</span>
-                  <span class='task__owner'></span>
-                </div>
-              </div>
-              
-               <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--illustration'>Illustration</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Dawn wants to move the text 3px to the right.</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>3</span>
-                  <span><i class="fas fa-paperclip"></i>7</span>
-                  <span class='task__owner'></span>
-                </div>
-              </div>
-              
-               <div class='task' draggable='true'>
-                <div class='task__tags'><span class='task__tag task__tag--copyright'>Copywriting</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
-                <p>Amend the contract details.</p>
-                <div class='task__stats'>
-                  <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
-                  <span><i class="fas fa-comment"></i>8</span>
-                  <span><i class="fas fa-paperclip"></i>16</span>
-                  <span class='task__owner'></span>
-                </div>
-              </div>
-              
-              </div>
-            
-          </div>
-        </main>
-        <aside class='task-details'>
-          <div class='tag-progress'>
-            <h2>Task Progress</h2>
-            <div class='tag-progress'>
-              <p>Copywriting <span>3/8</span></p>
-              <progress class="progress progress--copyright" max="8" value="3"> 3 </progress>
-            </div>
-            <div class='tag-progress'>
-              <p>Illustration <span>6/10</span></p>
-              <progress class="progress progress--illustration" max="10" value="6"> 6 </progress>
-            </div>
-            <div class='tag-progress'>
-              <p>UI Design <span>2/7</span></p>
-              <progress class="progress progress--design" max="7" value="2"> 2 </progress>
-            </div>
-          </div>
-          <div class='task-activity'>
-            <h2>Recent Activity</h2>
-            <ul>
-              <li>
-                <span class='task-icon task-icon--attachment'><i class="fas fa-paperclip"></i></span>
-                <b>Andrea </b>uploaded 3 documents
-                <time datetime="2021-11-24T20:00:00">Aug 10</time>
-              </li>
-                <li>
-                    <span class='task-icon task-icon--comment'><i class="fas fa-comment"></i></span>
-                <b>Karen </b> left a comment
-                <time datetime="2021-11-24T20:00:00">Aug 10</time>
-              </li>
-               <li>
-                   <span class='task-icon task-icon--edit'><i class="fas fa-pencil-alt"></i></span>
-                <b>Karen </b>uploaded 3 documents
-                <time datetime="2021-11-24T20:00:00">Aug 11</time>
-              </li>
-                <li>
-                    <span class='task-icon task-icon--attachment'><i class="fas fa-paperclip"></i></span>
-                <b>Andrea </b>uploaded 3 documents
-                <time datetime="2021-11-24T20:00:00">Aug 11</time>
-              </li>
-               <li>
-                   <span class='task-icon task-icon--comment'><i class="fas fa-comment"></i></span>
-                <b>Karen </b> left a comment
-                <time datetime="2021-11-24T20:00:00">Aug 12</time>
-              </li>
-            </ul>
-          </div>
-        </aside>
+        </div>
+
+    </nav>
+
+    <section class="home">
+         <section class="main">
+      <div class="main-top">
+        <h1>Skills</h1>
+        <i class="fas fa-user-cog"></i>
       </div>
- <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
+      <div class="main-skills">
+        <div class="card">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Web developement</h3>
+          <p>Join Over 1 million Students.</p>
+          <button>Get Started</button>
+        </div>
+        <div class="card">
+          <i class="fab fa-java"></i>
+          <h3>Java</h3>
+          <p>Join Over 3 million Students.</p>
+          <button>Get Started</button>
+        </div>
+        <div class="card">
+          <i class="fab fa-android"></i>
+          <h3>Android dev</h3>
+          <p>Join Over 1 million Students.</p>
+          <button>Get Started</button>
+        </div>
+      </div>
+      <section class="main-course">
+        <h1>My courses</h1>
+        <div class="course-box">
+          <ul>
+            <li class="active">In progress</li>
+            <li>explore</li>
+            <li>incoming</li>
+            <li>finished</li>
+          </ul>
+          <div class="course">
+            <div class="box">
+              <h3>HTML</h3>
+              <p>80% - progress</p>
+              <button>continue</button>
+              <i class="fab fa-html5 html"></i>
+            </div>
+            <div class="box">
+              <h3>CSS</h3>
+              <p>50% - progress</p>
+              <button>continue</button>
+              <i class="fab fa-css3-alt css"></i>
+            </div>
+            <div class="box">
+              <h3>JavaScript</h3>
+              <p>30% - progress</p>
+              <button>continue</button>
+              <i class="fab fa-js-square js"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    </section>
 
-var dragSrcEl = null;
-
-function handleDragStart(e) {
-  this.style.opacity = '0.1';
-  this.style.border = '3px dashed #c4cad3';
-  
-  dragSrcEl = this;
-
-  e.dataTransfer.effectAllowed = 'move';
-  e.dataTransfer.setData('text/html', this.innerHTML);
-}
-
-function handleDragOver(e) {
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
-
-  e.dataTransfer.dropEffect = 'move';
-  
-  return false;
-}
-
-function handleDragEnter(e) {
-  this.classList.add('task-hover');
-}
-
-function handleDragLeave(e) {
-  this.classList.remove('task-hover');
-}
-
-function handleDrop(e) {
-  if (e.stopPropagation) {
-    e.stopPropagation(); // stops the browser from redirecting.
-  }
-  
-  if (dragSrcEl != this) {
-    dragSrcEl.innerHTML = this.innerHTML;
-    this.innerHTML = e.dataTransfer.getData('text/html');
-  }
-  
-  return false;
-}
-
-function handleDragEnd(e) {
-  this.style.opacity = '1';
-  this.style.border = 0;
-  
-  items.forEach(function (item) {
-    item.classList.remove('task-hover');
-  });
-}
+    <script>
+        const body = document.querySelector('body'),
+      sidebar = body.querySelector('nav'),
+      toggle = body.querySelector(".toggle"),
+      searchBtn = body.querySelector(".search-box"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
 
 
-let items = document.querySelectorAll('.task'); 
-items.forEach(function(item) {
-  item.addEventListener('dragstart', handleDragStart, false);
-  item.addEventListener('dragenter', handleDragEnter, false);
-  item.addEventListener('dragover', handleDragOver, false);
-  item.addEventListener('dragleave', handleDragLeave, false);
-  item.addEventListener('drop', handleDrop, false);
-  item.addEventListener('dragend', handleDragEnd, false);
-});
-});
- </script>
+toggle.addEventListener("click" , () =>{
+    sidebar.classList.toggle("close");
+})
 
-<style>
-:root {
-  --bg:#ebf0f7;
-  --header:#fbf4f6;
-  --text:#2e2e2f;
-  --white:#ffffff;
-  --light-grey:#c4cad3; 
-  --tag-1:#ceecfd;
-  --tag-1-text:#2e87ba;
-  --tag-2:#d6ede2;
-  --tag-2-text:#13854e;
-  --tag-3:#ceecfd;
-  --tag-3-text:#2d86ba;
-  --tag-4:#f2dcf5;
-  --tag-4-text:#a734ba;
-  --purple:#7784ee;
-}
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: 'Poppins', sans-serif;
-  
-}
+searchBtn.addEventListener("click" , () =>{
+    sidebar.classList.remove("close");
+})
 
-body {
-  color:var(--text);
-}
-
-@mixin display {
-  display:flex;
-  align-items:center;
-}
-
-.app {
-  background-color:var(--bg);
-  width:100%;
-  min-height:100vh;
-}
-
-h1 {
-  font-size:30px;
-}
-.project {
-  padding:2rem;
-  max-width:75%;
-  width:100%;
-  display:inline-block;
-  
-  &-info {
-    padding:2rem 0;
-    display:flex;
-    width:100%;
-    justify-content:space-between;
-    align-items:center;
-  }
-  &-participants {
-    @include display;
-    span,
-    &__add{
-      width:30px;
-      height:30px;
-      display:inline-block;
-      background:var(--purple);
-      border-radius:100rem;
-      margin:0 .2rem; 
-    }
-    &__add {
-     background:transparent;
-     border:1px dashed rgb(150,150,150);
-     font-size:0;
-     cursor:pointer;
-     position:relative;
-      
-      &:after {
-        content:'+';
-        font-size:15px;
-        color:rgb(150,150,150);
+modeSwitch.addEventListener("click" , () =>{
+    body.classList.toggle("dark");
+    
+    if(body.classList.contains("dark")){
+        modeText.innerText = "Light mode";
+    }else{
+        modeText.innerText = "Dark mode";
         
-      }
     }
-  }
-  
-  &-tasks {
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    width:100%;
-    grid-column-gap:1.5rem;
-  }
-  &-column {
-    
-    &-heading {
-      margin-bottom:1rem;
-      @include display;
-      justify-content:space-between;
-      &__title {
-        font-size:20px;
- 
-      }
-      &__options {
-        background:transparent;
-        color:var(--light-grey);
-        font-size:18px;
-        border:0;
-          cursor:pointer;
-      }
-    }
-  }
+});
+    </script>
+
+    <style>
+       /* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.task {
-  cursor:move;
-  background-color:var(--white);
-  padding:1rem;
-  border-radius:8px;
-  width:100%;
-  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
-  margin-bottom:1rem;
-  border:3px dashed transparent;
-  
-  &:hover {
-     box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
-    border-color:rgba(162,179,207,.2)!important;
-  }
-  
-  p {
-    font-size:15px;
-    margin:1.2rem 0;
-  }
-  &__tag {
-    border-radius:100px;
-    padding:2px 13px;
-    font-size:12px;
-    
-    &--copyright {
-      color:var(--tag-4-text);
-      background-color:var(--tag-4);
-    }
-    &--design {
-       color:var(--tag-3-text);
-      background-color:var(--tag-3);
-    }
-    &--illustration {
-      color:var(--tag-2-text);
-      background-color:var(--tag-2);
-    }
-    
-  }
-  &__tags { 
-    width:100%;
-    @include display;
-    justify-content:space-between;
-  }
-  
-  &__options {
-      background:transparent; 
-      border:0;
-    color:var(--light-grey);
-    font-size:17px;
-    }
-  
-  &__stats {
-    
-    position:relative;
-    width:100%;
-    color:var(--light-grey);
-    
-    font-size:12px;
-    span:not(:last-of-type){
-      margin-right:1rem;
-    }
-    svg {
-      margin-right:5px;
-    }
-  }
-  
-  &__owner {
-    width:25px;
-    height:25px;
-    border-radius:100rem;
-    background:var(--purple);
-    position:absolute;
-    display:inline-block;
-    right:0;
-    bottom:0;
-    
-  }
+:root{
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
 }
 
-.task-hover {
-border:3px dashed var(--light-grey)!important;
-}
-.task-details {
-  width:24%;
-  border-left:1px solid #d9e0e9;
-  display:inline-block;
-  height:100%;
-  vertical-align:top;
-  padding:3rem 2rem;
+body{
+    min-height: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
 }
 
-.tag-progress {
-  margin:1.5rem 0;
-  h2 {
-    font-size:16px;
-    margin-bottom:1rem;
-  }
-  p {
-    display:flex;
-    width:100%;
-    justify-content:space-between;
-    
-    span {
-      color:rgb(180,180,180);
-    }
-  }
-  .progress {
-    width:100%;
-    -webkit-appearance: none;
-    appearance: none;
-    border:none;
-    border-radius:10px;
-    height:10px;
-    
-    &::-webkit-progress-bar,
-    &::-webkit-progress-value {
-      border-radius:10px;
-    }
-    &--copyright {
-      &::-webkit-progress-bar {
-      background-color:#ecd8e6;
-    }
-    
-    &::-webkit-progress-value {
-      background:#d459e8
-    }
-    }
-    
-        &--illustration {
-      &::-webkit-progress-bar {
-      background-color:#dee7e3;
-      
-    }
-    
-    &::-webkit-progress-value {
-      background-color:#46bd84;
-    }
-    }
-    
-        &--design {
-      &::-webkit-progress-bar {
-      
-      background-color:#d8e7f4;
-    }
-    
-    &::-webkit-progress-value {
-      background-color:#08a0f7;
-    }
-    }
-    
-
-  }
+::selection{
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
-.task-activity {
-   h2 {
-    font-size:16px;
-    margin-bottom:1rem;
-  }
-  
-  li {
-    list-style:none;
-    margin:1rem 0;
-    padding:0rem 1rem 1rem 3rem;
-    position:relative;
-  }
-  time {
-    display:block;
-    color:var(--light-grey);
-  }
+body.dark{
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
 }
 
-.task-icon {
-  width:30px;
-  height:30px;
-  border-radius:100rem;
-  position:absolute;
-  top:0;
-  left:0;
-  @include display;
-  justify-content:center;
-  
-
-  svg {
-    font-size:12px;
-    color:var(--white);
-  }
-  &--attachment {
-    background-color:#fba63c;
-  }
-  
-  &--comment {
-    background-color:#5dc983;
-  }
-  
-  &--edit {
-    background-color:#7784ee;
-  }
- 
+/* ===== Sidebar ===== */
+ .sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;  
+}
+.sidebar.close{
+    width: 88px;
 }
 
-
-
-
-
-@media only screen and (max-width: 1300px) {
-  .project {
-    max-width:100%;
-  }
-  .task-details {
-    width:100%;
-    display:flex;
-  }
-  .tag-progress,
-  .task-activity {
-    flex-basis:50%;
-    background:var(--white);
-    padding:1rem;
-    border-radius:8px;
-    margin:1rem;
-  }
+/* ===== Reusable code - Here ===== */
+.sidebar li{
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
 }
 
-@media only screen and (max-width: 1000px) {
-  .project-column:nth-child(2),
-  .project-column:nth-child(3){
-    display:none;
-  }
-  .project-tasks {
-    grid-template-columns:1fr 1fr;
-  }
+.sidebar header .image,
+.sidebar .icon{
+    min-width: 60px;
+    border-radius: 6px;
 }
 
-
-
-@media only screen and (max-width: 600px) {
-  .project-column:nth-child(4){
-    display:none;
-  }
-  .project-tasks {
-    grid-template-columns:1fr;
-  }
-  
-  .task-details {
-    flex-wrap:wrap;
-    padding:3rem 1rem;
-  }
-  .tag-progress,
-  .task-activity {
-    flex-basis:100%;
-  }
-  h1 {
-    font-size:25px;
-  }
+.sidebar .icon{
+    min-width: 60px;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
 }
 
-</style>
+.sidebar .text,
+.sidebar .icon{
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+.sidebar .text{
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+.sidebar.close .text{
+    opacity: 0;
+}
+/* =========================== */
+
+.sidebar header{
+    position: relative;
+}
+
+.sidebar header .image-text{
+    display: flex;
+    align-items: center;
+}
+.sidebar header .logo-text{
+    display: flex;
+    flex-direction: column;
+}
+header .image-text .name {
+    margin-top: 2px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+header .image-text .profession{
+    font-size: 16px;
+    margin-top: -2px;
+    display: block;
+}
+
+.sidebar header .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar header .image img{
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .toggle{
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+body.dark .sidebar header .toggle{
+    color: var(--text-color);
+}
+
+.sidebar.close .toggle{
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.sidebar .menu{
+    margin-top: 40px;
+}
+
+.sidebar li.search-box{
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+.sidebar li.search-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: var(--tran-05);
+}
+.sidebar li a{
+    list-style: none;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--tran-03);
+}
+
+.sidebar li a:hover{
+    background-color: var(--primary-color);
+}
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text{
+    color: var(--sidebar-color);
+}
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text{
+    color: var(--text-color);
+}
+
+.sidebar .menu-bar{
+    height: calc(100% - 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+.menu-bar::-webkit-scrollbar{
+    display: none;
+}
+.sidebar .menu-bar .mode{
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    position: relative;
+    transition: var(--tran-05);
+}
+
+.menu-bar .mode .sun-moon{
+    height: 50px;
+    width: 60px;
+}
+
+.mode .sun-moon i{
+    position: absolute;
+}
+.mode .sun-moon i.sun{
+    opacity: 0;
+}
+body.dark .mode .sun-moon i.sun{
+    opacity: 1;
+}
+body.dark .mode .sun-moon i.moon{
+    opacity: 0;
+}
+
+.menu-bar .bottom-content .toggle-switch{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
+
+.switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+    transition: var(--tran-04);
+}
+
+body.dark .switch::before{
+    left: 20px;
+}
+
+.home{
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+.home .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 12px 60px;
+}
+
+.sidebar.close ~ .home{
+    left: 78px;
+    height: 100vh;
+    width: calc(100% - 78px);
+}
+body.dark .home .text{
+    color: var(--text-color);
+} 
+/* Main Section */
+.main{
+  position: relative;
+  padding: 20px;
+  width: 100%;
+}
+.main-top{
+  display: flex;
+  width: 100%;
+}
+.main-top i{
+  position: absolute;
+  right: 0;
+  margin: 10px 30px;
+  color: rgb(110, 109, 109);
+  cursor: pointer;
+}
+.main-skills{
+  display: flex;
+  margin-top: 20px;
+}
+.main-skills .card{
+  width: 25%;
+  margin: 10px;
+  background: #fff;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.main-skills .card h3{
+  margin: 10px;
+  text-transform: capitalize;
+}
+.main-skills .card p{
+  font-size: 12px;
+}
+.main-skills .card button{
+  background: orangered;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.main-skills .card button:hover{
+  background: rgba(223, 70, 15, 0.856);
+}
+.main-skills .card i{
+  font-size: 22px;
+  padding: 10px;
+}
+/* Courses */
+.main-course{
+  margin-top:20px ;
+  text-transform: capitalize;
+}
+.course-box{
+  width: 100%;
+  height: 300px;
+  padding: 10px 10px 30px 10px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.course-box ul{
+  list-style: none;
+  display: flex;
+}
+.course-box ul li{
+  margin: 10px;
+  color: gray;
+  cursor: pointer;
+}
+.course-box ul .active{
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+.course-box .course{
+  display: flex;
+}
+.box{
+  width: 33%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background: rgb(235, 233, 233);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.box p{
+  font-size: 12px;
+  margin-top: 5px;
+}
+.box button{
+  background: #000;
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 10px;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+.box button:hover{
+  background: rgba(0, 0, 0, 0.842);
+}
+.box i{
+  font-size: 7rem;
+  float: right;
+  margin: -20px 20px 20px 0;
+}
+.html{
+  color: rgb(25, 94, 54);
+}
+.css{
+  color: rgb(104, 179, 35);
+}
+.js{
+  color: rgb(28, 98, 179);
+}
+    </style>
+
+</body>
+</html>
