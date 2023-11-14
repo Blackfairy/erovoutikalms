@@ -145,6 +145,7 @@ $mysqli->close();
                                 <div class="card-header">User Data Table</div>
                                 <div class="card-body">
                                     <p class="card-title"></p>
+                                    <form>
                                     <table class="table table-hover" id="dataTables-example" width="100%">
                                         <thead>
                                             <tr>
@@ -162,20 +163,24 @@ $mysqli->close();
                                             while($rows=$result->fetch_assoc())
                                             {
                                         ?>
+                                        
                                         <tr>
                                             <!-- FETCHING DATA FROM EACH
                                                 ROW OF EVERY COLUMN -->
-                                            <td><?php echo $rows['id'];?></td>
-                                            <td><?php echo $rows['name'];?></td>
-                                            <td><?php echo $rows['email'];?></td>
-                                            <td><?php echo $rows['status'];?></td>
-                                            <td><?php echo $rows['created_at'];?></td>
+                                            
+                                            <td><input type="text" id="ID" name="userId" value = "<?php echo $rows['id'];?>" ></td>
+                                            <td><input type="text" id="nameid" name="name" value = "<?php echo $rows['name'];?>" ></td>
+                                            <td><input type="text" id="emailid" name="email" value = "<?php echo $rows['email'];?>" ></td>
+                                            <td><input type="text" id="statusid" name="status" value = "<?php echo $rows['status'];?>" ></td>
+                                            <td><input type="text" id="createdid" name="created" value = "<?php echo $rows['created_at'];?>" ></td>
                                         </tr>
+                                        
                                         <?php
                                             }
                                         ?>
                                         </tbody>
                                     </table>
+                                    </form>
                                 </div>
                             </div>
                         </div>
