@@ -26,20 +26,22 @@ $sql = " SELECT * FROM usertable ";
 $result = $mysqli->query($sql);
 $mysqli->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EIRA | Admin </title>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link href="../assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
     <link href="../assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
     <link href="../assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
     <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/airdatepicker/css/datepicker.min.css" rel="stylesheet">
-    <link href="../assets/vendor/mdtimepicker/mdtimepicker.min.css" rel="stylesheet">
+    <link href="../assets/vendor/datatables/datatables.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 
 </head>
 <body>
@@ -57,13 +59,13 @@ $mysqli->close();
             <div class="menu">
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="admin.php">
                             <i class='bx bx-home-alt icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="admin_usertable_overview.php">
                             <i class='bx bx-user icon' ></i>
                             <span class="text nav-text">User Tables</span>
                         </a>
@@ -118,81 +120,111 @@ $mysqli->close();
                     <div class="toggle-switch">
                         <span class="switch"></span>
                     </div>
-                </li>
-                
+                </li>               
             </div>
         </div>
-
     </nav>
-
     <section class="home">
-         <section class="main">
-      <div class="main-top">
-        <h1>Dashboard</h1>
-        <i class="fas fa-user-cog"></i>
-      </div>
-      <div class="main-skills">
-      <div class="container">
-            <div class="row">
-                <div class="col-md-12 page-header">
-                    <div class="page-pretitle">Admin Overview</div>
-                    <h2 class="page-title">Users Table</h2>
+        <nav class="navbar navbar-expand-lg ">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="#" id="nav1" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-link"></i> <span>Quick Links</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end nav-link-menu" aria-labelledby="nav1">
+                                    <ul class="nav-list">
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-list"></i> Access Logs</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-database"></i> Back ups</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-cloud-download-alt"></i> Updates</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-user-shield"></i> Roles</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i> <span>Renz Amante</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end nav-link-menu">
+                                    <ul class="nav-list">
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-address-card"></i> Profile</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> Messages</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-lg-12">
-                    <div class="card">
-                        <div class="card-header">User Data Table</div>
-                        <div class="card-body">
-                            <p class="card-title"></p>
-                            <table class="table table-hover" id="dataTables-example" width="100%">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Status</th>
-                                        <th>Created at</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- PHP CODE TO FETCH DATA FROM ROWS -->
-                                    <?php 
-                                    // LOOP TILL END OF DATA
-                                    while($rows=$result->fetch_assoc())
-                                    {
-                                ?>
-                                <tr>
-                                    <!-- FETCHING DATA FROM EACH
-                                        ROW OF EVERY COLUMN -->
-                                    <td><?php echo $rows['id'];?></td>
-                                    <td><?php echo $rows['name'];?></td>
-                                    <td><?php echo $rows['email'];?></td>
-                                    <td><?php echo $rows['status'];?></td>
-                                    <td><?php echo $rows['created_at'];?></td>
-                                </tr>
-                                <?php
-                                    }
-                                ?>
-                                </tbody>
-                            </table>
+            </nav>
+         <section class="main">
+      <section class="main-course">
+        <h2>Users Table</h2>
+        <div class="course-box">
+          <div class="course">
+          <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 page-header">
+                            <div class="page-pretitle">Admin Overview</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="card">
+                                <div class="card-header">User Data Table</div>
+                                <div class="card-body">
+                                    <p class="card-title"></p>
+                                    <table class="table table-hover" id="dataTables-example" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Status</th>
+                                                <th>Created at</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- PHP CODE TO FETCH DATA FROM ROWS -->
+                                            <?php 
+                                            // LOOP TILL END OF DATA
+                                            while($rows=$result->fetch_assoc())
+                                            {
+                                        ?>
+                                        <tr>
+                                            <!-- FETCHING DATA FROM EACH
+                                                ROW OF EVERY COLUMN -->
+                                            <td><?php echo $rows['id'];?></td>
+                                            <td><?php echo $rows['name'];?></td>
+                                            <td><?php echo $rows['email'];?></td>
+                                            <td><?php echo $rows['status'];?></td>
+                                            <td><?php echo $rows['created_at'];?></td>
+                                        </tr>
+                                        <?php
+                                            }
+                                        ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+          </div>
         </div>
-      </div>
+      </section>
     </section>
     </section>
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/chartsjs/Chart.min.js"></script>
-    <script src="../assets/js/dashboard-charts.js"></script>
-    <script src="../assets/js/script.js"></script>
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/airdatepicker/js/datepicker.min.js"></script>
-    <script src="../assets/vendor/airdatepicker/js/i18n/datepicker.en.js"></script>
-    <script src="../assets/vendor/mdtimepicker/mdtimepicker.min.js"></script>
     <script>
     const body = document.querySelector('body'),
     sidebar = body.querySelector('nav'),
@@ -201,18 +233,26 @@ $mysqli->close();
     modeText = body.querySelector(".mode-text");
 
 
-toggle.addEventListener("click" , () =>{
-    sidebar.classList.toggle("close");
-})
-modeSwitch.addEventListener("click" , () =>{
-    body.classList.toggle("dark");
-    if(body.classList.contains("dark")){
-        modeText.innerText = "Light mode";
-    }else{
-        modeText.innerText = "Dark mode";  
-    }
-});
-    </script>
+    toggle.addEventListener("click" , () =>{
+        sidebar.classList.toggle("close");
+    })
+    modeSwitch.addEventListener("click" , () =>{
+        body.classList.toggle("dark");
+        if(body.classList.contains("dark")){
+            modeText.innerText = "Light mode";
+        }else{
+            modeText.innerText = "Dark mode";  
+        }
+    });
+        </script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/chartsjs/Chart.min.js"></script>
+    <script src="../assets/js/dashboard-charts.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/datatables/datatables.min.js"></script>
+    <script src="../assets/js/initiate-datatables.js"></script>
 
     <style>
        /* Google Font Import - Poppins */
@@ -251,7 +291,7 @@ a,
 
 :root{
     /* ===== Colors ===== */
-    --body-color: #E4E9F7;
+    --body-color: #fff;
     --sidebar-color: #FFF;
     --primary-color: #695CFE;
     --primary-color-light: #F6F5FF;
@@ -267,6 +307,7 @@ a,
 
 body{
     min-height: 100vh;
+    background-color: #FFF;
     background-color: var(--body-color);
     transition: var(--tran-05);
     font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -278,6 +319,7 @@ body{
 }
 
 body.dark{
+    background-color: #18191a;
     --body-color: #18191a;
     --sidebar-color: #242526;
     --primary-color: #3a3b3c;
@@ -285,7 +327,12 @@ body.dark{
     --toggle-color: #fff;
     --text-color: #ccc;
 }
-
+.page-pretitle {
+    font-size: .8rem;
+    text-transform: uppercase;
+    line-height: 1.6;
+    color: #000;
+}
 /* ===== Sidebar ===== */
  .sidebar{
     position: fixed;
@@ -556,11 +603,9 @@ body.dark .home .text{
 .main-skills{
   display: flex;
   margin-top: 20px;
-  width: fit-content;
-  height: fit-content;
 }
 .main-skills .card{
-  width: fit-content;
+  width: 25%;
   margin: 10px;
   background: #fff;
   text-align: center;
