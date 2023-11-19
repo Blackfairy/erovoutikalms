@@ -232,11 +232,16 @@ section h4 {
     color: darkorange; }
 .popup nav ul li a:hover{
     color: black; }
+.tab-content {
+    height: 100%;}
 .tab-content p {
     margin: 15px 0; }
+.tab-pane {
+    height: 95%; }
 .course-width {
-    width: 50%;
-    margin-left: 25%; }
+    width: 100%;
+    justify-content: center;
+    display: inline-flex; }
 .datacourse-width {
     width: 50%;
     margin-left: 15%; }
@@ -409,7 +414,6 @@ footer {
 
     <!--POPUP COURSES-->
     <section>
-    <!--POPUP COURSES-->
         <div class="row container">
         <!--FRONT END DEVELOPMENT COURSES-->
             <div class="dialog col position-relative text-center">
@@ -479,7 +483,7 @@ footer {
                                         HTML stands for HyperText Markup Language. It is used on the frontend and gives the structure to the webpage which <br>
                                         you can style using CSS and make interactive using JavaScript. </p>
                                     <div class="course-width">
-                                        <div class="d-inline float-left">
+                                        <div class="float-left p-3">
                                             <h5 class="font-weight-bold m-2"> IDEs for HTML</h5>
                                                 <ul class="list-group p-0 m-3">
                                                     <li>Notepad++</li>
@@ -492,7 +496,7 @@ footer {
                                                     <li>Geany</li>
                                                 </ul>
                                         </div>
-                                        <div class="d-inline float-right">
+                                        <div class="float-right p-3">
                                             <h5 class="font-weight-bold m-2">COURSE OUTLINE</h5>
                                                 <ul class="list-group p-0 m-3">
                                                     <li>Learn the basics</li>
@@ -502,6 +506,7 @@ footer {
                                                 </ul>
                                         </div>
                                     </div>
+                                    <div class="btn justify-content-center m-2 w-100"><a href="/src/html.html">Start Learning</a></div>
                                 </div>
                             <!--CSS COURSE-->
                                 <div class="tab-pane container" id="css">
@@ -513,7 +518,7 @@ footer {
                                         it easier to maintain and update the visual design of a website without changing the underlying code. CSS can be 
                                         written directly in the HTML file, or in a separate file that is linked to the HTML file. </p>
                                     <div class="course-width">
-                                        <div class="d-inline float-left">
+                                        <div class="float-left p-3">
                                             <h5 class="font-weight-bold m-2"> IDEs for CSS</h5>
                                                 <ul class="list-group p-0 m-3">
                                                     <li>IntelliJ IDEA</li>
@@ -525,7 +530,7 @@ footer {
                                                     <li>Sublime Text 3</li>
                                             </ul>
                                     </div>
-                                        <div class="d-inline float-right">
+                                        <div class="float-right p-3">
                                             <h5 class="font-weight-bold m-2">COURSE OUTLINE</h5>
                                                 <ul class="list-group p-0 m-3">
                                                     <li>Learn the basics</li>
@@ -534,6 +539,7 @@ footer {
                                                 </ul>
                                         </div>
                                     </div>
+                                    <div class="btn justify-content-center m-2 w-100"><a href="/src/css.html">Start Learning</a></div>
                                 </div>
                             <!--JAVASCRIPT COURSE-->
                                 <div class="tab-pane container" id="javascript">
@@ -544,7 +550,7 @@ footer {
                                         server-side operations. It is a popular choice for web developers because it allows for a lot of flexibility and can 
                                         be used to create a wide range of interactive and dynamic web applications. </p>
                                     <div class="course-width">
-                                        <div class="d-inline float-left">
+                                        <div class="float-left p-3">
                                             <h5 class="font-weight-bold m-2"> IDEs for JAVASCRIPT</h5>
                                                 <ul class="list-group p-0 m-3">
                                                     <li>Eclipse</li>
@@ -556,7 +562,7 @@ footer {
                                                     <li>Sublime Text 3</li>
                                                 </ul>
                                         </div>
-                                        <div class="d-inline float-right">
+                                        <div class="float-right p-3">
                                             <h5 class="font-weight-bold m-2">COURSE OUTLINE</h5>
                                                 <ul class="list-group p-0 m-3">
                                                     <li>Learn the basics</li>
@@ -565,6 +571,7 @@ footer {
                                                 </ul>
                                         </div>
                                     </div>
+                                    <div class="btn justify-content-center m-2 w-100"><a href="/src/javascript.html">Start Learning</a></div>
                                 </div>
                             </div>
                     </div>
@@ -667,8 +674,8 @@ footer {
                                         one another. Relational databases store data in a series of tables. Interconnections between the tables are 
                                         specified as foreign keys. A foreign key is a unique reference from one row in a relational table to another 
                                         row in a table, which can be the same table but is most commonly a different table. </p>
-                                    <div class="datacourse-width w-75">
-                                        <div class="d-inline float-left">
+                                    <div class="course-width">
+                                        <div class="float-left p-3">
                                             <h5 class="font-weight-bold m-2"> IDEs for RELATIONAL DATABASE</h5>
                                                 <ul class="list-group p-0 m-3">
                                                     <li>MySQL Workbench</li>
@@ -677,7 +684,7 @@ footer {
                                                     <li>DataGrip</li>
                                                 </ul>
                                         </div>
-                                        <div class="d-inline float-right">
+                                        <div class="float-right p-3">
                                             <h5 class="font-weight-bold m-2">COURSE OUTLINE</h5>
                                                 <ul class="list-group p-0 m-3">
                                                     <li>Learn the basics</li>
@@ -688,6 +695,7 @@ footer {
                                                 </ul>
                                         </div>
                                     </div>
+                                    <div class="btn justify-content-center m-2 w-100"><a href="/src/php.html">Start Learning</a></div>
                                 </div>
                             </div>
                     </div>
