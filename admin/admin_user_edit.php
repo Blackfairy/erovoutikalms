@@ -26,23 +26,26 @@ $sql = " SELECT * FROM usertable ";
 $result = $mysqli->query($sql);
 $mysqli->close();
 ?>
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EIRA | Admin </title>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link href="../assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
     <link href="../assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
     <link href="../assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
     <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/airdatepicker/css/datepicker.min.css" rel="stylesheet">
-    <link href="../assets/vendor/mdtimepicker/mdtimepicker.min.css" rel="stylesheet">
-
+    <link href="../assets/vendor/datatables/datatables.css" rel="stylesheet">
 </head>
+
 <body>
+    <div class="wrapper">
     <nav class="sidebar close">
         <header>
                 <div class="text logo-text">
@@ -124,75 +127,103 @@ $mysqli->close();
         </div>
 
     </nav>
-
-    <section class="home">
-         <section class="main">
-      <div class="main-top">
-        <h1>Dashboard</h1>
-        <i class="fas fa-user-cog"></i>
-      </div>
-      <div class="main-skills">
-      <div class="container">
-            <div class="row">
-                <div class="col-md-12 page-header">
-                    <div class="page-pretitle">Admin Overview</div>
-                    <h2 class="page-title">Users Table</h2>
+        <div id="body" class="active">
+            <!-- navbar navigation component -->
+            <nav class="navbar navbar-expand-lg ">
+                <button type="button" id="sidebarCollapse" class="btn btn-light">
+                    <i class="fas fa-bars"></i><span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="#" id="nav1" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-link"></i> <span>Quick Links</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end nav-link-menu" aria-labelledby="nav1">
+                                    <ul class="nav-list">
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-list"></i> Access Logs</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-database"></i> Back ups</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-cloud-download-alt"></i> Updates</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-user-shield"></i> Roles</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i> <span>Renz Amante</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end nav-link-menu">
+                                    <ul class="nav-list">
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-address-card"></i> Profile</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> Messages</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-lg-12">
-                    <div class="card">
-                        <div class="card-header">User Data Table</div>
-                        <div class="card-body">
-                            <p class="card-title"></p>
-                            <table class="table table-hover" id="dataTables-example" width="100%">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Status</th>
-                                        <th>Created at</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- PHP CODE TO FETCH DATA FROM ROWS -->
-                                    <?php 
-                                    // LOOP TILL END OF DATA
-                                    while($rows=$result->fetch_assoc())
-                                    {
-                                ?>
-                                <tr>
-                                    <!-- FETCHING DATA FROM EACH
-                                        ROW OF EVERY COLUMN -->
-                                    <td><?php echo $rows['id'];?></td>
-                                    <td><?php echo $rows['name'];?></td>
-                                    <td><?php echo $rows['email'];?></td>
-                                    <td><?php echo $rows['status'];?></td>
-                                    <td><?php echo $rows['created_at'];?></td>
-                                </tr>
-                                <?php
-                                    }
-                                ?>
-                                </tbody>
-                            </table>
+            </nav>
+            <!-- end of navbar navigation -->
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 page-header">
+                            <div class="page-pretitle">Admin Overview</div>
+                            <h2 class="page-title">Users Table</h2>
                         </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="card">
+                                <div class="card-header">User Data Table</div>
+                                <div class="card-body">
+                                    <p class="card-title"></p>
+                                    <table class="table table-hover" id="dataTables-example" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Status</th>
+                                                <th>Created at</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- PHP CODE TO FETCH DATA FROM ROWS -->
+                                            <?php 
+                                            // LOOP TILL END OF DATA
+                                            while($rows=$result->fetch_assoc())
+                                            {
+                                        ?>
+                                        <tr>
+                                            <!-- FETCHING DATA FROM EACH
+                                                ROW OF EVERY COLUMN -->
+                                            <td><?php echo $rows['id'];?></td>
+                                            <td><?php echo $rows['name'];?></td>
+                                            <td><?php echo $rows['email'];?></td>
+                                            <td><?php echo $rows['status'];?></td>
+                                            <td><?php echo $rows['created_at'];?></td>
+                                        </tr>
+                                        <?php
+                                            }
+                                        ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
             </div>
         </div>
-      </div>
-    </section>
-    </section>
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/chartsjs/Chart.min.js"></script>
-    <script src="../assets/js/dashboard-charts.js"></script>
-    <script src="../assets/js/script.js"></script>
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/airdatepicker/js/datepicker.min.js"></script>
-    <script src="../assets/vendor/airdatepicker/js/i18n/datepicker.en.js"></script>
-    <script src="../assets/vendor/mdtimepicker/mdtimepicker.min.js"></script>
+    </div>
     <script>
     const body = document.querySelector('body'),
     sidebar = body.querySelector('nav'),
@@ -201,28 +232,48 @@ $mysqli->close();
     modeText = body.querySelector(".mode-text");
 
 
-toggle.addEventListener("click" , () =>{
-    sidebar.classList.toggle("close");
-})
-modeSwitch.addEventListener("click" , () =>{
-    body.classList.toggle("dark");
-    if(body.classList.contains("dark")){
-        modeText.innerText = "Light mode";
-    }else{
-        modeText.innerText = "Dark mode";  
-    }
-});
-    </script>
+    toggle.addEventListener("click" , () =>{
+        sidebar.classList.toggle("close");
+    })
+    modeSwitch.addEventListener("click" , () =>{
+        body.classList.toggle("dark");
+        if(body.classList.contains("dark")){
+            modeText.innerText = "Light mode";
+        }else{
+            modeText.innerText = "Dark mode";  
+        }
+    });
+        </script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/chartsjs/Chart.min.js"></script>
+    <script src="../assets/js/dashboard-charts.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/datatables/datatables.min.js"></script>
+    <script src="../assets/js/initiate-datatables.js"></script>
 
     <style>
-       /* Google Font Import - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body / #body
+2. Header / #header
+3. Navigation / #navbar
+4. Content / #content
+5. Sidebar / #sidebar
+6. Boxes / .box
+7. Dashboard cards / .card
+8. Miscellaneous
+9. Adjustments to dafault behaviors
+10. Colors / .teal, .olive, .violet, .orange, .darkgray, .blue, .grey
+11. Responsive properties
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[1. Body / #body]
+*/
 @font-face {
     font-family: "Lato";
     font-style: normal;
@@ -247,7 +298,10 @@ h6,
 .h6,
 p,
 a,
-
+td {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
 
 :root{
     /* ===== Colors ===== */
@@ -265,9 +319,11 @@ a,
     --tran-05: all 0.3s ease;
 }
 
+
 body{
     min-height: 100vh;
     background-color: var(--body-color);
+    color: var(--bs-body-color);
     transition: var(--tran-05);
     font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
@@ -283,11 +339,153 @@ body.dark{
     --primary-color: #3a3b3c;
     --primary-color-light: #3a3b3c;
     --toggle-color: #fff;
-    --text-color: #ccc;
+    --text-color: #000000;
 }
 
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    overflow-x: hidden
+}
+
+#body {
+    width: 100%;
+    padding: 0;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/*------------------------------------------------------------------
+[2. Header / #header]
+*/
+
+#body>.navbar {
+    padding: 0 1.5rem;
+    min-height: 54px;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(101, 109, 119, .16);
+}
+/*------------------------------------------------------------------
+[3. Navigation / #navbar] - see /components/navbar/navbar-dropdown.css
+*/
+.nav-dropdown .nav-link {
+    color: #B2EBF2;
+    line-height: 1.42857;
+    padding: 1rem 0 1rem 1rem !important;
+}
+.nav-dropdown .nav-link:hover {
+    color: #fff;
+}
+.nav-dropdown.show a {
+    color: #fff;
+}
+.nav-dropdown .nav-link::after {
+    display: none;
+}
+.nav-dropdown .nav-link-menu {
+    position: absolute;
+    border: none;
+    min-width: 220px;
+    padding: 0;
+    line-height: 1.4;
+    box-shadow: 0 1px 10px 0 rgba(69, 90, 100, 0.2);
+    margin-top: -5px;
+}
+.nav-dropdown .nav-link-menu::before {
+    top: -4px;
+    right: 25%;
+    margin: 0 0 0 -.25em;
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    content: '';
+    visibility: visible;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: .5em;
+    height: .5em;
+    background: #ffffff;
+    z-index: 2;
+}
+.nav-dropdown .nav-link-menu .nav-list {
+    padding: 5px 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.nav-dropdown .nav-link-menu .nav-list li {
+    line-height: 1.2;
+}
+.nav-dropdown .nav-link-menu .nav-list li a {
+    color: #888;
+    font-size: 14px;
+    padding: .8rem;
+}
+.nav-dropdown .dropdown-divider {
+    margin: 3px 0;
+}
+.default-light-menu {
+    border: none !important;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset !important;
+    color: #f6ebeb;
+}
+.default-light-menu:hover {
+    background: #2196F3 !important;
+    color: #f0eded;
+}
+.btn-light {
+    --bs-btn-color: firebrick;
+    --bs-btn-bg: #000;
+    --bs-btn-border-color: #f8f9fa;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #d3d4d5;
+    --bs-btn-hover-border-color: #c6c7c8;
+    --bs-btn-focus-shadow-rgb: 211,212,213;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #c6c7c8;
+    --bs-btn-active-border-color: #babbbc;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #000;
+    --bs-btn-disabled-bg: #f8f9fa;
+    --bs-btn-disabled-border-color: #f8f9fa;
+}
+/*------------------------------------------------------------------
+[4. Content / #content]
+*/
+#body>.content {
+    position: relative;
+    padding: .5rem;
+}
+
+#body .content .page-title h3 {
+    margin: 1rem 0;
+}
+
+.page-header {
+    margin-top: 1.25rem;
+}
+
+.page-pretitle {
+    font-size: .8rem;
+    text-transform: uppercase;
+    line-height: 1.6;
+    color: #e3e4e4;
+}
+.page-title {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.5555556;
+}
+.detail-subtitle {
+    font-size: .8rem;
+    text-transform: uppercase;
+    line-height: 1.6;
+}
+/*------------------------------------------------------------------
+[5. Sidebar / #sidebar] - see /components/sidebar/sidebar-default.css
+*/
 /* ===== Sidebar ===== */
- .sidebar{
+.sidebar{
     position: fixed;
     top: 0;
     left: 0;
@@ -536,118 +734,13 @@ body.dark .switch::before{
 body.dark .home .text{
     color: var(--text-color);
 } 
-/* Main Section */
-.main{
-  position: relative;
-  padding: 20px;
-  width: 100%;
+@media (max-width: 768px) {
+    #sidebarCollapse span {
+        display: none;
+    }
 }
-.main-top{
-  display: flex;
-  width: 100%;
-}
-.main-top i{
-  position: absolute;
-  right: 0;
-  margin: 10px 30px;
-  color: rgb(110, 109, 109);
-  cursor: pointer;
-}
-.main-skills{
-  display: flex;
-  margin-top: 20px;
-  width: fit-content;
-  height: fit-content;
-}
-.main-skills .card{
-  width: fit-content;
-  margin: 10px;
-  background: #fff;
-  text-align: center;
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
-.main-skills .card h3{
-  margin: 10px;
-  text-transform: capitalize;
-}
-.main-skills .card p{
-  font-size: 12px;
-}
-.main-skills .card button{
-  background: orangered;
-  color: #fff;
-  padding: 7px 15px;
-  border-radius: 10px;
-  margin-top: 15px;
-  cursor: pointer;
-}
-.main-skills .card button:hover{
-  background: rgba(223, 70, 15, 0.856);
-}
-.main-skills .card i{
-  font-size: 22px;
-  padding: 10px;
-}
-/* Courses */
-.main-course{
-  margin-top:20px ;
-  text-transform: capitalize;
-}
-.course-box{
-  width: 100%;
-  height: fit-content;
-  padding: 10px 10px 30px 10px;
-  margin-top: 10px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
-.course-box ul{
-  list-style: none;
-  display: flex;
-}
-.course-box ul li{
-  margin: 10px;
-  color: gray;
-  cursor: pointer;
-}
-.course-box ul .active{
-  color: #000;
-  border-bottom: 1px solid #000;
-}
-.course-box .course{
-  display: flex;
-}
-.box{
-  width: 33%;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
-  background: rgb(235, 233, 233);
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
-.box p{
-  font-size: 12px;
-  margin-top: 5px;
-}
-.box button{
-  background: #000;
-  color: #fff;
-  padding: 7px 10px;
-  border-radius: 10px;
-  margin-top: 3rem;
-  cursor: pointer;
-}
-.box button:hover{
-  background: rgba(0, 0, 0, 0.842);
-}
-.box i{
-  font-size: 7rem;
-  float: right;
-  margin: -20px 20px 20px 0;
-}
+
+
 .html{
   color: rgb(25, 94, 54);
 }
@@ -657,7 +750,271 @@ body.dark .home .text{
 .js{
   color: rgb(28, 98, 179);
 }
-    </style>
+/*------------------------------------------------------------------
+[6. Boxes / .box] 
+*/
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #0b0909;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.box-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px;
+}
+.box-footer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: 1px solid #f4f4f4;
+    padding: 10px 20px;
+    background-color: #FAFAFA;
+    text-align: right;
+}
+.box-primary {
+    border-top-color: #22a1f9;
+}
+/*------------------------------------------------------------------
+[7. Dashboard Cards / .card] 
+*/
+.card {
+    margin-bottom: 15px;
+    box-shadow: rgba(35, 46, 60, .04) 0 2px 4px 0;
+    background: transparent;
+    color: #000;
+}
+.card-body{
+    color: #000;
+}
+.card .content {
+    padding: 15px 15px 10px 15px;
+}
 
+.card .content .icon-big {
+    font-size: 3em;
+    min-height: 64px;
+    line-height: 64px;
+}
+.card .content .number {
+    font-size: 1.5em;
+    text-align: right;
+    font-weight: bolder;
+}
+.card .content .footer {
+    background-attachment: fixed;
+    position: relative;
+    padding: 0;
+    line-height: 30px;
+}
+.card .content .stats {
+    display: inline-block;
+    color: #a9a9a9;
+}
+/*------------------------------------------------------------------
+[8. Miscellaneous ] 
+*/
+.line {
+    border-bottom: 1px solid #E0E0E0;
+}
+.nav-pills {
+    padding: 15px;
+    background-color: #E0E0E0;
+    -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+}
+.btn-rounded {
+    border-radius: 10em;
+    padding: 6px 8px;
+    font-size: small;
+    text-transform: none;
+    text-shadow: none !important;
+    background: #eaeaea;
+    border-color: transparent;
+    border: none;
+}
+.btn-rounded:hover {
+    border-color: transparent;
+    border: none;
+}
+#myTab {
+    margin-bottom: 15px;
+}
+.no-margin {
+    margin: 0;
+}
+.dfd {
+    width: 100%;
+}
+.bg-lighter-grey {
+    background: #FAFAFA;
+}
+/*------------------------------------------------------------------
+[9. Adjustments to default behaviors] 
+*/
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.btn.focus,
+.btn:focus {
+    box-shadow: none;
+}
+.btn.btn-square {
+    border-radius: 0;
+}
+.table td,
+.table th {
+    vertical-align: middle;
+}
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after {
+    font-size: .8rem;
+    bottom: .9rem;
+}
+.dataTables_info {
+    visibility: hidden;
+}
+table.dataTable>tbody>tr.child ul.dtr-details {
+    display: block;
+}
+.nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+}
+.nav-tabs .nav-item {
+    margin-bottom: -2px;
+}
+.nav-tabs .nav-link {
+    border: none;
+    -webkit-transition: color .1s ease;
+    transition: color .1s ease;
+    color: inherit;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: #007bff;
+    background-color: #fff;
+    border-bottom: 2px solid #22a1f9;
+}
+.tab-content {
+    padding: 15px;
+}
+.svg-inline--fa {
+    min-width: 15px;
+}
+.display-absolute {
+    position: absolute;
+}
+.large-icon {
+    font-size: 3em;
+}
+.license span {
+    margin-bottom: 1em;
+}
+/*------------------------------------------------------------------
+[10. Colors / .teal, .olive, .violet, .orange, .darkgray, .blue, .grey] 
+*/
+.teal {
+    color: #00b5ad !important;
+}
+.olive {
+    color: #b5cc18 !important;
+}
+.violet {
+    color: #6435c9 !important;
+}
+.orange {
+    color: #f2711c !important;
+}
+.darkgray {
+    color: darkgray !important;
+}
+.blue {
+    color: #2185d0 !important;
+}
+.grey {
+    color: #767676 !important;
+}
+.table {
+    color: #000;
+    --bs-table-bg: transparent;
+}
+/*------------------------------------------------------------------
+[11. Responsive properties] 
+*/
+@media (max-width: 768px) {
+    .display-absolute {
+        position: relative;
+    }
+}
+
+@media (max-width: 680px) {
+    #body.active .navbar-collapse {
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    }
+
+    .nav-dropdown .nav-link-menu {
+        position: fixed !important;
+        top: 52px !important;
+        width: 100% !important;
+        margin-top: 0;
+    }
+
+    .nav-dropdown .nav-link {
+        padding: 10px;
+    }
+
+    .nav-dropdown .nav-link-menu::before {
+        right: 50%;
+    }
+
+    #body .navbar-collapse {
+        display: none !important;
+    }
+
+    #body .nav-dropdown .nav-item span {
+        display: none !important;
+    }
+
+    .btn-header {
+        display: none;
+    }
+}
+
+@media (min-width: 200px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+}
+</style>
 </body>
 </html>

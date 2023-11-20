@@ -588,6 +588,7 @@ body.dark .home .text{
   position: relative;
   padding: 20px;
   width: 100%;
+  background: transparent;
 }
 .main-top{
   display: flex;
@@ -645,7 +646,7 @@ body.dark .home .text{
   height: fit-content;
   padding: 10px 10px 30px 10px;
   margin-top: 10px;
-  background: #fff;
+  background: transparent;
   border-radius: 10px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
