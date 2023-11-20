@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-    
-
+    <link href="../assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="../assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="../assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/airdatepicker/css/datepicker.min.css" rel="stylesheet">
+    <link href="../assets/vendor/mdtimepicker/mdtimepicker.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
     <nav class="sidebar close">
         <header>
                 <div class="text logo-text">
                     <span class="name">EIRA</span>
-                    <span class="profession">Learn at your own pace</span>
+                    <span class="profession">Admin Overview</span>
                 </div>
 
             <i class='bx bx-chevron-right toggle'></i>
@@ -24,12 +27,6 @@
 
         <div class="menu-bar">
             <div class="menu">
-
-                <li class="search-box">
-                    <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
-                </li>
-
                 <ul class="menu-links">
                     <li class="nav-link">
                         <a href="#">
@@ -37,32 +34,31 @@
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
-
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-user icon' ></i>
-                            <span class="text nav-text">Profiles</span>
+                            <span class="text nav-text">User Tables</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">Notifications</span>
+                            <span class="text nav-text">Student Tables</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-pie-chart-alt icon' ></i>
-                            <span class="text nav-text">Analytics</span>
+                            <span class="text nav-text">Teachers Table</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-task icon' ></i>
-                            <span class="text nav-text">Task</span>
+                            <span class="text nav-text">Courses Tables</span>
                         </a>
                     </li>
 
@@ -102,90 +98,213 @@
     </nav>
 
     <section class="home">
+    <nav class="navbar navbar-expand-lg ">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="#" id="nav1" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-link"></i> <span>Quick Links</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end nav-link-menu" aria-labelledby="nav1">
+                                    <ul class="nav-list">
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-list"></i> Access Logs</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-database"></i> Back ups</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-cloud-download-alt"></i> Updates</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-user-shield"></i> Roles</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="#" id="nav2" class="nav-item nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-user"></i> <span>Renz Amante</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end nav-link-menu">
+                                    <ul class="nav-list">
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-address-card"></i> Profile</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> Messages</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
          <section class="main">
       <div class="main-top">
-        <h1>Skills</h1>
-        <i class="fas fa-user-cog"></i>
+        <h1>Dashboard</h1>
       </div>
       <div class="main-skills">
         <div class="card">
-          <i class="fas fa-laptop-code"></i>
-          <h3>Web developement</h3>
-          <p>Join Over 1 million Students.</p>
-          <button>Get Started</button>
+                <div class="datepicker-here" data-language="en" date-inline="true"></div>
         </div>
         <div class="card">
-          <i class="fab fa-java"></i>
-          <h3>Java</h3>
-          <p>Join Over 3 million Students.</p>
-          <button>Get Started</button>
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="icon-big text-center">
+                            <i class="teal fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="detail">
+                            <p class="detail-subtitle">New Enrollee</p>
+                            <span class="number">6,267</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <i class="fas fa-users"></i> For this Week
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="card">
-          <i class="fab fa-android"></i>
-          <h3>Android dev</h3>
-          <p>Join Over 1 million Students.</p>
-          <button>Get Started</button>
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="icon-big text-center">
+                            <i class="violet fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="detail">
+                            <p class="detail-subtitle">Page views</p>
+                            <span class="number">28,210</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <i class="fas fa-stopwatch"></i> For this Month
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="icon-big text-center">
+                            <i class="orange fas fa-envelope"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="detail">
+                            <p class="detail-subtitle">Support Request</p>
+                            <span class="number">75</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <i class="fas fa-envelope-open-text"></i> For this week
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
       <section class="main-course">
-        <h1>My courses</h1>
+        <h1>Charts and Graphs</h1>
         <div class="course-box">
-          <ul>
-            <li class="active">In progress</li>
-            <li>explore</li>
-            <li>incoming</li>
-            <li>finished</li>
-          </ul>
           <div class="course">
             <div class="box">
-              <h3>HTML</h3>
-              <p>80% - progress</p>
-              <button>continue</button>
-              <i class="fab fa-html5 html"></i>
+                <div class="content">
+                    <div class="head">
+                        <h5 class="mb-0">Visitors Overview</h5>
+                        <p class="text-muted">Current year website visitor data</p>
+                    </div>
+                    <div class="canvas-wrapper">
+                        <canvas class="chart" id="trafficflow"></canvas>
+                    </div>
+                </div>
             </div>
             <div class="box">
-              <h3>CSS</h3>
-              <p>50% - progress</p>
-              <button>continue</button>
-              <i class="fab fa-css3-alt css"></i>
+                <div class="content">
+                    <div class="head">
+                        <h5 class="mb-0">Enrollee Overview</h5>
+                        <p class="text-muted">Current year enrollee data</p>
+                    </div>
+                    <div class="canvas-wrapper">
+                        <canvas class="chart" id="sales"></canvas>
+                    </div>
+                </div>
             </div>
             <div class="box">
-              <h3>JavaScript</h3>
-              <p>30% - progress</p>
-              <button>continue</button>
-              <i class="fab fa-js-square js"></i>
+                <div class="content">
+                    <div class="head">
+                        <h5 class="mb-0">Most Visited Pages</h5>
+                        <p class="text-muted">Current year website visitor data</p>
+                    </div>
+                    <div class="canvas-wrapper">
+                        <table class="table table-striped">
+                            <thead class="success">
+                                <tr>
+                                    <th>Page Name</th>
+                                    <th class="text-end">Visitors</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>/index.html<a href="/homepage/index.html"><i class="fas fa-link blue"></i></a></td>
+                                    <td class="text-end">8,340</td>
+                                </tr>
+                                <tr>
+                                    <td>/course.php <a href="/courses.php"><i class="fas fa-link blue"></i></a></td>
+                                    <td class="text-end">7,280</td>
+                                </tr>
+                                <tr>
+                                    <td>/about.html <a href="/homepage/about.html"><i class="fas fa-link blue"></i></a></td>
+                                    <td class="text-end">6,210</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
       </section>
     </section>
     </section>
-
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/chartsjs/Chart.min.js"></script>
+    <script src="../assets/js/dashboard-charts.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/airdatepicker/js/datepicker.min.js"></script>
+    <script src="../assets/vendor/airdatepicker/js/i18n/datepicker.en.js"></script>
+    <script src="../assets/vendor/mdtimepicker/mdtimepicker.min.js"></script>
     <script>
-        const body = document.querySelector('body'),
-      sidebar = body.querySelector('nav'),
-      toggle = body.querySelector(".toggle"),
-      searchBtn = body.querySelector(".search-box"),
-      modeSwitch = body.querySelector(".toggle-switch"),
-      modeText = body.querySelector(".mode-text");
+    const body = document.querySelector('body'),
+    sidebar = body.querySelector('nav'),
+    toggle = body.querySelector(".toggle"),
+    modeSwitch = body.querySelector(".toggle-switch"),
+    modeText = body.querySelector(".mode-text");
 
 
 toggle.addEventListener("click" , () =>{
     sidebar.classList.toggle("close");
 })
-
-searchBtn.addEventListener("click" , () =>{
-    sidebar.classList.remove("close");
-})
-
 modeSwitch.addEventListener("click" , () =>{
     body.classList.toggle("dark");
-    
     if(body.classList.contains("dark")){
         modeText.innerText = "Light mode";
     }else{
-        modeText.innerText = "Dark mode";
-        
+        modeText.innerText = "Dark mode";  
     }
 });
     </script>
@@ -199,6 +318,31 @@ modeSwitch.addEventListener("click" , () =>{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-display: auto;
+    src: url("../font/Lato-Regular.eot");
+    src: url("../font/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("../font/Lato-Regular.woff") format("woff"), url("../font/Lato-Regular.ttf") format("truetype");
+}
+
+body,
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+p,
+a,
+
 
 :root{
     /* ===== Colors ===== */
@@ -220,6 +364,7 @@ body{
     min-height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
+    font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 ::selection{
@@ -357,27 +502,9 @@ body.dark .sidebar header .toggle{
 
 .sidebar .menu{
     margin-top: 40px;
+    
 }
 
-.sidebar li.search-box{
-    border-radius: 6px;
-    background-color: var(--primary-color-light);
-    cursor: pointer;
-    transition: var(--tran-05);
-}
-
-.sidebar li.search-box input{
-    height: 100%;
-    width: 100%;
-    outline: none;
-    border: none;
-    background-color: var(--primary-color-light);
-    color: var(--text-color);
-    border-radius: 6px;
-    font-size: 17px;
-    font-weight: 500;
-    transition: var(--tran-05);
-}
 .sidebar li a{
     list-style: none;
     height: 100%;
@@ -419,7 +546,11 @@ body.dark .sidebar li a:hover .text{
     position: relative;
     transition: var(--tran-05);
 }
-
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 0;
+}
 .menu-bar .mode .sun-moon{
     height: 50px;
     width: 60px;
@@ -559,7 +690,7 @@ body.dark .home .text{
 }
 .course-box{
   width: 100%;
-  height: 300px;
+  height: fit-content;
   padding: 10px 10px 30px 10px;
   margin-top: 10px;
   background: #fff;

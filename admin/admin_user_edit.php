@@ -1,3 +1,32 @@
+<!-- PHP code to establish connection with the localserver -->
+<?php
+
+// Username is root
+$user = 'root';
+$password = '';
+
+// Database name is geeksforgeeks
+$database = 'erovoutikalms';
+
+// Server is localhost with
+// port number 3306
+$servername='localhost:3306';
+$mysqli = new mysqli($servername, $user,
+				$password, $database);
+
+// Checking for connections
+if ($mysqli->connect_error) {
+	die('Connect Error (' .
+	$mysqli->connect_errno . ') '.
+	$mysqli->connect_error);
+}
+
+// SQL query to select data from database
+$sql = " SELECT * FROM usertable ";
+$result = $mysqli->query($sql);
+$mysqli->close();
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -6,59 +35,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>EIRA | Admin </title>
-    <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
-    <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
-    <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/airdatepicker/css/datepicker.min.css" rel="stylesheet">
-    <link href="assets/vendor/mdtimepicker/mdtimepicker.min.css" rel="stylesheet">
-    <link href="assets/vendor/datatables/datatables.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link href="../assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="../assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="../assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/datatables/datatables.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="wrapper">
-        <nav id="sidebar" class="active">
-            <div class="sidebar-header">
-                <img src="image_src/eira_logo.png">
+    <nav class="sidebar close">
+        <header>
+                <div class="text logo-text">
+                    <span class="name">EIRA</span>
+                    <span class="profession">Admin Overview</span>
+                </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-user icon' ></i>
+                            <span class="text nav-text">User Tables</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Student Tables</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Teachers Table</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-task icon' ></i>
+                            <span class="text nav-text">Courses Tables</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-cog icon' ></i>
+                            <span class="text nav-text">Settings</span>
+                        </a>
+                    </li>
+
+                </ul>
             </div>
-            <ul class="list-unstyled components text-secondary">
-                <li>
-                    <a href="admin.html"><i class="fas fa-home"></i> Dashboard</a>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
                 </li>
-                <li>
-                    <a href="admin_user_overview.html"><i class="fas fa-file-alt"></i> Users Table</a>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
                 </li>
-                <li>
-                    <a href="admin_students_overview.html"><i class="fas fa-table"></i> Students Table</a>
-                </li>
-                <li>
-                    <a href="admin_courses_overview.html"><i class="fas fa-chart-bar"></i> Courses Table</a>
-                </li>
-                <li>
-                    <a href="icons.html"><i class="fas fa-icons"></i> Icons</a>
-                </li>
-                <li>
-                    <a href="#pagesmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-copy"></i> Pages</a>
-                    <ul class="collapse list-unstyled" id="pagesmenu">
-                        <li>
-                            <a href="index.html"><i class="fas fa-file"></i> Blank page</a>
-                        </li>
-                        <li>
-                            <a href="courses.html"><i class="fas fa-info-circle"></i> 404 Error page</a>
-                        </li>
-                        <li>
-                            <a href="login_signup.php"><i class="fas fa-info-circle"></i> 500 Error page</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
-                </li>
-            </ul>
-        </nav>
+                
+            </div>
+        </div>
+
+    </nav>
         <div id="body" class="active">
             <!-- navbar navigation component -->
-            <nav class="navbar navbar-expand-lg navbar-white bg-black">
+            <nav class="navbar navbar-expand-lg ">
                 <button type="button" id="sidebarCollapse" class="btn btn-light">
                     <i class="fas fa-bars"></i><span></span>
                 </button>
@@ -106,8 +177,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 page-header">
-                            <div class="page-pretitle">Overview</div>
-                            <h2 class="page-title">Dashboard</h2>
+                            <div class="page-pretitle">Admin Overview</div>
+                            <h2 class="page-title">Users Table</h2>
                         </div>
                     </div>
                     <div class="row">
@@ -121,82 +192,30 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Name</th>
-                                                <th>Salary</th>
-                                                <th>Country</th>
-                                                <th>City</th>
+                                                <th>Email</th>
+                                                <th>Status</th>
+                                                <th>Created at</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Dakota Rice</td>
-                                                <td>$36,738</td>
-                                                <td>United States</td>
-                                                <td>Oud-Turnhout</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Minerva Hooper</td>
-                                                <td>$23,789</td>
-                                                <td>Curaçao</td>
-                                                <td>Sinaai-Waas</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sage Rodriguez</td>
-                                                <td>$56,142</td>
-                                                <td>Netherlands</td>
-                                                <td>Baileux</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Philip Chaney</td>
-                                                <td>$38,735</td>
-                                                <td>Korea, South</td>
-                                                <td>Overland Park</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Doris Greene</td>
-                                                <td>$63,542</td>
-                                                <td>Malawi</td>
-                                                <td>Feldkirchen in Kärnten</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Mason Porter</td>
-                                                <td>$78,615</td>
-                                                <td>Chile</td>
-                                                <td>Gloucester</td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>Allisa Sanches</td>
-                                                <td>$28,615</td>
-                                                <td>Columbia</td>
-                                                <td>Nigger</td>
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>Peter Benhams</td>
-                                                <td>$33,215</td>
-                                                <td>Ecuador</td>
-                                                <td>Holster</td>
-                                            </tr>
-                                            <tr>
-                                                <td>9</td>
-                                                <td>Bramson Adams</td>
-                                                <td>$109,222</td>
-                                                <td>Philippines</td>
-                                                <td>Camp John</td>
-                                            </tr>
-                                            <tr>
-                                                <td>10</td>
-                                                <td>Jessie Williams</td>
-                                                <td>$55,123</td>
-                                                <td>Malaysia</td>
-                                                <td>Glosterine</td>
-                                            </tr>
+                                            <!-- PHP CODE TO FETCH DATA FROM ROWS -->
+                                            <?php 
+                                            // LOOP TILL END OF DATA
+                                            while($rows=$result->fetch_assoc())
+                                            {
+                                        ?>
+                                        <tr>
+                                            <!-- FETCHING DATA FROM EACH
+                                                ROW OF EVERY COLUMN -->
+                                            <td><?php echo $rows['id'];?></td>
+                                            <td><?php echo $rows['name'];?></td>
+                                            <td><?php echo $rows['email'];?></td>
+                                            <td><?php echo $rows['status'];?></td>
+                                            <td><?php echo $rows['created_at'];?></td>
+                                        </tr>
+                                        <?php
+                                            }
+                                        ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -205,17 +224,34 @@
             </div>
         </div>
     </div>
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/chartsjs/Chart.min.js"></script>
-    <script src="assets/js/dashboard-charts.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/airdatepicker/js/datepicker.min.js"></script>
-    <script src="assets/vendor/airdatepicker/js/i18n/datepicker.en.js"></script>
-    <script src="assets/vendor/mdtimepicker/mdtimepicker.min.js"></script>
-    <script src="assets/vendor/datatables/datatables.min.js"></script>
-    <script src="assets/js/initiate-datatables.js"></script>
+    <script>
+    const body = document.querySelector('body'),
+    sidebar = body.querySelector('nav'),
+    toggle = body.querySelector(".toggle"),
+    modeSwitch = body.querySelector(".toggle-switch"),
+    modeText = body.querySelector(".mode-text");
+
+
+    toggle.addEventListener("click" , () =>{
+        sidebar.classList.toggle("close");
+    })
+    modeSwitch.addEventListener("click" , () =>{
+        body.classList.toggle("dark");
+        if(body.classList.contains("dark")){
+            modeText.innerText = "Light mode";
+        }else{
+            modeText.innerText = "Dark mode";  
+        }
+    });
+        </script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/chartsjs/Chart.min.js"></script>
+    <script src="../assets/js/dashboard-charts.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/datatables/datatables.min.js"></script>
+    <script src="../assets/js/initiate-datatables.js"></script>
 
     <style>
 
@@ -267,13 +303,43 @@ td {
     -webkit-font-smoothing: antialiased;
 }
 
-body {
-    width: 100%;
-    height: 100%;
-    background: #141415;
+:root{
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+
+body{
+    min-height: 100vh;
+    background-color: var(--body-color);
+    color: var(--bs-body-color);
+    transition: var(--tran-05);
     font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    color: #f8f3f3;
+}
+
+::selection{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+body.dark{
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #000000;
 }
 
 .wrapper {
@@ -293,6 +359,7 @@ body {
 /*------------------------------------------------------------------
 [2. Header / #header]
 */
+
 #body>.navbar {
     padding: 0 1.5rem;
     min-height: 54px;
@@ -417,78 +484,272 @@ body {
 /*------------------------------------------------------------------
 [5. Sidebar / #sidebar] - see /components/sidebar/sidebar-default.css
 */
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background: #111111;
-    color: #fff;
-    transition: all 0.3s;
-    border-right: 1px solid #e6ecf5;
+/* ===== Sidebar ===== */
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;  
 }
-#sidebar.active {
-    margin-left: -250px;
-}
-#sidebar .sidebar-header {
-    padding: .4rem 1rem;
-    border-bottom: 1px solid rgba(101, 109, 119, .16);
-    max-height: 55px;
-}
-#sidebar .sidebar-header img {
-    padding: .5rem .1rem;
-    max-height: 60px;
-}
-#sidebar ul.components {
-    padding: 0 0;
-}
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
-#sidebar ul li a {
-    padding: .8rem 1.5rem;
-    font-size: 1rem;
-    display: block;
-}
-#sidebar ul li a .fas {
-    min-width: 20px;
-    margin-right: 5px;
-    text-align: center;
+.sidebar.close{
+    width: 88px;
 }
 
-#sidebar ul li a:hover,
-#sidebar ul li a.active {
-    color: #fff;
-    background: #2196F3;
-}
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: inherit;
-}
-#sidebar ul ul a {
-    font-size: 1rem;
-    background: #EEEEEE;
+/* ===== Reusable code - Here ===== */
+.sidebar li{
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
 }
 
-#sidebar a[data-toggle="collapse"] {
+.sidebar header .image,
+.sidebar .icon{
+    min-width: 60px;
+    border-radius: 6px;
+}
+
+.sidebar .icon{
+    min-width: 60px;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.sidebar .text,
+.sidebar .icon{
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+.sidebar .text{
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+.sidebar.close .text{
+    opacity: 0;
+}
+/* =========================== */
+
+.sidebar header{
     position: relative;
 }
-#sidebar .dropdown-toggle::after {
+
+.sidebar header .image-text{
+    display: flex;
+    align-items: center;
+}
+.sidebar header .logo-text{
+    display: flex;
+    flex-direction: column;
+}
+header .image-text .name {
+    margin-top: 2px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+header .image-text .profession{
+    font-size: 16px;
+    margin-top: -2px;
     display: block;
+}
+
+.sidebar header .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar header .image img{
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .toggle{
     position: absolute;
     top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+
+body.dark .sidebar header .toggle{
+    color: var(--text-color);
+}
+
+.sidebar.close .toggle{
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.sidebar .menu{
+    margin-top: 40px;
+    
+}
+
+.sidebar li a{
+    list-style: none;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--tran-03);
+}
+
+.sidebar li a:hover{
+    background-color: var(--primary-color);
+}
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text{
+    color: var(--sidebar-color);
+}
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text{
+    color: var(--text-color);
+}
+
+.sidebar .menu-bar{
+    height: calc(100% - 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+.menu-bar::-webkit-scrollbar{
     display: none;
 }
+.sidebar .menu-bar .mode{
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    position: relative;
+    transition: var(--tran-05);
+}
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 0;
+}
+.menu-bar .mode .sun-moon{
+    height: 50px;
+    width: 60px;
+}
+
+.mode .sun-moon i{
+    position: absolute;
+}
+.mode .sun-moon i.sun{
+    opacity: 0;
+}
+body.dark .mode .sun-moon i.sun{
+    opacity: 1;
+}
+body.dark .mode .sun-moon i.moon{
+    opacity: 0;
+}
+
+.menu-bar .bottom-content .toggle-switch{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
+
+.switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+    transition: var(--tran-04);
+}
+
+body.dark .switch::before{
+    left: 20px;
+}
+
+.home{
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+.home .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 12px 60px;
+}
+
+.sidebar.close ~ .home{
+    left: 78px;
+    height: 100vh;
+    width: calc(100% - 78px);
+}
+body.dark .home .text{
+    color: var(--text-color);
+} 
 @media (max-width: 768px) {
     #sidebarCollapse span {
         display: none;
     }
 }
-.table {
-    color: #fff;
-}
 
+
+.html{
+  color: rgb(25, 94, 54);
+}
+.css{
+  color: rgb(104, 179, 35);
+}
+.js{
+  color: rgb(28, 98, 179);
+}
 /*------------------------------------------------------------------
 [6. Boxes / .box] 
 */
@@ -527,9 +788,12 @@ a[aria-expanded="true"] {
 .card {
     margin-bottom: 15px;
     box-shadow: rgba(35, 46, 60, .04) 0 2px 4px 0;
-    background: #0b0909;
+    background: transparent;
+    color: #000;
 }
-
+.card-body{
+    color: #000;
+}
 .card .content {
     padding: 15px 15px 10px 15px;
 }
@@ -688,6 +952,10 @@ table.dataTable>tbody>tr.child ul.dtr-details {
 }
 .grey {
     color: #767676 !important;
+}
+.table {
+    color: #000;
+    --bs-table-bg: transparent;
 }
 /*------------------------------------------------------------------
 [11. Responsive properties] 
