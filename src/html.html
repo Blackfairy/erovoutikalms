@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EIRA | HTML</title>
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+        crossorigin="anonymous"
+    />
+    <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"
+    ></script>
+
+    <script src="https://kit.fontawesome.com/95c10202b4.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./src/assets/scss/main.scss" />
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; }
+
+body::-webkit-scrollbar {
+    width: 10px; }
+body::-webkit-scrollbar-track {
+    background: #f1f1f1; }
+body::-webkit-scrollbar-thumb {
+    background: #888; }
+body::-webkit-scrollbar-thumb:hover {
+    background: #555; }
+
+/*NAVIGATION MENU*/
+.navbar .navbar-nav {
+    padding: 15px 0; }
+.navbar .navbar-nav .nav-link {
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    outline: none; }
+.navbar .navbar-nav .nav-link.active, .nav-link:hover {
+    color: white !important; }
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px; }
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        transition: .5s;
+        opacity: 0;
+    }
+}
+.navbar .nav-item:hover .dropdown-menu {
+    transform: rotateX(0deg);
+    visibility: visible;
+    transition: .5s;
+    opacity: 1; }
+
+main {
+    display: flex; }
+
+/*COURSE MENU*/
+aside {
+    width: 380px;
+    height: auto;
+    background-color: #222599; }
+aside img {
+    position: relative;
+    left: 15%;
+    height: 200px;
+    width: 150px; }
+aside .nav-item {
+    padding: 10px; }
+aside li a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none; }
+aside li a:hover {
+    border: 5px;
+    border-left-color: darkcyan;
+    color: darkorange;
+    background-color: #222599; }
+aside i {
+    color: darkorange;
+    padding: 10px; }
+
+/*COURSE DESCRIPTION*/
+section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    padding: 10px; }
+section h1 {
+    font-weight: 600; }
+section h5 {
+    margin-top: 15px; }
+
+/*FOOTER*/
+.footer .short-link a,
+.footer .help-link a,
+.footer .contact-link a {
+    transition: .5s; }
+.footer .short-link a:hover,
+.footer .help-link a:hover,
+.footer .contact-link a:hover {
+    letter-spacing: 1px; }
+.footer .hightech-link a:hover {
+    background: var(--bs-primary);
+    border: 0; }
+
+
+</style>
+</head>
+<body>
+<nav>
+    <!--NAVIGATION MENU-->
+    <div class="container-fluid" style="background-color:black;">
+        <div class="container">
+            <nav class="navbar navbar-dark navbar-expand-lg py-0">
+                <a href="index.html" class="navbar-brand">
+                    <img src="/image_src/Rectangle 13.png" alt="img" class="h-50 w-75">
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto mx-xl-auto p-0">
+                        <a href="/homepage/index.html" class="nav-item nav-link active text-secondary">Home</a>
+                        <a href="/homepage/about.html" class="nav-item nav-link">About</a>
+                        <a href="/src/coursedashboard.html" class="nav-item nav-link">Training</a>
+                        <a href="/homepage/gallery.html" class="nav-item nav-link">Gallery</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu rounded">
+                                <a href="#" class="dropdown-item">Certificates</a>
+                                <a href="verify.html" class="dropdown-item">Verify Certificates</a>
+                                <a href="login.html" class="dropdown-item">Login</a>
+                                <a href="/src/courses.html" class="dropdown-item">Courses</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>     
+        </div>
+    </div>
+</nav>
+
+<main>
+    <aside>
+        <div class="container">
+            <img src="/image_src/html.png" alt="img">
+                <nav class="nav nav-tabs list-unstyled p-2" id="tabContent">
+                        <li class="nav-item">
+                            <a href="#basics" data-toggle="tab">HTML Basics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#semantic" data-toggle="tab">Semantic HTML</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#fandv" data-toggle="tab">Forms and Validations</a>                    
+                        </li>
+                        <li class="nav-item">
+                            <a href="#access" data-toggle="tab">Accessibility</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="float-right p-3 text-white"> 
+                    <span>NEXT COURSE:</span>
+                    <a href="/src/css.html" class="font-normal text-white text-decoration-none">CSS<i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+        </div>
+    </aside>
+
+    <section>
+        <div class="tab-content">
+        <!--HTML BASICS-->
+            <div class="tab-pane container active" id="basics">
+                <h1>HTML Basics</h1>
+                    <p>
+                        HTML <code>(HyperText Markup Language)</code> is a markup language that tells web browsers how to 
+                        structure the web pages you visit. It can be as complicated or as simple as the web developer wants it to be. HTML consists of a 
+                        series of <code>elements</code>, which you use to enclose, wrap, or mark up different parts of 
+                        content to make it appear or act in a certain way.<br>The enclosing <code>tags</code> can make 
+                        content into a hyperlink to connect to another page, italicize words, and so on.
+                    </p>
+                <h3>Anatomy of an HTML element</h3>
+                    <img src="/image_src/anatomy.png" alt="img"/>
+                <h5>The anatomy of our element is:</h5>
+                    <ul>
+                        <li>
+                            <p><span class="font-weight-bold">The opening tag:</span>
+                                This consists of the name of the element (in this example, p for paragraph), wrapped in opening and closing angle brackets. 
+                                This opening tag marks where the element begins or starts to take effect. In this example, it precedes the start of the 
+                                paragraph text.
+                            </p>
+                        </li>
+                        <li>
+                            <p><span class="font-weight-bold">The content:</span>
+                                This is the content of the element. In this example, it is the paragraph text.
+                            </p>
+                        </li>
+                        <li>
+                            <p><span class="font-weight-bold">The closing tag:</span>
+                                This is the same as the opening tag, except that it includes a forward slash before the element name. This marks where the 
+                                element ends. Failing to include a closing tag is a common beginner error that can produce peculiar results.
+                            </p>
+                        </li>
+                    </ul>
+                        <p>The element is the opening tag, followed by content, followed by the closing tag.</p>
+                <h3 class="text-white bg-secondary p-2">Attributes</h3>
+                    <p>Elements can also have attributes. Attributes look like this:</p>
+                        <img src="/image_src/attributes.png" alt="img" class="w-75 mb-3">
+                            <p>Attributes contain extra information about the element that won't appear in the content. In this example,<br> 
+                                the <code>class</code> attribute is an identifying name used to target the 
+                                element with style information.
+                            </p>
+                                <h5>An attribute should have:</h5>
+                                    <ul>
+                                        <li>
+                                            A space between it and the element name. (For an element with more than one attribute, 
+                                            the attributes should be separated by spaces too.)
+                                        </li>
+                                        <li>
+                                            The attribute name, followed by an equal sign.
+                                        </li>
+                                        <li>
+                                            An attribute value, wrapped with opening and closing quote marks.
+                                        </li>
+                                    </ul>
+                <h3>Anatomy of an HTML document</h3>
+                    <p>Individual HTML elements aren't very useful on their own. Next, let's examine how individual elements combine to form an entire HTML page:</p>
+                        <img src="/image_src/document.jpg" alt="img"/>
+                            <ol class="mt-3">
+                                <li><code>!DOCTYPE html</code>:
+                                    The doctype. When HTML was young (1991-1992), doctypes were meant to act as links to a set of rules that the HTML page 
+                                    had to follow to be considered good HTML.
+                                </li>
+                                <li><code>html</code>:
+                                    The html element. This element wraps all the content on the page. It is sometimes known as the root element.
+                                </li>
+                                <li><code>meta charset="utf-8"</code>:
+                                    The meta element. This element represents metadata that cannot be represented by other HTML meta-related elements, 
+                                    like <code>base, link, script, style or title</code>. The <code>charset</code>> attribute specifies the character 
+                                    encoding for your document as UTF-8, which includes most characters from the vast majority of human written languages.
+                                    With this setting, the page can now handle any textual content it might contain. There is no reason not to set this, 
+                                    and it can help avoid some problems later.
+                                </li>
+                                <li><code>title</code>:
+                                    The title element. This sets the title of the page, which is the title that appears in the browser tab the page is 
+                                    loaded in. The page title is also used to describe the page when it is bookmarked.
+                                </li>
+                                <li><code>body</code>:
+                                    The body element. This contains all the content that displays on the page, including text, images, videos, games, 
+                                    playable audio tracks, or whatever else.
+                                </li>
+                            </ol>
+            </div>
+        <!--SEMANTIC HTML-->
+            <div class="tab-pane container" id="semantic">
+                <h1>Semantic HTML</h1>
+                <p>
+                    Semantic element clearly describes its meaning to both the browser and the developer. In HTML, semantic element are the type of 
+                    elements that can be used to define different parts of a web page such as  etc.
+                </p>
+            </div>
+        <!--FORMS & VALIDATIONS-->
+            <div class="tab-pane container" id="fandv">
+                <h1>Forms and Validations</h1>
+                <p>
+                    Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct format. 
+                    This is called client-side form validation, and helps ensure data submitted matches the requirements set forth in the various form 
+                    controls.
+                </p>
+            </div>
+        <!--ACCESSIBILITY-->
+            <div class="tab-pane container" id="access">
+                <h1>Accessibility</h1>
+                <p>
+                    Web accessibility means that websites, tools, and technologies are designed and developed in such a way that people with disabilities
+                    can use them easily.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <!--Footer-->
+    <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+        <div class="container pt-5 pb-4">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html">
+                        <h1 class="text-white fw-bold d-block">EI<span class="text-primary">RA</span> </h1>
+                    </a>
+                    <p class="mt-4 text-light">Innovate with EIRA, where technology meets your learning pace</p>
+                    <div class="d-flex hightech-link">
+                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
+                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
+                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
+                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <a href="#" class="h3 text-primary">Quick Links</a>
+                    <div class="mt-4 d-flex flex-column short-link">
+                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Home</a>
+                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>About</a>
+                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Training</a>
+                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Gallery</a>
+                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Latest Blog</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <a href="#" class="h3 text-primary">Our Services</a>
+                    <div class="mt-4 d-flex flex-column help-link">
+                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Training and Certifications</a>
+                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Automation Solutions</a>
+                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Robotics</a>
+                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Research And Development</a>
+                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Cybersecurity</a>
+                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Blockchain</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <a href="#" class="h3 text-primary">Contact Us</a>
+                    <div class="text-white mt-4 d-flex flex-column contact-link">
+                        <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-primary me-2"></i> Parc House Building II, Guadalupe Nuevo, Makati, Philippines</a>
+                        <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-primary me-2"></i> 074 423 1557 | 09653546415</a>
+                        <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-primary me-2"></i> erovoutika@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="text-light mt-5 mb-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <span class="text-light"><a href="#" class="text-primary"><i class="fas fa-copyright text-primary me-2"></i>EIRA</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <span class="text-light">Designed By<a href="https://htmlcodex.com" class="text-primary"> Group 2</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="module" src="./src/assets/js/main.js"></script>
+</body>
+</html>
+
