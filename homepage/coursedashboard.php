@@ -1,3 +1,4 @@
+<?php require_once "controllerUserData.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +59,8 @@ header {
     text-decoration: none; }
 .navbar .nav-item:hover {
     text-decoration: underline;
-    color: darkorange; }
+    color: darkorange;
+}
 
 /*CAROUSEL SLIDER*/
 figure {
@@ -113,16 +115,18 @@ figure article {
     margin: 40px 25%;
     top: 5%; }
 
-/*LOGOS*/
+/*REVIEWS*/
 main article {
     background-color: #0205a1;
+    color: white;
     position: relative;
     left: 0;
     right: 0;
     margin-top: 7%;}
 main article img{
-    height: 40%;
-    width: 40%; }
+    background-color: black;
+    height: 30%;
+    width: 30%; }
 
 /*POP-UP COURSES*/
 main section {
@@ -172,11 +176,9 @@ input[type=checkbox] {
     width: 100%;
     background: #000000b3; }
 .popup__wrapper {
-    overflow: scroll;
     position: fixed;
-    left: 5%;
-    margin: 10px;
     z-index: 9;
+    left: 80px;
     width: 100%;
     height: 100%;
     max-width: 1200px;
@@ -188,14 +190,6 @@ input[type=checkbox] {
     top: 30px;
     right: 50px;
     font-size: 40px; }
-.popup__wrapper::-webkit-scrollbar {
-    width: 10px; }
-.popup__wrapper::-webkit-scrollbar-track {
-    background: #f1f1f1; }
-.popup__wrapper::-webkit-scrollbar-thumb {
-    background: #888; }
-.popup__wrapper::-webkit-scrollbar-thumb:hover {
-    background: #555; }
 .heading {
     padding-top: 20px;
     font-size: 50px; }
@@ -227,72 +221,15 @@ section h4 {
 .datacourse-width {
     width: 50%;
     margin-left: 15%; }
-.button-width {
-    width: 100%;
-    display: inline-flex;
-    justify-content: center; }
-.btn {
-    background-color: #012766; }
-.btn a {
-    color: #fff; }
-.btn:hover {
-    background: var(--bs-primary); }
 .dropdown-menu {
     width: max-content;
     padding: 10%;
     line-height: 1.6; }
+.btn {
+    line-height: 0.5; }
 .dropdown-item-text {
     display: contents; }
 
-/*GALLERY*/
-.project-img {
-    position: relative;
-    padding: 15px; }
-.project-img::before {
-    content: "";
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    top: 0;
-    left: 0;
-    background: var(--bs-primary);
-    border-radius: 10px;
-    opacity: 1;
-    z-index: -1;
-    transition: .5s; }
-.project-img::after {
-    content: "";
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background: var(--bs-primary);
-    border-radius: 10px;
-    opacity: 1;
-    z-index: -1;
-    transition: .5s; }
-.project-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0; }
-.project-content a {
-    display: inline-block;
-    padding: 20px 25px;
-    background-color: #0205a1;
-    border-radius: 10px; }
-.project-item:hover .project-content {
-    opacity: 1;
-    transition: .5s; }
-.project-item:hover .project-img::before,
-.project-item:hover .project-img::after {
-    opacity: 0; }
 
 /*CONTACT*/
 .contact-detail::before {
@@ -388,27 +325,27 @@ footer {
 </header>
 
 <main>
-    <!--LOGOS-->
+    <!--LANGUAGES-->
     <article>
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col">
-                    <div class="p-2">
+                    <div class="p-1">
                         <img src="/homepage/img/html.png" alt="img">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="p-2">
+                    <div class="p-1">
                         <img src="/homepage/img/css.png" alt="img">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="p-2">
+                    <div class="p-1">
                         <img src="/homepage/img/javascrpit.png" alt="img">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="p-2">
+                    <div class="p-1">
                         <img src="/homepage/img/php.png" alt="img">
                     </div>
                 </div>
@@ -512,12 +449,11 @@ footer {
                                                     <li>Learn the basics</li>
                                                     <li>Writing Semantic HTML</li>
                                                     <li>Forms and Validations</li>
+                                                    <li>Accesibility</li>
                                                 </ul>
                                         </div>
                                     </div>
-                                    <div class="button-width">
-                                        <div class="btn m-2"><a href="/login-signup/login_signup.php">Start Learning</a></div>
-                                    </div>
+                                    <div class="btn justify-content-center m-2 w-100"><a href="/login-signup/login_signup.php">Start Learning</a></div>
                                 </div>
                             <!--CSS COURSE-->
                                 <div class="tab-pane container" id="css">
@@ -547,9 +483,7 @@ footer {
                                                 </ul>
                                         </div>
                                     </div>
-                                    <div class="button-width">
-                                        <div class="btn m-2"><a href="/login-signup/login_signup.php">Start Learning</a></div>
-                                    </div>
+                                    <div class="btn justify-content-center m-2 w-100"><a href="/login-signup/login_signup.php">Start Learning</a></div>
                                 </div>
                             <!--JAVASCRIPT COURSE-->
                                 <div class="tab-pane container" id="javascript">
@@ -581,9 +515,7 @@ footer {
                                                 </ul>
                                         </div>
                                     </div>
-                                    <div class="button-width">
-                                        <div class="btn m-2"><a href="/login-signup/login_signup.php">Start Learning</a></div>
-                                    </div>
+                                    <div class="btn justify-content-center m-2 w-100"><a href="/login-signup/login_signup.php">Start Learning</a></div>
                                 </div>
                             </div>
                     </div>
@@ -707,9 +639,7 @@ footer {
                                                 </ul>
                                         </div>
                                     </div>
-                                    <div class="button-width">
-                                        <div class="btn m-2"><a href="/login-signup/login_signup.php">Start Learning</a></div>
-                                    </div>
+                                    <div class="btn justify-content-center m-2 w-100"><a href="/login-signup/login_signup.php">Start Learning</a></div>
                                 </div>
                             </div>
                     </div>
@@ -734,7 +664,7 @@ footer {
                                         <a href="#programAbout" data-toggle="tab">ABOUT</a>
                                     </li>
                                     <li class="dropdown" data-toggle="tab">
-                                        <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                                             PROGRAMS
                                         </button>
                                         <ul class="dropdown-menu">
@@ -780,7 +710,7 @@ footer {
                                                                 The platform employs adaptive learning technologies to tailor the educational experience to individual needs, ensuring that participants can progress at their own pace and focus on areas that require additional attention.</li>
                                                         </ul>
                                                 </div>
-                                            </div>
+                                            </div> 
                                         </div>
                                     <!--GAME DEVELOPMENT & ANIMATION-->
                                         <div class="tab-pane container" id="gamedev">
@@ -809,9 +739,6 @@ footer {
                                                             <li>Game Programmer</li>
                                                         </ul>
                                                 </div>
-                                            </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="/homepage/enroll.html">Start Learning</a></div>
                                             </div>
                                         </div>
                                     <!--CISCO WAN TECHNOLOGY-->
@@ -843,9 +770,6 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="/homepage/enroll.html">Start Learning</a></div>
-                                            </div>
                                         </div>
                                     <!--CLOUD COMPUTING-->
                                         <div class="tab-pane container" id="cloud">
@@ -875,9 +799,6 @@ footer {
                                                             <li>Cloud Compliance Officer</li>
                                                         </ul>
                                                 </div>
-                                            </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="/homepage/enroll.html">Start Learning</a></div>
                                             </div>
                                         </div>
                                     <!--MACHINE LEARNING-->
@@ -910,9 +831,6 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="/homepage/enroll.html">Start Learning</a></div>
-                                            </div>
                                         </div>
                                     <!--LINUX SYSTEM ADMINISTRATION-->
                                         <div class="tab-pane container" id="linux">
@@ -941,9 +859,6 @@ footer {
                                                             <li>System Analyst</li>
                                                         </ul>
                                                 </div>
-                                            </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="/homepage/enroll.html">Start Learning</a></div>
                                             </div>
                                         </div>
                                     <!--DATA ANALYTICS-->
@@ -975,9 +890,6 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="/homepage/enroll.html">Start Learning</a></div>
-                                            </div>
                                         </div>
                                     <!--PLC PROGRAMMING LEVEL1-->
                                         <div class="tab-pane container" id="plc-1">
@@ -1008,9 +920,6 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="/homepage/enroll.html">Start Learning</a></div>
-                                            </div>
                                         </div>
                                     <!--PLC PROGRAMMING LEVEL2-->
                                         <div class="tab-pane container" id="plc-2">
@@ -1038,9 +947,6 @@ footer {
                                                             <li>Supervisory Control and <br/> Data Acquisition (SCADA) Engineer</li>
                                                         </ul>
                                                 </div>
-                                            </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="/homepage/enroll.html">Start Learning</a></div>
                                             </div>
                                         </div>
                                     <!--INNOVATION IN TELECOMMUNICATION-->
@@ -1072,9 +978,6 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="/homepage/enroll.html">Start Learning</a></div>
-                                            </div>
                                         </div>
                                     <!--INDUSTRIAL PNEUMATIC SYSTEM-->
                                         <div class="tab-pane container" id="industrial">
@@ -1105,9 +1008,6 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="/homepage/enroll.html">Start Learning</a></div>
-                                            </div>
                                         </div>
                                 </div>
                     </div>
@@ -1117,10 +1017,10 @@ footer {
 
     <!--GALLERY-->
     <section>
-        <div class="container-fluid project py-5">
+        <div class="container-fluid project py-5 mb-5">
             <div class="container">
                 <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h3 class="text-primary">Our Gallery</h3>
+                    <h5 class="text-primary">Our Gallery</h5>
                     <h1 class="font-weight-bold">Our Recently Completed Training</h1>
                 </div>
                 <div class="row g-5">
@@ -1210,19 +1110,19 @@ footer {
 
 <!--ABOUT-->
 <article>
-    <div class="container-fluid mb-5">
+    <div class="container-fluid py-5 my-5">
         <div class="container pt-5">
             <div class="row g-5">
                 <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
                     <div class="h-100 position-relative">
-                        <img src="/homepage/img/about-1.png" class="img-fluid w-75 rounded" alt="" style="opacity: 0.5; margin-bottom: 25%;">
-                        <div class="position-absolute w-75" style="top: 15%; left: 25%;">
+                        <img src="/homepage/img/about-1.png" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
+                        <div class="position-absolute w-75" style="top: 25%; left: 25%;">
                             <img src="/homepage/img/about-1.png" class="img-fluid w-100 rounded" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
-                    <h3 class="text-primary">About Us</h3>
+                    <h5 class="text-primary">About Us</h5>
                     <h1 class="mb-4 font-weight-bold">Erovoutika International Robotics Academy</h1>
                     <p>A respected and experienced Automation and Robotics Company. Our highly professional teams, with in-depth knowledge of each jurisdiction, has been successfully deliver customer needs.</p>
                     <p class="mb-4"> Our goal is to assist our clients in getting their needs and requirements in the easiest and fastest possible time in a most professional manner. We provide the highest quality service at the most reasonable cost.</p>
@@ -1238,7 +1138,7 @@ footer {
     <div class="container-fluid border-top py-5 mb-5">
         <div class="container">
             <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                <h3 class="text-primary">Get In Touch</h3>
+                <h5 class="text-primary">Get In Touch</h5>
                 <h1 class="mb-3">Contact for any query</h1>
             </div>
             <div class="contact-detail position-relative p-5">

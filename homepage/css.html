@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>EIRA | CSS</title>
+    <link rel="icon" type="images/x-icon" href="/homepage/img/css.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EIRA | CSS</title>
     <link
         rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
@@ -11,19 +12,19 @@
         crossorigin="anonymous"
     />
     <script
-        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        homepage="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"
     ></script>
     <script
-        src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        homepage="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
         integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
         crossorigin="anonymous"
     ></script>
 
-    <script src="https://kit.fontawesome.com/95c10202b4.js" crossorigin="anonymous"></script>
+    <script homepage="https://kit.fontawesome.com/95c10202b4.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="./src/assets/scss/main.scss" />
+    <link rel="stylesheet" href="./homepage/assets/scss/main.scss" />
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
@@ -35,7 +36,7 @@
     font-family: "Poppins", sans-serif; }
 
 body::-webkit-scrollbar {
-    width: 10px; }
+    width: 15px; }
 body::-webkit-scrollbar-track {
     background: #f1f1f1; }
 body::-webkit-scrollbar-thumb {
@@ -44,65 +45,47 @@ body::-webkit-scrollbar-thumb:hover {
     background: #555; }
 
 /*NAVIGATION MENU*/
-.navbar .navbar-nav {
-    padding: 15px 0; }
-.navbar .navbar-nav .nav-link {
-    padding: 10px;
+.navbar .nav-item {
+    padding: 20px;
     color: white;
-    font-size: 18px;
-    outline: none; }
-.navbar .navbar-nav .nav-link.active, .nav-link:hover {
-    color: white !important; }
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px; }
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        visibility: hidden;
-        top: 100%;
-        transform: rotateX(-75deg);
-        transform-origin: 0% 0%;
-        transition: .5s;
-        opacity: 0;
-    }
-}
-.navbar .nav-item:hover .dropdown-menu {
-    transform: rotateX(0deg);
-    visibility: visible;
-    transition: .5s;
-    opacity: 1; }
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none; }
 
 main {
     display: flex; }
 
 /*COURSE MENU*/
 aside {
-    width: 380px;
-    height: auto;
-    background-color: #222599; }
-aside img {
-    position: relative;
-    left: 15%;
+    background: var(--bs-primary);
+    width: 400px;
+    height: auto; }
+.sidenav {
+    overflow: hidden;
+    width: 360px;
+    height: 90%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    padding: 8px 0; }
+.sidenav img {
+    margin-left: 30px;
+    display: block;
     height: 200px;
-    width: 150px; }
-aside .nav-item {
+    width: 200px; } 
+.sidenav li {
     padding: 10px; }
-aside li a {
+.sidenav a {
     font-size: 20px;
     color: white;
     text-decoration: none; }
-aside li a:hover {
+.sidenav li a:hover {
     border: 5px;
     border-left-color: darkcyan;
-    color: darkorange;
-    background-color: #222599; }
-aside i {
-    color: darkorange;
-    padding: 10px; }
+    color: darkorange; }
+.sidenav i {
+    padding: 10px;
+    color: darkorange; }
 
 /*COURSE DESCRIPTION*/
 section {
@@ -115,50 +98,26 @@ section h1 {
     font-weight: 600; }
 section h5 {
     margin-top: 15px; }
-
-/*FOOTER*/
-.footer .short-link a,
-.footer .help-link a,
-.footer .contact-link a {
-    transition: .5s; }
-.footer .short-link a:hover,
-.footer .help-link a:hover,
-.footer .contact-link a:hover {
-    letter-spacing: 1px; }
-.footer .hightech-link a:hover {
-    background: var(--bs-primary);
-    border: 0; }
-
+code {
+    font-size: 20px; }
 
 </style>
 </head>
 <body>
 <nav>
     <!--NAVIGATION MENU-->
-    <div class="container-fluid" style="background-color:black;">
+    <div class="container-fluid" style="background-color:#0205a1;">
         <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                <a href="index.html" class="navbar-brand">
-                    <img src="/image_src/Rectangle 13.png" alt="img" class="h-50 w-75">
+                <a href="" class="navbar-brand">
+                    <img src="/homepage/img/Rectangle 13.png" alt="img" class="h-50 w-75">
                 </a>
-                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                        <a href="/homepage/index.html" class="nav-item nav-link active text-secondary">Home</a>
-                        <a href="/homepage/about.html" class="nav-item nav-link">About</a>
-                        <a href="/src/coursedashboard.html" class="nav-item nav-link">Training</a>
-                        <a href="/homepage/gallery.html" class="nav-item nav-link">Gallery</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu rounded">
-                                <a href="#" class="dropdown-item">Certificates</a>
-                                <a href="verify.html" class="dropdown-item">Verify Certificates</a>
-                                <a href="login.html" class="dropdown-item">Login</a>
-                                <a href="/src/courses.html" class="dropdown-item">Courses</a>
-                            </div>
-                        </div>
+                <div class="collapse navbar-collapse bg-transparent">
+                    <div class="navbar-nav ms-auto mx-xl-auto">
+                        <a href="" class="nav-item active">Home</a>
+                        <a href="/homepage/coursedashboard.html" class="nav-item">Training</a>
+                        <a href="https://eira.erovoutika.ph/certificate.php" class="nav-item">Certificates</a>
+                        <a href="/login-signup/login_signup.php" class="nav-item">Login</a>
                     </div>
                 </div>
             </nav>     
@@ -168,9 +127,10 @@ section h5 {
 
 <main>
     <aside>
-        <div class="container">
-            <img src="/image_src/css.png" alt="img">
-                <nav class="nav nav-tabs list-unstyled p-2" id="tabContent">
+        <div class="container-fluid">
+            <div class="sidenav">
+            <img src="/homepage/img/css.png" alt="css logo">
+                <nav class="nav d-block list-unstyled border-bottom w-75 p-2" id="tabContent">
                         <li class="nav-item">
                             <a href="#basics" data-toggle="tab">CSS Basics</a>
                         </li>
@@ -182,12 +142,13 @@ section h5 {
                         </li>
                     </ul>
                 </nav>
-                <div class="float-right text-white p-2"> 
+                <div class="text-white p-3"> 
                     <span>PREVIOUS COURSE:</span>
-                        <a href="/src/html.html" class="font-normal text-white text-decoration-none">HTML<br></a>
+                        <a href="/homepage/html.html" class="font-normal text-white text-decoration-none">HTML<i class="fa-solid fa-circle-arrow-left"></i><br/></a>
                     <span>NEXT COURSE:</span>
-                        <a href="/src/javascript.html" class="font-normal text-white text-decoration-none">JAVASCRIPT<i class="fa-solid fa-circle-arrow-right"></i></a>
+                        <a href="/homepage/javascript.html" class="font-normal text-white text-decoration-none">JAVASCRIPT<i class="fa-solid fa-circle-arrow-right"></i></a>
                 </div>
+            </div>
         </div>
     </aside>
 
@@ -197,26 +158,113 @@ section h5 {
             <div class="tab-pane container active" id="basics">
                 <h1>CSS Basics</h1>
                     <p>
-                        CSS or <code> Cascading Style Sheets </code> is the language used to style the frontend of any website. 
-                        CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
+                        CSS, short for <code>Cascading Style Sheet</code>, is a stylesheet language used to describe the presentation of a document 
+                        written in a markup language. It is used to define the layout, colors, fonts, and other visual elements of a website, 
+                        and how they interact with one another. CSS allows developers to separate the presentation from the content, making 
+                        it easier to maintain and update the visual design of a website without changing the underlying code. CSS can be 
+                        written directly in the HTML file, or in a separate file that is linked to the HTML file. 
                     </p>
                 <h3>Why Use CSS?</h3>
                     <p>
                         It allows developers to separate the content of a page from its visual presentation, making it easier to maintain and update 
                         page designs. CSS also supports responsive design, which allows pages to be optimized for different screen sizes and devices.
                     </p>
-                <h3 class="text-white bg-secondary p-2">Selectors</h3>
+                <h3 class="text-white bg-primary p-2">Selectors</h3>
                     <p>
                         As elements are added to a web page, they may be styled using CSS. A selector designates exactly which element or elements 
-                        within our HTML to target and apply styles (such as color, size, and position) to.<br><br>
-                        Selectors generally target an attribute value, such as an id or class value, or target the type of element, such as <code>h1 or p</code>. <br><br>
-                        Within CSS, selectors are followed with curly brackets, {}, which encompass the styles to be applied to the selected element. 
-                        The selector here is targeting all <code>p</code> elements.
+                        within our HTML to target and apply styles (such as color, size, and position) to.<br>
                     </p>
+                <h6>Syntax:</h6>
+                    <p><code>selector {Property : value;}</code></p>
+                <p class="mt-4">Every declaration has a CSS property name and a value, separated by a <code>colon(:)</code> and is surrounded by <code>curly braces({ })</code>. 
+                    For declaring the multiple CSS properties, it can be separated by the <code>semicolon(;)</code>.</p>
+                    <h6>Let's define each of these:</h6>
+                    <ol>
+                        <li>
+                            <p><span class="font-weight-bold">Declaration:</span>
+                                A combination of a property and its corresponding value.
+                            </p>
+                        </li>
+                        <li>
+                            <p><span class="font-weight-bold">Selector:</span>
+                            Used to target and select specific HTML elements to apply styles to.
+                            </p>
+                        </li>
+                        <li>
+                            <p><span class="font-weight-bold">Property:</span>
+                                Defines the specific aspect or characteristic of an element that you want to modify.
+                            </p>
+                        </li>
+                        <li>
+                            <p><span class="font-weight-bold">Value:</span>
+                            Assigned setting or parameter for a given property, determining how the selected element should appear or behave.
+                            </p>
+                        </li>
+                    </ol>
+                <h6>Example:</h6>
+                    <img src="/homepage/img/css_document.jpg" alt="img">
+                <h4 class="text-white p-2 mt-3" style="background-color:darkorange;">Element Selector</h4>
+                    <p>The element selector selects HTML elements based on the element name.</p>
+                        <code>
+                            p {
+                                text-align: center;<br/>
+                                color: red;
+                            }
+                        </code>
+                <h4 class="text-white p-2 mt-3" style="background-color:darkorange;">ID Selector</h4>
+                    <p>The id selector uses the id attribute of an HTML element to select a specific element. 
+                        To select an element with a specific id, write a hash (#) character, followed by the id of the element.</p>
+                        <code>
+                            #para1 {
+                                text-align: center;<br/>
+                                color: red;
+                            }
+                        </code>
+                <h4 class="text-white p-2 mt-3" style="background-color:darkorange;">Class Selector</h4>
+                    <p>The class selector selects HTML elements with a specific class attribute.
+                        To select elements with a specific class, write a period (.) character, followed by the class name.</p>
+                        <code>
+                            .center {
+                                text-align: center;<br/>
+                                color: red;
+                            }
+                        </code>
+                <h4 class="text-white p-2 mt-3" style="background-color:darkorange;">Universal Selector</h4>
+                    <p>The universal selector (*) selects all HTML elements on the page.</p>
+                        <code>
+                            * {
+                                text-align: center;<br/>
+                                color: blue;
+                            }
+                        </code>
+                <h3 class="text-white bg-primary p-2 mt-4">CSS Insertion</h3>
+                    <h5>There are three ways to add CSS to HTML:</h5>
+                        <ul>
+                            <li class="p-3">
+                                <p><span class="font-weight-bold text-decoration-underline">Inline CSS:</span>
+                                    places the CSS inside an HTML tag and affects only that element.</p>
+                                <img src="/homepage/img/css_document2.jpg" alt="img">
+                            </li>
+                            <li class="p-3">
+                                <p><span class="font-weight-bold text-decoration-underline">Internal CSS:</span>
+                                    is placed inside a <code>style</code> element, which goes inside the <code>head</code> of the HTML document.
+                                </p>
+                                <img src="/homepage/img/css_document3.jpg" alt="img">
+                            </li>
+                            <li class="p-3">
+                                <p><span class="font-weight-bold text-decoration-underline">External CSS:</span>
+                                    exists in a separate file called an external stylesheet, and requires a <code>link</code> element placed inside the head section of an HTML file.
+                                </p>
+                                <img src="/homepage/img/css_document4.jpg" alt="img" class="d-inline p-2">
+                                <img src="/homepage/img/css_document5.jpg" alt="img" class="d-inline p-2">
+                            </li>
+                        </ul>
             </div>
+
         <!--MAKING LAYOUTS-->
             <div class="tab-pane container" id="layout">
                 <h1>Making Layouts</h1>
+                    
 
             </div>
         <!--RESPONSIVE DESIGN-->
@@ -227,68 +275,7 @@ section h5 {
         </div>
     </section>
 </main>
-
-<footer>
-    <!--Footer-->
-    <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
-        <div class="container pt-5 pb-4">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <a href="index.html">
-                        <h1 class="text-white fw-bold d-block">EI<span class="text-primary">RA</span> </h1>
-                    </a>
-                    <p class="mt-4 text-light">Innovate with EIRA, where technology meets your learning pace</p>
-                    <div class="d-flex hightech-link">
-                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
-                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
-                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
-                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="#" class="h3 text-primary">Quick Links</a>
-                    <div class="mt-4 d-flex flex-column short-link">
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Home</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>About</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Training</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Gallery</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Latest Blog</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="#" class="h3 text-primary">Our Services</a>
-                    <div class="mt-4 d-flex flex-column help-link">
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Training and Certifications</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Automation Solutions</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Robotics</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Research And Development</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Cybersecurity</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-primary me-2"></i>Blockchain</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="#" class="h3 text-primary">Contact Us</a>
-                    <div class="text-white mt-4 d-flex flex-column contact-link">
-                        <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-primary me-2"></i> Parc House Building II, Guadalupe Nuevo, Makati, Philippines</a>
-                        <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-primary me-2"></i> 074 423 1557 | 09653546415</a>
-                        <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-primary me-2"></i> erovoutika@gmail.com</a>
-                    </div>
-                </div>
-            </div>
-            <hr class="text-light mt-5 mb-4">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <span class="text-light"><a href="#" class="text-primary"><i class="fas fa-copyright text-primary me-2"></i>EIRA</a>, All right reserved.</span>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <span class="text-light">Designed By<a href="https://htmlcodex.com" class="text-primary"> Group 2</a></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script type="module" src="./src/assets/js/main.js"></script>
+<script type="module" src="./homepage/js/main.js"></script>
 </body>
 </html>
 
