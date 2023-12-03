@@ -207,9 +207,4 @@ if(isset($_POST['signup'])){
         $errors['db-error'] = "Failed to retrieve the old password.";
     }
 }
-    
-   //if login now button click
-    if(isset($_POST['login'])){
-        header('Location: courses.php');
-    }
 ?>

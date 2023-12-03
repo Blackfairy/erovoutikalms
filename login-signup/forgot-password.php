@@ -1,4 +1,4 @@
-<?php require_once "controllerUserData.php"; ?>
+<?php require_once "../controllerUserData.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +9,10 @@
 </head>
 <body>
 <div class="logo">
-	<img src="Erovoutika_Logo.png">
+	<img src="../Erovoutika_Logo.png">
 </div>
 	<div class="signup-vector">
-		<img src="Forgot password.png">
+		<img src="../Forgot password.png">
 	</div>
     <div class="container">
         <div class="row">

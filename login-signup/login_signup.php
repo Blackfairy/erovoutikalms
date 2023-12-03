@@ -1,4 +1,4 @@
-<?php require_once "controllerUserData.php"; ?>
+<?php require_once "../controllerUserData.php"; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -12,10 +12,10 @@
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="image_src/login.png" alt="">
+        <img src="../image_src/login.png" alt="">
       </div>
       <div class="back">
-        <img class="backImg" src="image_src/signup.png" alt="">
+        <img class="backImg" src="../image_src/signup.png" alt="">
       </div>
     </div>
     <div class="forms">

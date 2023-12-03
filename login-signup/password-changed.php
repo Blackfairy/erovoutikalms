@@ -1,4 +1,4 @@
-<?php require_once "controllerUserData.php"; ?>
+<?php require_once "../controllerUserData.php"; ?>
 <?php
 if($_SESSION['info'] == false){
     header('Location: login_signup.php');  
@@ -14,7 +14,7 @@ if($_SESSION['info'] == false){
 </head>
 <body>
 <div class="logo">
-	<img src="image_src/Erovoutika_Logo.png">
+	<img src="../image_src/Erovoutika_Logo.png">
 </div>
 	<div class="signup-vector">
 		<img src="Forgot password.png">
