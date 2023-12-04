@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require "connection.php";
+require "send_mail.php"; // Include the send_mail.php script
 $email = "";
 $name = "";
 $errors = array();
@@ -83,34 +84,59 @@ if(isset($_POST['signup'])){
         }
     }
 
-    //if user click login button
-    if(isset($_POST['login'])){
-        $email = mysqli_real_escape_string($con, $_POST['email']);
-        $password = mysqli_real_escape_string($con, $_POST['password']);
-        $check_email = "SELECT * FROM usertable WHERE email = '$email'";
-        $res = mysqli_query($con, $check_email);
-        if(mysqli_num_rows($res) > 0){
-            $fetch = mysqli_fetch_assoc($res);
-            $fetch_pass = $fetch['password'];
-            if(password_verify($password, $fetch_pass)){
-                $_SESSION['email'] = $email;
-                $status = $fetch['status'];
-                if($status == 'verified'){
-                  $_SESSION['email'] = $email;
-                  $_SESSION['password'] = $password;
-                    header('location: courses.php');
-                }else{
-                    $info = "It looks like you haven't still verify your email - $email";
-                    $_SESSION['info'] = $info;
-                    header('location: user-otp.php');
+ //if user click login button
+if(isset($_POST['login'])){
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $check_email = "SELECT * FROM usertable WHERE email = '$email'";
+    $res = mysqli_query($con, $check_email);
+    
+    if(mysqli_num_rows($res) > 0){
+        $fetch = mysqli_fetch_assoc($res);
+        $fetch_pass = $fetch['password'];
+        $status = $fetch['status'];
+        
+        if(password_verify($password, $fetch_pass)){
+            $_SESSION['email'] = $email;
+            
+            if($status == 'verified'){
+                $_SESSION['password'] = $password;
+                header('location: courses.php');
+            } else {
+                // Generate a new verification code
+                $code = rand(999999, 111111);
+                $update_code = "UPDATE usertable SET code = $code WHERE email = '$email'";
+                $update_res = mysqli_query($con, $update_code);
+
+                if ($update_res) {
+                    $subject = "Email Verification Code";
+                    $message = "Your new verification code is $code";
+
+                    // Use the send_mail function from send_mail.php
+                    $mailResult = send_mail($email, $subject, $message);
+
+                    if ($mailResult === true) {
+                        $info = "You still haven't verified your account yet. A new 6-digit verification code was sent to $email";
+                        $_SESSION['info'] = $info;
+                        $_SESSION['email'] = $email;
+                        $_SESSION['password'] = $password;
+                        header('location: user-otp.php');
+                        exit();
+                    } else {
+                        $errors['otp-error'] = "Failed while sending code! Error: $mailResult";
+                    }
+                } else {
+                    $errors['db-error'] = "Failed while updating code!";
                 }
-            }else{
-                $errors['email'] = "Incorrect email or password!";
             }
-        }else{
-            $errors['email'] = "The email you entered isn’t connected to an account.";
+        } else {
+            $errors['email'] = "<span style='color: black; font-weight: 600; margin-left: -15px;'>Incorrect email or password!";
         }
+    } else {
+        $errors['email'] = "<span style='color: black; font-weight: 600; font-size: 14px; margin-left: -15px;'>The email you entered isn’t connected to an account!";
     }
+}
+
 
     //if user click continue button in forgot password form
     if(isset($_POST['check-email'])){

@@ -1,4 +1,4 @@
-<?php require_once "../controllerUserData.php"; ?>
+<?php require_once "controllerUserData.php"; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -12,10 +12,10 @@
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="../image_src/login.png" alt="">
+        <img src="homepage/img/login.png" alt="">
       </div>
       <div class="back">
-        <img class="backImg" src="../image_src/signup.png" alt="">
+        <img class="backImg" src="homepage/img/signup.png" alt="">
       </div>
     </div>
     <div class="forms">
@@ -24,6 +24,19 @@
             <div class="title">Login</div>
             <h1> Welcome Back! Please login <br>to your account</h1>
             <form class="form" action="login_signup.php" method="POST" autocomplete="off">
+            <?php
+                    if(count($errors) > 0){
+                        ?>
+                        <div class="alert alert-danger text-center">
+                            <?php
+                            foreach($errors as $showerror){
+                                echo $showerror;
+                            }
+                            ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
@@ -38,8 +51,16 @@
                 <input type="submit" name="login" value="Login">
                 
               </div>
-               <?php
-                    if(count($errors) > 0){
+             
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
+            </div>
+        </form>
+      </div>
+      <form action="login_signup.php" method="POST" autocomplete="off">
+        <div class="signupuser-form">
+        <div class="title">Signup</div>
+        <?php
+                    if(count($errors) == 1){
                         ?>
                         <div class="alert alert-danger text-center">
                             <?php
@@ -49,15 +70,20 @@
                             ?>
                         </div>
                         <?php
+                    }elseif(count($errors) > 1){
+                        ?>
+                        <div class="alert alert-danger text-center">
+                            <?php
+                            foreach($errors as $showerror){
+                                ?>
+                                <li><?php echo $showerror; ?></li>
+                                <?php
+                            }
+                            ?>
+                        </div>
+                        <?php
                     }
-                    ?>
-              <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
-            </div>
-        </form>
-      </div>
-      <form action="login_signup.php" method="POST" autocomplete="off">
-        <div class="signupuser-form">
-        <div class="title">Signup</div>
+                    ?>  
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
@@ -83,31 +109,7 @@
                     <div class="button input-box">
                         <input type="submit" name="signup" value="Create Account">
                     </div>
-                    <?php
-                    if(count($errors) == 1){
-                        ?>
-                        <div class="alert alert-danger text-center">
-                            <?php
-                            foreach($errors as $showerror){
-                                echo $showerror;
-                            }
-                            ?>
-                        </div>
-                        <?php
-                    }elseif(count($errors) > 1){
-                        ?>
-                        <div class="alert alert-danger text-center">
-                            <?php
-                            foreach($errors as $showerror){
-                                ?>
-                                <li><?php echo $showerror; ?></li>
-                                <?php
-                            }
-                            ?>
-                        </div>
-                        <?php
-                    }
-                    ?>  
+                    
               <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
               </form>
             </div>
