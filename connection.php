@@ -1,3 +1,3 @@
 <?php 
-$con = mysqli_connect('localhost', 'root', '', 'erovoutikalms');
+$con = mysqli_connect('localhost', 'root', '', 'erovoutikalmsdb');
 ?>

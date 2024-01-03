@@ -1,9 +1,47 @@
 <?php require_once "../controllerUserData.php"; ?>
+<?php
+$page_title = 'Add Student';
+require_once('includes/load.php');
+$all_categories = find_all('students');
+
+if (isset($_POST['coursedashboard1'])) {
+    $req_fields = array('llname', 'ffname', 'ddob', 'ggender', 'mmjor', 'ssemail');
+    validate_fields($req_fields);
+
+    if (empty($errors)) {
+        $s_firstname = remove_junk($db->escape($_POST['ffname']));
+        $s_lastname = remove_junk($db->escape($_POST['llname']));
+        $s_dob = remove_junk($db->escape($_POST['ddob']));
+        $s_gender = remove_junk($db->escape($_POST['ggender']));
+        $s_major = remove_junk($db->escape($_POST['mmjor']));
+        $s_semail = remove_junk($db->escape($_POST['ssemail']));
+
+
+        $query  = "INSERT INTO students (";
+        $query .=" first_name,last_name,date_of_birth,gender,major,student_email";
+        $query .=") VALUES (";
+        $query .=" '{$s_firstname}', '{$s_lastname}', '{$s_dob}', '{$s_gender}', '{$s_major}', '{$s_semail}'";
+        $query .=")";
+        $query .=" ON DUPLICATE KEY UPDATE student_email='{$s_semail}'";
+
+        if ($db->query($query)) {
+            $session->msg('s',"students added ");
+            redirect('coursedashboard1.php', false);
+        } else {
+            $session->msg('d',' Sorry failed to add!');  
+        }
+
+    } else {
+        $session->msg("d", $errors);
+        redirect('coursedashboard1.php', false);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>EIRA | Training Courses</title>
-    <link rel="icon" type="images/x-icon" href="/homepage/img/Rectangle 13.png" />
+    <link rel="icon" type="images/x-icon" href="img/Rectangle 13.png" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,7 +64,18 @@
 
     <script src="https://kit.fontawesome.com/95c10202b4.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="./homepage/scss/bootstrap.scss" />
+    <link rel="stylesheet" href="scss/bootstrap.scss" />
+    <link rel="stylesheet" href="testcss.css">
+            
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Add this in the <head> section of your HTML -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="testScript1.js"></script>
+        
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
@@ -59,8 +108,7 @@ header {
     text-decoration: none; }
 .navbar .nav-item:hover {
     text-decoration: underline;
-    color: darkorange;
-}
+    color: darkorange; }
 
 /*CAROUSEL SLIDER*/
 figure {
@@ -115,18 +163,16 @@ figure article {
     margin: 40px 25%;
     top: 5%; }
 
-/*REVIEWS*/
+/*LOGOS*/
 main article {
     background-color: #0205a1;
-    color: white;
     position: relative;
     left: 0;
     right: 0;
     margin-top: 7%;}
 main article img{
-    background-color: black;
-    height: 30%;
-    width: 30%; }
+    height: 40%;
+    width: 40%; }
 
 /*POP-UP COURSES*/
 main section {
@@ -176,9 +222,11 @@ input[type=checkbox] {
     width: 100%;
     background: #000000b3; }
 .popup__wrapper {
+    overflow: scroll;
     position: fixed;
+    left: 5%;
+    margin: 10px;
     z-index: 9;
-    left: 80px;
     width: 100%;
     height: 100%;
     max-width: 1200px;
@@ -190,6 +238,14 @@ input[type=checkbox] {
     top: 30px;
     right: 50px;
     font-size: 40px; }
+.popup__wrapper::-webkit-scrollbar {
+    width: 10px; }
+.popup__wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1; }
+.popup__wrapper::-webkit-scrollbar-thumb {
+    background: #888; }
+.popup__wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555; }
 .heading {
     padding-top: 20px;
     font-size: 50px; }
@@ -221,15 +277,72 @@ section h4 {
 .datacourse-width {
     width: 50%;
     margin-left: 15%; }
+.button-width {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center; }
+.btn {
+    background-color: #012766; }
+.btn a {
+    color: #fff; }
+.btn:hover {
+    background: var(--bs-primary); }
 .dropdown-menu {
     width: max-content;
     padding: 10%;
     line-height: 1.6; }
-.btn {
-    line-height: 0.5; }
 .dropdown-item-text {
     display: contents; }
 
+/*GALLERY*/
+.project-img {
+    position: relative;
+    padding: 15px; }
+.project-img::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 0;
+    left: 0;
+    background: var(--bs-primary);
+    border-radius: 10px;
+    opacity: 1;
+    z-index: -1;
+    transition: .5s; }
+.project-img::after {
+    content: "";
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: var(--bs-primary);
+    border-radius: 10px;
+    opacity: 1;
+    z-index: -1;
+    transition: .5s; }
+.project-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; }
+.project-content a {
+    display: inline-block;
+    padding: 20px 25px;
+    background-color: #0205a1;
+    border-radius: 10px; }
+.project-item:hover .project-content {
+    opacity: 1;
+    transition: .5s; }
+.project-item:hover .project-img::before,
+.project-item:hover .project-img::after {
+    opacity: 0; }
 
 /*CONTACT*/
 .contact-detail::before {
@@ -276,14 +389,17 @@ footer {
         <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg py-0">
                 <a href="https://eira.erovoutika.ph/index.php" class="navbar-brand">
-                    <img src="/homepage/img/Rectangle 13.png" alt="img" class="h-50 w-75">
+                    <img src="img/Rectangle 13.png" alt="img" class="h-50 w-75">
                 </a>
                 <div class="collapse navbar-collapse bg-transparent">
                     <div class="navbar-nav ms-auto mx-xl-auto">
                         <a href="https://eira.erovoutika.ph/index.php" class="nav-item active">Home</a>
-                        <a href="/homepage/coursedashboard.html" class="nav-item">Training</a>
-                        <a href="https://eira.erovoutika.ph/certificate.php" class="nav-item">Certificates</a>
-                        <a href="/login-signup/login_signup.php" class="nav-item">Login</a>
+                        <a href="coursedashboard.html" class="nav-item">Training</a>
+                        <a href="https://eira.erovoutika.ph/certificate.php" class="nav-item">Certificates</a>                     
+                        <!-- Anchor link to trigger the modal -->
+                        <a href="#0" class="nav-item cd-signin">Sign in</a>
+                        <a href="#0" class="nav-item cd-signup">Sign up</a>
+                        <a href="../login-signup/logout-user.php" class="nav-item cd-logout">Log out</a>
                     </div>
                 </div>
             </nav>     
@@ -296,13 +412,13 @@ footer {
     <div id="carouselControls" class="carousel slide d-block" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/homepage/img/backgroundblue.jpg" alt="First slide">
+                <img src="img/backgroundblue.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img src="/homepage/img/training7.png" alt="Second slide" style="width:100%;height:200%;">
+                <img src="img/training7.png" alt="Second slide" style="width:100%;height:200%;">
             </div>
             <div class="carousel-item">
-                <img src="/homepage/img/training2.png" alt="Third slide">
+                <img src="img/training2.png" alt="Third slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
@@ -325,28 +441,28 @@ footer {
 </header>
 
 <main>
-    <!--LANGUAGES-->
+    <!--LOGOS-->
     <article>
         <div class="container-fluid text-center">
             <div class="row">
                 <div class="col">
-                    <div class="p-1">
-                        <img src="/homepage/img/html.png" alt="img">
+                    <div class="p-2">
+                        <img src="img/html.png" alt="img">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="p-1">
-                        <img src="/homepage/img/css.png" alt="img">
+                    <div class="p-2">
+                        <img src="img/css.png" alt="img">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="p-1">
-                        <img src="/homepage/img/javascrpit.png" alt="img">
+                    <div class="p-2">
+                        <img src="img/javascrpit.png" alt="img">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="p-1">
-                        <img src="/homepage/img/php.png" alt="img">
+                    <div class="p-2">
+                        <img src="img/php.png" alt="img">
                     </div>
                 </div>
             </div>
@@ -365,7 +481,7 @@ footer {
         <!--FRONT END DEVELOPMENT COURSES-->
             <div class="dialog col position-relative text-center">
                 <div class="d-inline-block">
-                    <img src="/homepage/img/course.png" alt="img">
+                    <img src="img/course.png" alt="img">
                     <h4>Front-End Development</h4>
                     <a class="button position-relative text-center font-weight-bold" href="#modal1">Details<i class="fa-solid fa-arrow-up-right-from-square m-lg-1"></i></a>
                 </div>
@@ -449,11 +565,12 @@ footer {
                                                     <li>Learn the basics</li>
                                                     <li>Writing Semantic HTML</li>
                                                     <li>Forms and Validations</li>
-                                                    <li>Accesibility</li>
                                                 </ul>
                                         </div>
                                     </div>
-                                    <div class="btn justify-content-center m-2 w-100"><a href="/login-signup/login_signup.php">Start Learning</a></div>
+                                    <div class="button-width">
+                                        <div class="btn m-2"><a href="/login-signup/login_signup.php">Start Learning</a></div>
+                                    </div>
                                 </div>
                             <!--CSS COURSE-->
                                 <div class="tab-pane container" id="css">
@@ -483,7 +600,9 @@ footer {
                                                 </ul>
                                         </div>
                                     </div>
-                                    <div class="btn justify-content-center m-2 w-100"><a href="/login-signup/login_signup.php">Start Learning</a></div>
+                                    <div class="button-width">
+                                        <div class="btn m-2"><a href="/login-signup/login_signup.php">Start Learning</a></div>
+                                    </div>
                                 </div>
                             <!--JAVASCRIPT COURSE-->
                                 <div class="tab-pane container" id="javascript">
@@ -515,7 +634,9 @@ footer {
                                                 </ul>
                                         </div>
                                     </div>
-                                    <div class="btn justify-content-center m-2 w-100"><a href="/login-signup/login_signup.php">Start Learning</a></div>
+                                    <div class="button-width">
+                                        <div class="btn m-2"><a href="/login-signup/login_signup.php">Start Learning</a></div>
+                                    </div>
                                 </div>
                             </div>
                     </div>
@@ -524,7 +645,7 @@ footer {
         <!--BACK END DEVELOPMEnT COURSES-->
             <div class="dialog col position-relative text-center">
                 <div class="d-inline-block">
-                    <img src="/homepage/img/course.png" alt="img">
+                    <img src="img/course.png" alt="img">
                     <h4>Back-End Development</h4>
                     <a class="button position-relative text-center font-weight-bold" href="#modal2">Details<i class="fa-solid fa-arrow-up-right-from-square m-lg-1"></i></a>
                 </div>
@@ -639,7 +760,9 @@ footer {
                                                 </ul>
                                         </div>
                                     </div>
-                                    <div class="btn justify-content-center m-2 w-100"><a href="/login-signup/login_signup.php">Start Learning</a></div>
+                                    <div class="button-width">
+                                        <div class="btn m-2"><a href="/login-signup/login_signup.php">Start Learning</a></div>
+                                    </div>
                                 </div>
                             </div>
                     </div>
@@ -648,7 +771,7 @@ footer {
         <!--SELF PACED PROGRAM COURSES-->
             <div class="dialog col position-relative text-center">
                 <div class="d-inline-block">
-                    <img src="/homepage/img/course.png" alt="img">
+                    <img src="img/course.png" alt="img">
                     <h4>Self-Paced Training Program</h4>
                     <a class="button position-relative font-weight-bold" href="#modal3">Details<i class="fa-solid fa-arrow-up-right-from-square m-lg-1"></i></a>
                 </div>
@@ -664,7 +787,7 @@ footer {
                                         <a href="#programAbout" data-toggle="tab">ABOUT</a>
                                     </li>
                                     <li class="dropdown" data-toggle="tab">
-                                        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                        <button class="dropdown-toggle" type="button" data-toggle="dropdown">
                                             PROGRAMS
                                         </button>
                                         <ul class="dropdown-menu">
@@ -710,7 +833,7 @@ footer {
                                                                 The platform employs adaptive learning technologies to tailor the educational experience to individual needs, ensuring that participants can progress at their own pace and focus on areas that require additional attention.</li>
                                                         </ul>
                                                 </div>
-                                            </div> 
+                                            </div>
                                         </div>
                                     <!--GAME DEVELOPMENT & ANIMATION-->
                                         <div class="tab-pane container" id="gamedev">
@@ -739,6 +862,9 @@ footer {
                                                             <li>Game Programmer</li>
                                                         </ul>
                                                 </div>
+                                            </div>
+                                            <div class="button-width">
+                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
                                             </div>
                                         </div>
                                     <!--CISCO WAN TECHNOLOGY-->
@@ -770,6 +896,9 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
+                                            <div class="button-width">
+                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
+                                            </div>
                                         </div>
                                     <!--CLOUD COMPUTING-->
                                         <div class="tab-pane container" id="cloud">
@@ -799,6 +928,9 @@ footer {
                                                             <li>Cloud Compliance Officer</li>
                                                         </ul>
                                                 </div>
+                                            </div>
+                                            <div class="button-width">
+                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
                                             </div>
                                         </div>
                                     <!--MACHINE LEARNING-->
@@ -831,6 +963,9 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
+                                            <div class="button-width">
+                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
+                                            </div>
                                         </div>
                                     <!--LINUX SYSTEM ADMINISTRATION-->
                                         <div class="tab-pane container" id="linux">
@@ -859,6 +994,9 @@ footer {
                                                             <li>System Analyst</li>
                                                         </ul>
                                                 </div>
+                                            </div>
+                                            <div class="button-width">
+                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
                                             </div>
                                         </div>
                                     <!--DATA ANALYTICS-->
@@ -890,6 +1028,9 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
+                                            <div class="button-width">
+                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
+                                            </div>
                                         </div>
                                     <!--PLC PROGRAMMING LEVEL1-->
                                         <div class="tab-pane container" id="plc-1">
@@ -920,6 +1061,9 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
+                                            <div class="button-width">
+                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
+                                            </div>
                                         </div>
                                     <!--PLC PROGRAMMING LEVEL2-->
                                         <div class="tab-pane container" id="plc-2">
@@ -947,6 +1091,9 @@ footer {
                                                             <li>Supervisory Control and <br/> Data Acquisition (SCADA) Engineer</li>
                                                         </ul>
                                                 </div>
+                                            </div>
+                                            <div class="button-width">
+                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
                                             </div>
                                         </div>
                                     <!--INNOVATION IN TELECOMMUNICATION-->
@@ -978,6 +1125,9 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
+                                            <div class="button-width">
+                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
+                                            </div>
                                         </div>
                                     <!--INDUSTRIAL PNEUMATIC SYSTEM-->
                                         <div class="tab-pane container" id="industrial">
@@ -1008,6 +1158,9 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
+                                            <div class="button-width">
+                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
+                                            </div>
                                         </div>
                                 </div>
                     </div>
@@ -1017,17 +1170,17 @@ footer {
 
     <!--GALLERY-->
     <section>
-        <div class="container-fluid project py-5 mb-5">
+        <div class="container-fluid project py-5">
             <div class="container">
                 <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Our Gallery</h5>
+                    <h3 class="text-primary">Our Gallery</h3>
                     <h1 class="font-weight-bold">Our Recently Completed Training</h1>
                 </div>
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
                         <div class="project-item">
                             <div class="project-img">
-                                <img src="/homepage/img/training1.png" class="img-fluid w-100 rounded" alt="">
+                                <img src="img/training1.png" class="img-fluid w-100 rounded" alt="">
                                 <div class="project-content">
                                     <a href="#" class="text-center">
                                         <h4 class="text-white">Web design</h4>
@@ -1040,7 +1193,7 @@ footer {
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
                         <div class="project-item">
                             <div class="project-img">
-                                <img src="/homepage/img/training3.png" class="img-fluid w-100 rounded" alt="">
+                                <img src="img/training3.png" class="img-fluid w-100 rounded" alt="">
                                 <div class="project-content">
                                     <a href="#" class="text-center">
                                         <h4 class="text-white">Cyber Security</h4>
@@ -1053,7 +1206,7 @@ footer {
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
                         <div class="project-item">
                             <div class="project-img">
-                                <img src="/homepage/img/training4.png" class="img-fluid w-100 rounded" alt="">
+                                <img src="img/training4.png" class="img-fluid w-100 rounded" alt="">
                                 <div class="project-content">
                                     <a href="#" class="text-center">
                                         <h4 class="text-white">Application Developement</h4>
@@ -1066,7 +1219,7 @@ footer {
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
                         <div class="project-item">
                             <div class="project-img">
-                                <img src="/homepage/img/training5.png" class="img-fluid w-100 rounded" alt="">
+                                <img src="img/training5.png" class="img-fluid w-100 rounded" alt="">
                                 <div class="project-content">
                                     <a href="#" class="text-center">
                                         <h4 class="text-white">Web Development</h4>
@@ -1079,7 +1232,7 @@ footer {
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
                         <div class="project-item">
                             <div class="project-img">
-                                <img src="/homepage/img/training6.png" class="img-fluid w-100 rounded" alt="">
+                                <img src="img/training6.png" class="img-fluid w-100 rounded" alt="">
                                 <div class="project-content">
                                     <a href="#" class="text-center">
                                         <h4 class="text-white">Networking</h4>
@@ -1092,7 +1245,7 @@ footer {
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
                         <div class="project-item">
                             <div class="project-img">
-                                <img src="/homepage/img/training7.png" class="img-fluid w-100 rounded" alt="">
+                                <img src="img/training7.png" class="img-fluid w-100 rounded" alt="">
                                 <div class="project-content">
                                     <a href="#" class="text-center">
                                         <h4 class="text-white">Research Development</h4>
@@ -1110,19 +1263,19 @@ footer {
 
 <!--ABOUT-->
 <article>
-    <div class="container-fluid py-5 my-5">
+    <div class="container-fluid mb-5">
         <div class="container pt-5">
             <div class="row g-5">
                 <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
                     <div class="h-100 position-relative">
-                        <img src="/homepage/img/about-1.png" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
-                        <div class="position-absolute w-75" style="top: 25%; left: 25%;">
-                            <img src="/homepage/img/about-1.png" class="img-fluid w-100 rounded" alt="">
+                        <img src="img/about-1.png" class="img-fluid w-75 rounded" alt="" style="opacity: 0.5; margin-bottom: 25%;">
+                        <div class="position-absolute w-75" style="top: 15%; left: 25%;">
+                            <img src="img/about-1.png" class="img-fluid w-100 rounded" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
-                    <h5 class="text-primary">About Us</h5>
+                    <h3 class="text-primary">About Us</h3>
                     <h1 class="mb-4 font-weight-bold">Erovoutika International Robotics Academy</h1>
                     <p>A respected and experienced Automation and Robotics Company. Our highly professional teams, with in-depth knowledge of each jurisdiction, has been successfully deliver customer needs.</p>
                     <p class="mb-4"> Our goal is to assist our clients in getting their needs and requirements in the easiest and fastest possible time in a most professional manner. We provide the highest quality service at the most reasonable cost.</p>
@@ -1138,7 +1291,7 @@ footer {
     <div class="container-fluid border-top py-5 mb-5">
         <div class="container">
             <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                <h5 class="text-primary">Get In Touch</h5>
+                <h3 class="text-primary">Get In Touch</h3>
                 <h1 class="mb-3">Contact for any query</h1>
             </div>
             <div class="contact-detail position-relative p-5">
@@ -1269,6 +1422,8 @@ footer {
     </div>
 </footer>
 
-<script type="module" src="./homepage/js/main.js"></script>
+<?php require_once "../login-signup/login_signup.php"; ?>
+
+<script type="module" src=".js/main.js"></script>
 </body>
 </html>

@@ -1,3 +1,42 @@
+<?php require_once "../controllerUserData.php"; ?>
+<?php
+$page_title = 'Add Student';
+require_once('includes/load.php');
+$all_categories = find_all('students');
+
+if (isset($_POST['coursedashboard1'])) {
+    $req_fields = array('llname', 'ffname', 'ddob', 'ggender', 'mmjor', 'ssemail');
+    validate_fields($req_fields);
+
+    if (empty($errors)) {
+        $s_firstname = remove_junk($db->escape($_POST['ffname']));
+        $s_lastname = remove_junk($db->escape($_POST['llname']));
+        $s_dob = remove_junk($db->escape($_POST['ddob']));
+        $s_gender = remove_junk($db->escape($_POST['ggender']));
+        $s_major = remove_junk($db->escape($_POST['mmjor']));
+        $s_semail = remove_junk($db->escape($_POST['ssemail']));
+
+
+        $query  = "INSERT INTO students (";
+        $query .=" first_name,last_name,date_of_birth,gender,major,student_email";
+        $query .=") VALUES (";
+        $query .=" '{$s_firstname}', '{$s_lastname}', '{$s_dob}', '{$s_gender}', '{$s_major}', '{$s_semail}'";
+        $query .=")";
+        $query .=" ON DUPLICATE KEY UPDATE student_email='{$s_semail}'";
+
+        if ($db->query($query)) {
+            $session->msg('s',"students added ");
+            redirect('coursedashboard1.php', false);
+        } else {
+            $session->msg('d',' Sorry failed to added!');  
+        }
+
+    } else {
+        $session->msg("d", $errors);
+        redirect('coursedashboard1.php', false);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +65,9 @@
     <script src="https://kit.fontawesome.com/95c10202b4.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="scss/bootstrap.scss" />
+    <link rel="stylesheet" href="testcss.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
@@ -345,8 +387,9 @@ footer {
                     <div class="navbar-nav ms-auto mx-xl-auto">
                         <a href="https://eira.erovoutika.ph/index.php" class="nav-item active">Home</a>
                         <a href="coursedashboard.html" class="nav-item">Training</a>
-                        <a href="https://eira.erovoutika.ph/certificate.php" class="nav-item">Certificates</a>
-                        <a href="../test1.php" class="nav-item">Login</a>
+                        <a href="https://eira.erovoutika.ph/certificate.php" class="nav-item">Certificates</a>                     
+                        <!-- Anchor link to trigger the modal -->
+                        <a class="nav-item" href="#0" data-toggle="modal" data-target="#registrationModal">Register</a>
                     </div>
                 </div>
             </nav>     
@@ -1368,6 +1411,73 @@ footer {
         </div>
     </div>
 </footer>
+
+<!-- Registration Form Modal -->
+<div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registrationModalLabel">Registration Form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <section class="container2">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            
+                            <div class="panel-body">
+                                
+                                    <form method="post" action="coursedashboard1.php" class="form">
+                                        <div class="form-group">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" name="llname" placeholder="Last Name">
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" name="ffname"
+                                                            placeholder="First Name">
+                                                    </div>
+                                                    <div class="input-group">
+                
+                                                        <input type="date" class="form-control" name="ddob"
+                                                            placeholder="Date of Birth">
+                                                    </div>
+                                                    <div class="input-group">
+                
+                                                        <input type="text" class="form-control" name="ggender"
+                                                            placeholder="Gender">
+                                                    </div>
+                                                    <div class="input-group">
+                
+                                                        <input type="text" class="form-control" name="mmjor"
+                                                            placeholder="Major">
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" name="ssemail"
+                                                            placeholder="Student Email">
+                                                    </div>
+                                                    <div class="input-group">
+                                                <button type="submit" name="coursedashboard1" class="btn">Add students</button>
+                                                    </div>
+                                        </div>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap and jQuery JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 <script type="module" src=".js/main.js"></script>
 </body>

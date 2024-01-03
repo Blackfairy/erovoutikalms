@@ -11,10 +11,13 @@
       <header>Registration Form</header>
       <form action="#" class="form">
         <div class="input-box">
-          <label>Full Name</label>
-          <input type="text" placeholder="Enter full name" required />
+          <label>First Name</label>
+          <input type="text" placeholder="Enter first name" required />
         </div>
-
+        <div class="input-box">
+        <label>Last Name</label>
+        <input type="text" placeholder="Enter last name" required />
+      </div>
         <div class="input-box">
           <label>Email Address</label>
           <input type="text" placeholder="Enter email address" required />
@@ -22,8 +25,8 @@
 
         <div class="column">
           <div class="input-box">
-            <label>Phone Number</label>
-            <input type="number" placeholder="Enter phone number" required />
+            <label>College</label>
+            <input type="text" placeholder="College course" required />
           </div>
           <div class="input-box">
             <label>Birth Date</label>
@@ -35,7 +38,7 @@
           <div class="gender-option">
             <div class="gender">
               <input type="radio" id="check-male" name="gender" checked />
-              <label for="check-male">male</label>
+              <label for="check-male">Male</label>
             </div>
             <div class="gender">
               <input type="radio" id="check-female" name="gender" />
@@ -48,25 +51,17 @@
           </div>
         </div>
         <div class="input-box address">
-          <label>Address</label>
-          <input type="text" placeholder="Enter street address" required />
-          <input type="text" placeholder="Enter street address line 2" required />
+          <label>Course Enrolling </label>
           <div class="column">
             <div class="select-box">
               <select>
-                <option hidden>Country</option>
-                <option>America</option>
-                <option>Japan</option>
-                <option>India</option>
-                <option>Nepal</option>
+                <option hidden>Available Courses</option>
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>JAVASCRIPT</option>
+                <option>PHP</option>
               </select>
             </div>
-            <input type="text" placeholder="Enter your city" required />
-          </div>
-          <div class="column">
-            <input type="text" placeholder="Enter your region" required />
-            <input type="number" placeholder="Enter postal code" required />
-          </div>
         </div>
         <button>Submit</button>
       </form>
