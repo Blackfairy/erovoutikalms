@@ -1,19 +1,13 @@
-<?php require_once "controllerUserData.php"; ?>
+<?php require_once "../controllerUserData.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Forgot Password</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="forgot-password.css">
+    
 </head>
 <body>
-<div class="logo">
-	<img src="../Erovoutika_Logo.png">
-</div>
-	<div class="signup-vector">
-		<img src="../Forgot password.png">
-	</div>
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4 form">

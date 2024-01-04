@@ -1,3 +1,42 @@
+<?php require_once "../controllerUserData.php"; ?>
+<?php
+$page_title = 'Add Student';
+require_once('includes/load.php');
+$all_categories = find_all('students');
+
+if (isset($_POST['coursedashboard1'])) {
+    $req_fields = array('llname', 'ffname', 'ddob', 'ggender', 'mmjor', 'ssemail');
+    validate_fields($req_fields);
+
+    if (empty($errors)) {
+        $s_firstname = remove_junk($db->escape($_POST['ffname']));
+        $s_lastname = remove_junk($db->escape($_POST['llname']));
+        $s_dob = remove_junk($db->escape($_POST['ddob']));
+        $s_gender = remove_junk($db->escape($_POST['ggender']));
+        $s_major = remove_junk($db->escape($_POST['mmjor']));
+        $s_semail = remove_junk($db->escape($_POST['ssemail']));
+
+
+        $query  = "INSERT INTO students (";
+        $query .=" first_name,last_name,date_of_birth,gender,major,student_email";
+        $query .=") VALUES (";
+        $query .=" '{$s_firstname}', '{$s_lastname}', '{$s_dob}', '{$s_gender}', '{$s_major}', '{$s_semail}'";
+        $query .=")";
+        $query .=" ON DUPLICATE KEY UPDATE student_email='{$s_semail}'";
+
+        if ($db->query($query)) {
+            $session->msg('s',"students added ");
+            redirect('coursedashboard1.php', false);
+        } else {
+            $session->msg('d',' Sorry failed to add!');  
+        }
+
+    } else {
+        $session->msg("d", $errors);
+        redirect('coursedashboard1.php', false);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +65,17 @@
     <script src="https://kit.fontawesome.com/95c10202b4.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="scss/bootstrap.scss" />
+    <link rel="stylesheet" href="testcss.css">
+            
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Add this in the <head> section of your HTML -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="testScript1.js"></script>
+        
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
@@ -44,12 +94,10 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
     background: #555; }
 
-body {
-    overflow-x: hidden; }
-
 header {
+    position: relative;
     width: 100%;
-    height: 15vh; }
+    height: 80vh; }
 
 /*NAVIGATION MENU*/
 .navbar .nav-item {
@@ -61,14 +109,20 @@ header {
 .navbar .nav-item:hover {
     text-decoration: underline;
     color: darkorange; }
-.dropdown {
-    display: none; }
 
 /*CAROUSEL SLIDER*/
+figure {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    margin-top: 7%;
+    left: 0;
+    right: 0; }
 figure .carousel-item {
     position: relative;
     width: 100%;
     height: 500px;
+    object-fit: none;
     object-position: 0 5%; }
 figure .carousel-item::after {
     content: "";
@@ -105,18 +159,20 @@ figure .carousel-control-next:hover {
 figure article {
     position: absolute;
     text-align: center;
+    width: 50%;
     margin: 40px 25%;
     top: 5%; }
 
 /*LOGOS*/
-.figure-img {
-    background: #0205a1;
-    display: block; }
-.col img {
+main article {
+    background-color: #0205a1;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-top: 7%;}
+main article img{
     height: 40%;
     width: 40%; }
-.heading {
-    font-size: 50px; }
 
 /*POP-UP COURSES*/
 main section {
@@ -339,15 +395,17 @@ footer {
                     <div class="navbar-nav ms-auto mx-xl-auto">
                         <a href="https://eira.erovoutika.ph/index.php" class="nav-item active">Home</a>
                         <a href="coursedashboard.html" class="nav-item">Training</a>
-                        <a href="https://eira.erovoutika.ph/certificate.php" class="nav-item">Certificates</a>
-                        <a href="../test1.php" class="nav-item">Login</a>
+                        <a href="https://eira.erovoutika.ph/certificate.php" class="nav-item">Certificates</a>                     
+                        <!-- Anchor link to trigger the modal -->
+                        <a href="#0" class="nav-item cd-signin">Sign in</a>
+                        <a href="#0" class="nav-item cd-signup">Sign up</a>
+                        <a href="../login-signup/logout-user.php" class="nav-item cd-logout">Log out</a>
                     </div>
                 </div>
             </nav>     
         </div>
     </div>
 </nav>
-</header>
 
 <figure>
     <!--CAROUSEL SLIDER-->
@@ -380,12 +438,12 @@ footer {
     </article>
     </div>
 </figure>
-
+</header>
 
 <main>
     <!--LOGOS-->
     <article>
-        <div class="figure-img img-fluid text-center">
+        <div class="container-fluid text-center">
             <div class="row">
                 <div class="col">
                     <div class="p-2">
@@ -399,11 +457,7 @@ footer {
                 </div>
                 <div class="col">
                     <div class="p-2">
-<<<<<<< HEAD
-                        <img src="/homepage/img/javascript.png" alt="img">
-=======
                         <img src="img/javascrpit.png" alt="img">
->>>>>>> a3f23a6e24302295fb72fb0f7c259e8223781588
                     </div>
                 </div>
                 <div class="col">
@@ -418,7 +472,7 @@ footer {
     <!--HEADING-->
     <div class="position-relative" >
         <div class="heading position-relative text-center font-weight-bolder">Training Courses</div>
-            <p class="text-center font-weight-bold" style="color:darkorange;">Develop your mind & skills by our intense tracks that covers all you need</p>
+            <p class="text-center font-weight-bold p-2" style="color:darkorange;">Develop your mind & skills by our intense tracks that covers all you need</p>
     </div>
 
     <!--POPUP COURSES-->
@@ -1367,6 +1421,8 @@ footer {
         </div>
     </div>
 </footer>
+
+<?php require_once "../login-signup/login_signup.php"; ?>
 
 <script type="module" src=".js/main.js"></script>
 </body>

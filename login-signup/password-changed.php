@@ -1,4 +1,4 @@
-<?php require_once "controllerUserData.php"; ?>
+<?php require_once "../controllerUserData.php"; ?>
 <?php
 if($_SESSION['info'] == false){
     header('Location: login_signup.php');  
@@ -10,15 +10,9 @@ if($_SESSION['info'] == false){
     <meta charset="UTF-8">
     <title>Login Form</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="password-changed.css">
+   
 </head>
 <body>
-<div class="logo">
-	<img src="../image_src/Erovoutika_Logo.png">
-</div>
-	<div class="signup-vector">
-		<img src="Forgot password.png">
-	</div>
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4 form login-form">

@@ -1,24 +1,12 @@
-<?php require_once "controllerUserData.php"; ?>
-<?php 
-$email = $_SESSION['email'];
-if($email == false){
-  header('Location: login_signup.php');
-}
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Code Verification</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="user-otp.css">
-</head>
-<body>
-    <div class="container">
+<?php require_once "../controllerUserData.php"; ?>
+<div class="otpModal"> <!-- this is the entire modal form, including the background -->
+    <div class="cd-user-modal-container1"> <!-- this is the container1 wrapper -->
+        <div class="container1">
+        <div class="forms">
+                <div class="form-content">
         <div class="row">
             <div class="col-md-4 offset-md-4 form">
-                <form action="user-otp.php" method="POST" autocomplete="off">
-				<img src="../image_src/eira_logo.png">
+                <form action="" method="POST" autocomplete="off">
                     <h2 class="text-center">Verify Your Account</h2>
                     <?php 
                     if(isset($_SESSION['info'])){
@@ -50,8 +38,9 @@ if($email == false){
                     </div>
                 </form>
             </div>
+            </div>
+            </div>
         </div>
-    </div>
-    
-</body>
-</html>
+        </div>
+    </div> <!-- cd-user-modal-container1 -->
+  </div> <!-- cd-user-modal -->

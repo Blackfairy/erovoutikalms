@@ -45,7 +45,7 @@ if(isset($_POST['signup'])){
                 $_SESSION['info'] = $info;
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
-                header('location: user-otp.php');
+                header('location: ../login-signup/user-otp.php');
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while sending code!";
@@ -74,7 +74,7 @@ if(isset($_POST['signup'])){
             if($update_res){
                 $_SESSION['name'] = $name;
                 $_SESSION['email'] = $email;
-                header('location: login_signup.php');
+                header('location: ../homepage/coursedashboard.php');
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while updating code!";
@@ -83,25 +83,26 @@ if(isset($_POST['signup'])){
             $errors['otp-error'] = "You've entered incorrect code!";
         }
     }
-
  //if user click login button
 if(isset($_POST['login'])){
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
-    $check_email = "SELECT * FROM usertable WHERE email = '$email'";
-    $res = mysqli_query($con, $check_email);
+     
+    // Retrieve the hashed password from the database
+    $hashed_password_query = "SELECT password FROM usertable WHERE email = '$email'";
+    $res = mysqli_query($con, $hashed_password_query);
     
-    if(mysqli_num_rows($res) > 0){
-        $fetch = mysqli_fetch_assoc($res);
-        $fetch_pass = $fetch['password'];
-        $status = $fetch['status'];
+    if($res && mysqli_num_rows($res) > 0) {
+        $row = mysqli_fetch_assoc($res);
+        $hashed_password = $row['password'];
         
-        if(password_verify($password, $fetch_pass)){
+        // Compare the hashed password with the entered password using password_verify()
+        if(password_verify($password, $hashed_password)){
             $_SESSION['email'] = $email;
             
             if($status == 'verified'){
                 $_SESSION['password'] = $password;
-                header('location: courses.php');
+                header('location: coursedashboard.html');
             } else {
                 // Generate a new verification code
                 $code = rand(999999, 111111);
@@ -120,7 +121,7 @@ if(isset($_POST['login'])){
                         $_SESSION['info'] = $info;
                         $_SESSION['email'] = $email;
                         $_SESSION['password'] = $password;
-                        header('location: user-otp.php');
+                        header('location: ../login-signup/user-otp.php');
                         exit();
                     } else {
                         $errors['otp-error'] = "Failed while sending code! Error: $mailResult";
@@ -155,7 +156,7 @@ if(isset($_POST['login'])){
                     $info = "We will send a verification code to $email";
                     $_SESSION['info'] = $info;
                     $_SESSION['email'] = $email;
-                    header('location: reset-code.php');
+                    header('location: ../login-signup/reset-code.php');
                     exit();
                 }else{
                     $errors['otp-error'] = "Failed while sending code!";
@@ -180,7 +181,7 @@ if(isset($_POST['login'])){
             $_SESSION['email'] = $email;
             $info = "Create a new password";
             $_SESSION['info'] = $info;
-            header('location: new-password.php');
+            header('location: ../login-signup/new-password.php');
             exit();
         }else{
             $errors['otp-error'] = "You've entered incorrect code!";
@@ -224,7 +225,7 @@ if(isset($_POST['login'])){
             if($run_query) {
                 $info = "Your password changed. Now you can login with your new password.";
                 $_SESSION['info'] = $info;
-                header('Location: password-changed.php');
+                header('Location: ../login-signup/password-changed.php');
             } else {
                 $errors['db-error'] = "Failed to change your password!";
             }
@@ -232,5 +233,10 @@ if(isset($_POST['login'])){
     } else {
         $errors['db-error'] = "Failed to retrieve the old password.";
     }
+}
+ 
+   //if login now button click
+   if(isset($_POST['login-now'])){
+    header('Location: ../homepage/coursedashboard.php');
 }
 ?>
