@@ -45,7 +45,7 @@ if(isset($_POST['signup'])){
                 $_SESSION['info'] = $info;
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
-                header('location: ../login-signup/user-otp.php');
+                header('location: user-otp.php');
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while sending code!";
@@ -74,7 +74,7 @@ if(isset($_POST['signup'])){
             if($update_res){
                 $_SESSION['name'] = $name;
                 $_SESSION['email'] = $email;
-                header('location: ../homepage/coursedashboard.php');
+                header('location: ../homepage/userprofile.html');
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while updating code!";
@@ -102,7 +102,7 @@ if(isset($_POST['login'])){
             
             if($status == 'verified'){
                 $_SESSION['password'] = $password;
-                header('location: coursedashboard.html');
+                header('location: userprofile.html');
             } else {
                 // Generate a new verification code
                 $code = rand(999999, 111111);
@@ -237,6 +237,6 @@ if(isset($_POST['login'])){
  
    //if login now button click
    if(isset($_POST['login-now'])){
-    header('Location: ../homepage/coursedashboard.php');
+    header('Location: ../homepage/userprofile.html');
 }
 ?>

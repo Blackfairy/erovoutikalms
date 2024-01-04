@@ -397,8 +397,8 @@ footer {
                         <a href="coursedashboard.html" class="nav-item">Training</a>
                         <a href="https://eira.erovoutika.ph/certificate.php" class="nav-item">Certificates</a>                     
                         <!-- Anchor link to trigger the modal -->
-                        <a href="#0" class="nav-item cd-signin">Sign in</a>
-                        <a href="#0" class="nav-item cd-signup">Sign up</a>
+                        <a href="#0" class="nav-item cd-signin">Log in</a>
+                        <a href="#0" class="nav-item cd-signup">Register</a>
                         <a href="../login-signup/logout-user.php" class="nav-item cd-logout">Log out</a>
                     </div>
                 </div>
