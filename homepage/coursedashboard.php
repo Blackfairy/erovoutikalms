@@ -406,6 +406,7 @@ footer {
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                 </a>
+<<<<<<< HEAD
                 <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
@@ -441,6 +442,17 @@ footer {
                         <div class="p-2">
                             <img src="img/php.png" alt="img">
                         </div>
+=======
+                <div class="collapse navbar-collapse bg-transparent">
+                    <div class="navbar-nav ms-auto mx-xl-auto">
+                        <a href="https://eira.erovoutika.ph/index.php" class="nav-item active">Home</a>
+                        <a href="coursedashboard.html" class="nav-item">Training</a>
+                        <a href="https://eira.erovoutika.ph/certificate.php" class="nav-item">Certificates</a>                     
+                        <!-- Anchor link to trigger the modal -->
+                        <a href="#0" class="nav-item cd-signin">Log in</a>
+                        <a href="#0" class="nav-item cd-signup">Register</a>
+                        <a href="../login-signup/logout-user.php" class="nav-item cd-logout">Log out</a>
+>>>>>>> b2ad836f546a3ff4cb424fda4e4bae7a81f09918
                     </div>
                 </div>
         </div>
