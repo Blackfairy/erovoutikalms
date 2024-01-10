@@ -80,18 +80,27 @@ if (isset($_POST['coursedashboard1'])) {
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; }
+
+body::-webkit-scrollbar {
+    width: 15px; }
+body::-webkit-scrollbar-track {
+    background: #f1f1f1; }
+body::-webkit-scrollbar-thumb {
+    background: #888; }
+body::-webkit-scrollbar-thumb:hover {
+    background: #555; }
+  
 body {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: rgb(130, 106, 251);
+  background-color: #0205a1;
 }
 .container {
   position: relative;
