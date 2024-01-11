@@ -1,42 +1,4 @@
 <?php require_once "../controllerUserData.php"; ?>
-<?php
-$page_title = 'Add Student';
-require_once('includes/load.php');
-$all_categories = find_all('students');
-
-if (isset($_POST['coursedashboard1'])) {
-    $req_fields = array('llname', 'ffname', 'ddob', 'ggender', 'mmjor', 'ssemail');
-    validate_fields($req_fields);
-
-    if (empty($errors)) {
-        $s_firstname = remove_junk($db->escape($_POST['ffname']));
-        $s_lastname = remove_junk($db->escape($_POST['llname']));
-        $s_dob = remove_junk($db->escape($_POST['ddob']));
-        $s_gender = remove_junk($db->escape($_POST['ggender']));
-        $s_major = remove_junk($db->escape($_POST['mmjor']));
-        $s_semail = remove_junk($db->escape($_POST['ssemail']));
-
-
-        $query  = "INSERT INTO students (";
-        $query .=" first_name,last_name,date_of_birth,gender,major,student_email";
-        $query .=") VALUES (";
-        $query .=" '{$s_firstname}', '{$s_lastname}', '{$s_dob}', '{$s_gender}', '{$s_major}', '{$s_semail}'";
-        $query .=")";
-        $query .=" ON DUPLICATE KEY UPDATE student_email='{$s_semail}'";
-
-        if ($db->query($query)) {
-            $session->msg('s',"students added ");
-            redirect('coursedashboard1.php', false);
-        } else {
-            $session->msg('d',' Sorry failed to add!');  
-        }
-
-    } else {
-        $session->msg("d", $errors);
-        redirect('coursedashboard1.php', false);
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -457,7 +419,7 @@ footer {
                 </div>
                 <div class="col">
                     <div class="p-2">
-                        <img src="img/javascrpit.png" alt="img">
+                        <img src="img/javascript.png" alt="img">
                     </div>
                 </div>
                 <div class="col">
@@ -569,9 +531,12 @@ footer {
                                         </div>
                                     </div>
                                     <div class="button-width">
-                                        <div class="btn m-2"><a href="/login-signup/login_signup.php">Start Learning</a></div>
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning">
+                                        </form>
                                     </div>
-                                </div>
+
                             <!--CSS COURSE-->
                                 <div class="tab-pane container" id="css">
                                     <h3 class="font-weight-bolder">WHAT IS CSS?</h3>
