@@ -536,7 +536,8 @@ footer {
                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                 </div>
@@ -571,7 +572,8 @@ footer {
                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                 </div>
@@ -608,7 +610,8 @@ footer {
                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                 </div>
@@ -707,7 +710,8 @@ footer {
                                             <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                         </div>
@@ -740,12 +744,7 @@ footer {
                                                         </ul>
                                                 </div>
                                             </div>
-                                            <div class="button-width">
-                                        <!-- Change the button to an input element with type "submit" -->
-                                        <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
-                                        </form>
-                                    </div>
+                                            
                                         </div>
                                     </div>
                             </div>
@@ -849,7 +848,8 @@ footer {
                                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                                 </div>
@@ -885,7 +885,8 @@ footer {
                                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                                 </div>
@@ -921,7 +922,8 @@ footer {
                                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                                 </div>
@@ -958,7 +960,8 @@ footer {
                                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                                 </div>
@@ -993,7 +996,8 @@ footer {
                                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                                 </div>
@@ -1029,7 +1033,8 @@ footer {
                                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                                 </div>
@@ -1065,7 +1070,8 @@ footer {
                                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                                 </div>
@@ -1099,7 +1105,8 @@ footer {
                                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                                 </div>
@@ -1135,7 +1142,8 @@ footer {
                                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                                 </div>
@@ -1171,7 +1179,8 @@ footer {
                                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        <input type="submit" name="start" class="btn m-2" value="Payment" style="color: white">
+                                        <input type="submit" name="start-course" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
                                                 </div>

@@ -68,20 +68,23 @@ if(count($errors) === 0){
     }
 }
 }
-if (isset($_POST['start'])) {
+if (isset($_POST['start-course'])) {
     $email = $_SESSION['email'];
-    $password = $_SESSION['password'];
 
     // Check if the user is enrolled
     $checkEnrollmentSql = "SELECT * FROM enrolled_students WHERE student_email = '$email'";
     $run_CheckEnrollmentSql = mysqli_query($con, $checkEnrollmentSql);
 
     if ($run_CheckEnrollmentSql && mysqli_num_rows($run_CheckEnrollmentSql) > 0) {
-        // User is enrolled, redirect to the course page
-        header("Location: html.html"); // Replace 'course_page.php' with the actual course page URL
-        exit();
-    } 
+        // User is enrolled
+        header('Location: html.html');
+        exit(); // Make sure to stop further execution
+    } else {
+        // User is not enrolled
+        echo 'not_enrolled';
+    }
 }
+
 
 
 if (isset($_POST['authenticate'])) {
