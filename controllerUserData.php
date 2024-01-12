@@ -172,7 +172,7 @@ if (isset($_POST['authenticate'])) {
             if($update_res){
                 $_SESSION['name'] = $name;
                 $_SESSION['email'] = $email;
-                header('location: ../homepage/coursedashboard.php');
+                header('location: ../homepage/index.php');
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while updating code!";
@@ -204,7 +204,7 @@ if(isset($_POST['login'])){
                 $activation_data = mysqli_fetch_assoc($activation_result);
                 $activation = $activation_data['activation'];
                 $_SESSION['password'] = $password;
-                header('location: coursedashboard.php');
+                header('location: index.php');
             } else {
                 // Generate a new verification code
                 $code = rand(999999, 111111);

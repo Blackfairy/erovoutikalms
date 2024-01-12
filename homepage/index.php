@@ -359,12 +359,12 @@ footer {
                 <div class="collapse navbar-collapse bg-transparent">
                     <div class="navbar-nav ms-auto mx-xl-auto">
                         <a href="https://eira.erovoutika.ph/index.php" class="nav-item active">Home</a>
-                        <a href="coursedashboard.html" class="nav-item">Training</a>
+                        <a href="index.php" class="nav-item">Training</a>
                         <a href="https://eira.erovoutika.ph/certificate.php" class="nav-item">Certificates</a>                     
                         <!-- Anchor link to trigger the modal -->
                         <a href="#0" class="nav-item cd-signin">Log in</a>
                         <a href="#0" class="nav-item cd-signup">Register</a>
-                        <a href="../login-signup/logout-user.php" class="nav-item cd-logout">Log out</a>
+                        
                     </div>
                 </div>
             </nav>     
