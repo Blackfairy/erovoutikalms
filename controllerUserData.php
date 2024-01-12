@@ -69,132 +69,89 @@ if(count($errors) === 0){
 }
 }
 if (isset($_POST['start'])) {
-    $courseName = $_POST['courseName']; 
+    $email = $_SESSION['email'];
+    $password = $_SESSION['password'];
+
+    // Check if the user is enrolled
+    $checkEnrollmentSql = "SELECT * FROM enrolled_students WHERE student_email = '$email'";
+    $run_CheckEnrollmentSql = mysqli_query($con, $checkEnrollmentSql);
+
+    if ($run_CheckEnrollmentSql && mysqli_num_rows($run_CheckEnrollmentSql) > 0) {
+        // User is enrolled, redirect to the course page
+        header("Location: html.html"); // Replace 'course_page.php' with the actual course page URL
+        exit();
+    } 
 }
+
+
 if (isset($_POST['authenticate'])) {
     $email = $_SESSION['email'];
     $password = $_SESSION['password'];
 
     if ($email != false && $password != false) {
-        // Get the course name from the form
+        $courseName = $_POST['courseName']; // Get the course name from the form
         $referenceNumber = $_POST['reference_number']; // Get the reference number from the form
 
-        // File upload handling
-        $targetDir = "uploads/";
-        if (!file_exists($targetDir)) {
-            mkdir($targetDir, 0755, true);
-        }
-        
-        $targetFile = $targetDir . basename($_FILES["img"]["name"]);
-        $targetFile = $targetDir . basename($_FILES["img"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+        // Continue with existing authentication logic
 
-        // Check if the file is an actual image
-        $check = getimagesize($_FILES["img"]["tmp_name"]);
-        if ($check === false) {
-            $errors['img-error'] = "File is not an image.";
-            $uploadOk = 0;
-        }
+        $sql = "SELECT * FROM students WHERE student_email = '$email'";
+        $run_Sql = mysqli_query($con, $sql);
 
-        // Check if the file already exists
-        if (file_exists($targetFile)) {
-            $errors['img-error'] = "Sorry, the file already exists.";
-            $uploadOk = 0;
-        }
+        if ($run_Sql) {
+            $fetch_info = mysqli_fetch_assoc($run_Sql);
+            $activation = $fetch_info['activation'];
 
-        // Check file size (adjust as needed)
-        if ($_FILES["img"]["size"] > 500000) {
-            $errors['img-error'] = "Sorry, your file is too large.";
-            $uploadOk = 0;
-        }
+            if ($activation == "1") {
+                $adminEmail = "amanterenz1@gmail.com"; // Replace with the actual admin email
+                $subject = "Authorization Request";
+                $userMessage = "Your authorization request for the $courseName course has been sent to the admin. Wait for approval.
+                   
+                ";
 
-        // Allow only certain file formats (you can customize this list)
-        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-            $errors['img-error'] = "Sorry, only JPG, JPEG, PNG, and GIF files are allowed.";
-            $uploadOk = 0;
-        }
+                $adminMessage = "
+                        User with email $email is requesting authorization for $courseName course.
+                   
+                ";
 
-        // Check if $uploadOk is set to 0 by an error
-        if ($uploadOk == 0) {
-            $errors['img-error'] = "Sorry, your file was not uploaded.";
-        } else {
-            // If everything is ok, try to upload the file
-            if (move_uploaded_file($_FILES["img"]["tmp_name"], $targetFile)) {
-                // Continue with existing authentication logic
+                $userSender = "From: erovoutika.test.email01@gmail.com";
+                $adminSender = "From: erovoutika.test.email01@gmail.com";
 
-                $sql = "SELECT * FROM students WHERE student_email = '$email'";
-                $run_Sql = mysqli_query($con, $sql);
-
-                if ($run_Sql) {
-                    $fetch_info = mysqli_fetch_assoc($run_Sql);
-                    $activation = $fetch_info['activation'];
-
-                    if ($activation == "1") {
-                        $adminEmail = "amanterenz1@gmail.com"; // Replace with the actual admin email
-                        $subject = "Authorization Request";
-                        $userMessage = "
-                        <html>
-                        <body>
-                            <p>Your authorization request for the $courseName course has been sent to the admin. Wait for approval.</p>
-                            <p>Uploaded Image:</p>
-                            <img src='$targetFile' alt='Uploaded Image' style='max-width: 300px;'>
-                        </body>
-                        </html>
-                    ";
-                    
-                    $adminMessage = "
-                        <html>
-                        <body>
-                            <p>User with email $email is requesting authorization for $courseName course.</p>
-                            <p>Uploaded Image:</p>
-                            <img src='$targetFile' alt='Uploaded Image' style='max-width: 300px;'>
-                        </body>
-                        </html>
-                    ";
-
-                        $userSender = "From: erovoutika.test.email01@gmail.com";
-                        $adminSender = "From: erovoutika.test.email01@gmail.com";
-
-                        // Send email to the user
-                        if (mail($email, $subject, $userMessage, $userSender)) {
-                            $info = "Authorization request was sent to Admin. Wait for approval.";
-                            $_SESSION['info'] = $info;
-                            $_SESSION['email'] = $email;
-                            $_SESSION['password'] = $password;
-                            echo "<script>
-                                alert('Authorization request sent to user and admin. Wait for approval.');
-                            </script>";
-                        } else {
-                            $errors['otp-error'] = "Failed while sending Authorization request to the user!";
-                        }
-
-                        // Send email to the admin
-                        if (mail($adminEmail, $subject, $adminMessage, $adminSender)) {
-                            // Email to admin sent successfully
-                        } else {
-                            $errors['otp-error'] = "Failed while sending Authorization request to the admin!";
-                        }
-
-                        // Update the new 'receipt' table in the existing database
-                        $receiptSql = "INSERT INTO `receipt` 
-                            (`image_path`, `reference_number`, `user_email`) 
-                            VALUES ('$targetFile', '$referenceNumber', '$email')";
-                        $con->query($receiptSql);
-                    } else {
-                        $errors['otp-error'] = "User is not authorized.";
-                    }
+                // Send email to the user
+                if (mail($email, $subject, $userMessage, $userSender)) {
+                    $info = "Authorization request was sent to Admin. Wait for approval.";
+                    $_SESSION['info'] = $info;
+                    $_SESSION['email'] = $email;
+                    $_SESSION['password'] = $password;
+                    echo "<script>
+                        alert('Authorization request sent to user and admin. Wait for approval.');
+                    </script>";
                 } else {
-                    $errors['otp-error'] = "Error while querying the database.";
+                    $errors['otp-error'] = "Failed while sending Authorization request to the user!";
                 }
+
+                // Send email to the admin
+                if (mail($adminEmail, $subject, $adminMessage, $adminSender)) {
+                    // Email to admin sent successfully
+                } else {
+                    $errors['otp-error'] = "Failed while sending Authorization request to the admin!";
+                }
+
+                // Update the new 'receipt' table in the existing database
+                $receiptSql = "INSERT INTO `receipt` 
+                    (`reference_number`, `user_email`) 
+                    VALUES ('$referenceNumber', '$email')";
+                $con->query($receiptSql);
             } else {
-                $errors['img-error'] = "Sorry, there was an error uploading your file.";
+                $errors['otp-error'] = "User is not authorized.";
             }
+        } else {
+            $errors['otp-error'] = "Error while querying the database.";
         }
     } else {
         $errors['otp-error'] = "Email or password is missing.";
     }
 }
+
 
 
 
@@ -215,7 +172,7 @@ if (isset($_POST['authenticate'])) {
             if($update_res){
                 $_SESSION['name'] = $name;
                 $_SESSION['email'] = $email;
-                header('location: ../homepage/userprofile.html');
+                header('location: ../homepage/coursedashboard.php');
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while updating code!";

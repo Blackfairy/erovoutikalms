@@ -536,7 +536,6 @@ footer {
                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                        <input type="hidden" id="courseName" name="courseName" value="HTML">
                                             <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>

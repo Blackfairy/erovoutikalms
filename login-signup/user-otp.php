@@ -1,10 +1,5 @@
 <?php require_once "../controllerUserData.php"; ?>
-<?php 
-$email = $_SESSION['email'];
-if($email == false){
-  header('Location: login_signup.php');
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

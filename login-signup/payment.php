@@ -30,6 +30,20 @@
                                         <label for="reference_number" class="text-black form-label">Reference Number</label>
                                         <input type="text" name="reference_number" class="form-control" id="reference_number" placeholder="Reference Number" onkeyup="this.value=this.value.replace(/[<>]/g,'')" required="">
                                     </div>
+                                    <div class="col-md-12 mb-3">
+                                        <label for="courseName" class="text-black form-label">Course Name</label>
+                                        <select name="courseName" class="form-control" id="courseName" required="">
+                                        <option value="" disabled selected>Select Course</option>
+                                        <option value="HTML">HTML</option>
+                                        <option value="CSS">CSS</option>
+                                        <option value="JAVASCRIPT">JAVASCRIPT</option>
+                                        <option value="PHP">PHP</option>
+                                        <option value="GAME DEVELOPMENT & ANIMATION">GAME DEVELOPMENT & ANIMATION</option>
+                                        <option value="CISCO WAN TECHNOLOGY">CISCO WAN TECHNOLOGY</option>
+                                        <option value="CLOUD COMPUTING">CLOUD COMPUTING</option>
+                                        <option value="other">Other</option>
+                                    </select>    
+                                    </div>
                                     <!-- Submit button -->
                                     <div class="button input-box">
                                         <input type="submit" name="authenticate" value="Submit">
