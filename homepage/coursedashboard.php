@@ -28,13 +28,16 @@
 
     <link rel="stylesheet" href="scss/bootstrap.scss" />
     <link rel="stylesheet" href="testcss.css">
+    
+    <link rel="stylesheet" href="testcss1.css">
             
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Add this in the <head> section of your HTML -->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="testScript1.js"></script>
+    <script src="testScript1.js"></script>
+    <script src="testScript2.js"></script>
         
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -59,7 +62,7 @@ body::-webkit-scrollbar-thumb:hover {
 header {
     position: relative;
     width: 100%;
-    height: 80vh; }
+    height: 500px; }
 
 /*NAVIGATION MENU*/
 .navbar .nav-item {
@@ -445,21 +448,21 @@ footer {
                 <div class="d-inline-block">
                     <img src="img/course.png" alt="img">
                     <h4>Front-End Development</h4>
-                    <a class="button position-relative text-center font-weight-bold" href="#modal1">Details<i class="fa-solid fa-arrow-up-right-from-square m-lg-1"></i></a>
+                    <a class="button position-relative text-center font-weight-bold" href="#modal1">Details<i class="fa-solid fa-arrow-up-right-from-square m-lg-1" aria-hidden="true"></i></a>
                 </div>
             </div>
         <!--COURSE MODAL-->
             <div class="popup" id="modal1">
                 <a class="popup__overlay" href="#"></a>
                     <div class="popup__wrapper m-3">
-                        <a class="popup__close" href="#"><i class="fa-regular fa-circle-xmark"></i></a>
+                        <a class="popup__close" href="#"><i class="fa-regular fa-circle-xmark" aria-hidden="true"></i></a>
                             <nav>
                                 <ul class="nav nav-tabs list-unstyled border-bottom p-3" id="tabContent">
                                     <li class="nav-item">
                                         <a href="#about" data-toggle="tab">ABOUT</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#html" data-toggle="tab">HTML</a>
+                                        <a href="#html" data-toggle="tab" class="active">HTML</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#css" data-toggle="tab">CSS</a>
@@ -471,7 +474,7 @@ footer {
                             </nav>
                             <div class="tab-content p-3">
                             <!--ABOUT COURSE-->
-                                <div class="tab-pane container active" id="about">
+                                <div class="tab-pane container" id="about">
                                     <h3 class="font-weight-bolder">WHAT IS FRONT-END DEVELOPMENT?</h3>
                                     <p class="lh-base">
                                         Front-end development refers to the part of web development that deals with the user interface and user experience of a website. <br>
@@ -502,7 +505,7 @@ footer {
                                     </div>
                                 </div>
                             <!--HTML COURSE-->
-                                <div class="tab-pane container" id="html">
+                                <div class="tab-pane container active" id="html">
                                     <h3 class="font-weight-bolder">WHAT IS HTML?</h3>
                                     <p class="lh-base">
                                         HTML stands for HyperText Markup Language. It is used on the frontend and gives the structure to the webpage which <br>
@@ -533,10 +536,11 @@ footer {
                                     <div class="button-width">
                                         <!-- Change the button to an input element with type "submit" -->
                                         <form method="post" action="">
-                                            <input type="submit" name="start" class="btn m-2" value="Start Learning">
+                                        <input type="hidden" id="courseName" name="courseName" value="HTML">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
                                         </form>
                                     </div>
-
+                                </div>
                             <!--CSS COURSE-->
                                 <div class="tab-pane container" id="css">
                                     <h3 class="font-weight-bolder">WHAT IS CSS?</h3>
@@ -566,7 +570,10 @@ footer {
                                         </div>
                                     </div>
                                     <div class="button-width">
-                                        <div class="btn m-2"><a href="/login-signup/login_signup.php">Start Learning</a></div>
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
                                     </div>
                                 </div>
                             <!--JAVASCRIPT COURSE-->
@@ -600,537 +607,579 @@ footer {
                                         </div>
                                     </div>
                                     <div class="button-width">
-                                        <div class="btn m-2"><a href="/login-signup/login_signup.php">Start Learning</a></div>
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                     </div>
             </div>
 
-        <!--BACK END DEVELOPMEnT COURSES-->
-            <div class="dialog col position-relative text-center">
-                <div class="d-inline-block">
-                    <img src="img/course.png" alt="img">
-                    <h4>Back-End Development</h4>
-                    <a class="button position-relative text-center font-weight-bold" href="#modal2">Details<i class="fa-solid fa-arrow-up-right-from-square m-lg-1"></i></a>
-                </div>
-            </div>
-        <!--COURSE MODAL-->
-            <div class="popup " id="modal2">
-                <a class="popup__overlay" href="#"></a>
-                    <div class="popup__wrapper">
-                        <a class="popup__close" href="#"><i class="fa-regular fa-circle-xmark"></i></a>
-                            <nav>
-                                <ul class="nav nav-tabs list-unstyled border-bottom p-3" id="tabContent">
-                                    <li class="nav-item"> 
-                                        <a href="#dataAbout" data-toggle="tab">ABOUT</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#database" data-toggle="tab">DATABASE</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#php" data-toggle="tab">PHP</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <div class="tab-content p-3">
-                            <!--ABOUT COURSE-->
-                                <div class="tab-pane container active" id="dataAbout">
-                                    <h3 class="font-weight-bolder">WHAT IS BACK-END DEVELOPMENT?</h3>
-                                    <p class="lh-base">
-                                        Refers to the part of web development concerned with creating server-side applications and services. 
-                                        This includes creating APIs, managing databases, and developing logic for the front-end front-end applications 
-                                        to interact with. They work closely with front-end developers, but their work is usually less visible to the end user. </p>
-                                    <div class="w-75 ml-sm-5">
-                                        <div class="d-inline float-left">
-                                            <h5 class="font-weight-bold m-2">Back-End Development Skills</h5>
-                                                <ul class="list-group p-0 m-3">
-                                                    <li>Programming Languages: Java, Python, PHP </li>
-                                                    <li>Web Frameworks</li>
-                                                    <li>Data Structure and Algorithm</li>
-                                                    <li>Server Management</li>
-                                                    <li>Application Programming Interface (API)</li>
-                                                    <li><a href="https://www.geeksforgeeks.org/back-end-developer-skills/">See more...</a></li>
-                                                </ul>
-                                        </div>
-                                        <div class="d-inline float-right">
-                                            <h5 class="font-weight-bold m-2">Back-End Job Titles</h5>
-                                                <ul class="list-group p-0 m-3">
-                                                    <li>Back-end Developer</li>
-                                                    <li>Full Stack Developer</li>
-                                                    <li>Back-end Engineer</li>
-                                                    <li>DevOps Engineer</li>
-                                                    <li>SQL Developer</li>
-                                                    <li><a href="https://www.indeed.com/career-advice/career-development/front-end-vs-back-end">See more...</a></li>
-                                                </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            <!--DATABASE COURSE-->
-                                <div class="tab-pane container" id="database">
-                                    <h3 class="font-weight-bolder">WHAT IS A DATABASE?</h3>
-                                    <p class="lh-base">
-                                        A database is a collection of useful data of one or more related organizations structured in a way to make data 
-                                        an asset to the organization. A database management system is a software designed to assist in maintaining and 
-                                        extracting large collections of data in a timely fashion. </p>
-                                    <div class="datacourse-width">
-                                        <div class="d-inline float-left">
-                                            <h5 class="font-weight-bold m-2"> IDEs for DATABASE</h5>
-                                                <ul class="list-group p-0 m-3">
-                                                    <li>Visual Studio Code</li>
-                                                    <li>Oracle SQL Developer</li>
-                                                    <li>DataGrip</li>
-                                                    <li>PL/SQL Developer</li>
-                                                    <li>IntelliJ IDEA</li>
-                                                </ul>
-                                        </div>
-                                        <div class="d-inline float-right">
-                                            <h5 class="font-weight-bold m-2">COURSE OUTLINE</h5>
-                                                <ul class="list-group p-0 m-3">
-                                                    <li>Learn the basics</li>
-                                                    <li>Information Management</li>
-                                                    <li>Database VS DBMS</li>
-                                                    <li>What is DBMS?</li>
-                                                    <!--DATABASE FILE >> https://drive.google.com/file/d/1eAj5GYqWHb3tM3TutnlR6hw8txp52zcJ/view?usp=drive_link-->
-                                                </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            <!--PHP COURSE-->
-                                <div class="tab-pane container" id="php">
-                                    <h3 class="font-weight-bolder">WHAT IS PHP?</h3>
-                                    <p class="lh-base">
-                                        A relational database is a type of database that stores and provides access to data points that are related to 
-                                        one another. Relational databases store data in a series of tables. Interconnections between the tables are 
-                                        specified as foreign keys. A foreign key is a unique reference from one row in a relational table to another 
-                                        row in a table, which can be the same table but is most commonly a different table. </p>
-                                    <div class="course-width">
-                                        <div class="float-left p-3">
-                                            <h5 class="font-weight-bold m-2"> IDEs for RELATIONAL DATABASE</h5>
-                                                <ul class="list-group p-0 m-3">
-                                                    <li>MySQL Workbench</li>
-                                                    <li>HeidiSQL</li>
-                                                    <li>SQL Server Management Studio</li>
-                                                    <li>DataGrip</li>
-                                                </ul>
-                                        </div>
-                                        <div class="float-right p-3">
-                                            <h5 class="font-weight-bold m-2">COURSE OUTLINE</h5>
-                                                <ul class="list-group p-0 m-3">
-                                                    <li>Learn the basics</li>
-                                                    <li>Relational Model and Mathematical Foundation</li>
-                                                    <li>Define, Query and Manipulate Relational Database</li>
-                                                    <li>Conceptual Database Modelling Methods</li>
-                                                    <li>Query Processing and Optimization</li>
-                                                </ul>
-                                        </div>
-                                    </div>
-                                    <div class="button-width">
-                                        <div class="btn m-2"><a href="/login-signup/login_signup.php">Start Learning</a></div>
-                                    </div>
-                                </div>
-                            </div>
+                <!--BACK END DEVELOPMENT COURSES-->
+                    <div class="dialog col position-relative text-center">
+                        <div class="d-inline-block">
+                            <img src="img/course.png" alt="img" style="height:150px; width:260px; padding-top: 10px;">
+                            <h4>Back-End Development</h4>
+                            <a class="button position-relative text-center font-weight-bold" href="#modal2">Details<i class="fa-solid fa-arrow-up-right-from-square m-lg-1" aria-hidden="true"></i></a>
+                        </div>
                     </div>
-            </div>
-
-        <!--SELF PACED PROGRAM COURSES-->
-            <div class="dialog col position-relative text-center">
-                <div class="d-inline-block">
-                    <img src="img/course.png" alt="img">
-                    <h4>Self-Paced Training Program</h4>
-                    <a class="button position-relative font-weight-bold" href="#modal3">Details<i class="fa-solid fa-arrow-up-right-from-square m-lg-1"></i></a>
-                </div>
-            </div>
-        <!--COURSE MODAL-->
-            <div class="popup" id="modal3">
-                <a class="popup__overlay" href="#"></a>
-                    <div class="popup__wrapper">
-                        <a class="popup__close" href="#"><i class="fa-regular fa-circle-xmark"></i></a>
-                            <nav>
-                                <ul class="nav nav-tabs list-unstyled border-bottom p-3" id="tabContent">
-                                    <li class="nav-item">
-                                        <a href="#programAbout" data-toggle="tab">ABOUT</a>
-                                    </li>
-                                    <li class="dropdown" data-toggle="tab">
-                                        <button class="dropdown-toggle" type="button" data-toggle="dropdown">
-                                            PROGRAMS
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item-text" href="#gamedev" data-toggle="tab">GAME DEVELOPMENT & ANIMATION</a></li>
-                                            <li><a class="dropdown-item-text" href="#cisco" data-toggle="tab">CISCO WAN TECHNOLOGY</a></li>
-                                            <li><a class="dropdown-item-text" href="#cloud" data-toggle="tab">CLOUD COMPUTING</a></li>
-                                            <li><a class="dropdown-item-text" href="#machine" data-toggle="tab">MACHINE LEARNING</a></li>
-                                            <li><a class="dropdown-item-text" href="#linux" data-toggle="tab">LINUX SYSTEM ADMINISTRATION</a></li>
-                                            <li><a class="dropdown-item-text" href="#datanalytics" data-toggle="tab">DATA ANALYTICS</a></li>
-                                            <li><a class="dropdown-item-text" href="#plc-1" data-toggle="tab">PLC PROGRAMMING LEVEL-1</a></li>
-                                            <li><a class="dropdown-item-text" href="#plc-2" data-toggle="tab">PLC PROGRAMMING LEVEL-2</a></li>
-                                            <li><a class="dropdown-item-text" href="#telecom" data-toggle="tab">INNOVATION IN TELECOMMUNICATION</a></li>
-                                            <li><a class="dropdown-item-text" href="#industrial" data-toggle="tab">INDUSTRIAL PNUEMATIC SYSTEM</a></li>
+                <!--COURSE MODAL-->
+                    <div class="popup " id="modal2">
+                        <a class="popup__overlay" href="#"></a>
+                            <div class="popup__wrapper">
+                                <a class="popup__close" href="#"><i class="fa-regular fa-circle-xmark" aria-hidden="true"></i></a>
+                                    <nav>
+                                        <ul class="nav nav-tabs list-unstyled border-bottom p-3" id="tabContent">
+                                            <li class="nav-item"> 
+                                                <a href="#dataAbout" data-toggle="tab">ABOUT</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#database" data-toggle="tab" class="">DATABASE</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#php" data-toggle="tab" class="active">PHP</a>
+                                            </li>
                                         </ul>
-                                    </li>
-                                </ul>
-                            </nav>
-                                <div class="tab-content p-3">
+                                    </nav>
+                                    <div class="tab-content p-3">
                                     <!--ABOUT COURSE-->
-                                        <div class="tab-pane container active" id="programAbout">
-                                            <h3 class="font-weight-bolder"> WHY CHOOSE OUR PROGRAMS? </h3>
-                                            <p class="lh-base"> 
-                                                Embarking on the training program offered by Erovoutika LMS is a transformative journey towards personal and 
-                                                professional excellence. It stands out as a premier learning platform, offering a unique and innovative approach to education that goes beyond 
-                                                traditional training methods.</p>
-                                            <div class="w-75 ml-sm-5">
-                                                <div class="d-inline">
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>
-                                                                <span class="font-weight-bold">Cutting-edge Curriculum:</span> 
-                                                                Erovoutika LMS prides itself on delivering a curriculum that is at the forefront of industry trends and technological advancements. </li>
-                                                            <li>
-                                                                <span class="font-weight-bold">Flexible Learning Paths:</span> 
-                                                                Recognizing the diverse needs and schedules of learners, Erovoutika LMS offers flexible learning paths.</li>
-                                                            <li>
-                                                                <span class="font-weight-bold">Innovative Teaching Methodologies:</span> 
-                                                                Employs state-of-the-art teaching methodologies, including interactive simulations, virtual labs, and real-world case studies.</li>
-                                                            <li>
-                                                                <span class="font-weight-bold">Industry-Expert Instructors:</span> 
-                                                                The training program is led by a team of seasoned industry experts who bring a wealth of real-world experience to the virtual classroom. </li>
-                                                            <li>
-                                                                <span class="font-weight-bold">Personalized Learning Experience:</span>
-                                                                The platform employs adaptive learning technologies to tailor the educational experience to individual needs, ensuring that participants can progress at their own pace and focus on areas that require additional attention.</li>
-                                                        </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <!--GAME DEVELOPMENT & ANIMATION-->
-                                        <div class="tab-pane container" id="gamedev">
-                                            <h3 class="font-weight-bolder"> WHAT IS GAME DEVELOPMENT and ANIMATION? </h3>
+                                        <div class="tab-pane container" id="dataAbout">
+                                            <h3 class="font-weight-bolder">WHAT IS BACK-END DEVELOPMENT?</h3>
                                             <p class="lh-base">
-                                                Game development involves the creation of video games. It includes game design, programming, art, 
-                                                and testing. Various tools and techniques are used in game development, including game engines, 
-                                                game art software, and animation software.</p>
-                                            <div class="w-80 ml-sm-5">
+                                                Refers to the part of web development concerned with creating server-side applications and services. 
+                                                This includes creating APIs, managing databases, and developing logic for the front-end front-end applications 
+                                                to interact with. They work closely with front-end developers, but their work is usually less visible to the end user. </p>
+                                            <div class="w-75 ml-sm-5">
                                                 <div class="d-inline float-left">
-                                                    <h5 class="font-weight-bold m-2">Game Development & Animation Skills</h5>
+                                                    <h5 class="font-weight-bold m-2">Back-End Development Skills</h5>
                                                         <ul class="list-group p-0 m-3">
-                                                            <li>Programming languages like C++, Unity, and Unreal Engine</li>
-                                                            <li>Design characters, environments, and special effects</li>
-                                                            <li>Drawing, rigging, and compositing</li>
-                                                            <li>knowledge of physics, mathematics, and music theory</li>
+                                                            <li>Programming Languages: Java, Python, PHP </li>
+                                                            <li>Web Frameworks</li>
+                                                            <li>Data Structure and Algorithm</li>
+                                                            <li>Server Management</li>
+                                                            <li>Application Programming Interface (API)</li>
+                                                            <li><a href="https://www.geeksforgeeks.org/back-end-developer-skills/">See more...</a></li>
                                                         </ul>
                                                 </div>
                                                 <div class="d-inline float-right">
-                                                    <h5 class="font-weight-bold m-2">Game Development & Animation Job Titles</h5>
+                                                    <h5 class="font-weight-bold m-2">Back-End Job Titles</h5>
                                                         <ul class="list-group p-0 m-3">
-                                                            <li>3D Designer</li>
-                                                            <li>Game Developer</li>
-                                                            <li>Motion Capture Artist</li>
-                                                            <li>Animation Artist</li>
-                                                            <li>Game Programmer</li>
-                                                        </ul>
-                                                </div>
-                                            </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
-                                            </div>
-                                        </div>
-                                    <!--CISCO WAN TECHNOLOGY-->
-                                        <div class="tab-pane container" id="cisco">
-                                            <h3 class="font-weight-bolder">WHAT IS CISCO WAN TECHNOLOGY?</h3>
-                                            <p class="lh-base">
-                                                Refers to the set of networking protocols and devices used to create and maintain wide-area 
-                                                networks (WANs). Cisco WAN technology includes products and services such as routers, switches, firewalls, 
-                                                and VPNs that are designed to provide secure and reliable connectivity between WAN devices.</p>
-                                            <div class="w-75 ml-sm-5">
-                                                <div class="d-inline float-left">
-                                                    <h5 class="font-weight-bold m-2">Cisco Wan Technology Skills</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Infastructure requirements</li>
-                                                            <li>Compnents of Wide and Local area networks</li>
-                                                            <li>Network Operating System</li>
-                                                            <li>Network Protocols</li>
-                                                            <li>Diagnostic tools</li>
-                                                        </ul>
-                                                </div>
-                                                <div class="d-inline float-right">
-                                                    <h5 class="font-weight-bold m-2">Cisco Wan Technology Job Titles</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Network Engineer</li>
-                                                            <li>Network Design Engineer</li>
-                                                            <li>Network Architect</li>
-                                                            <li>WAN Professional</li>
-                                                            <li>Cisco Certified Internetwork Expert (CCIE)</li>
-                                                        </ul>
-                                                </div>
-                                            </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
-                                            </div>
-                                        </div>
-                                    <!--CLOUD COMPUTING-->
-                                        <div class="tab-pane container" id="cloud">
-                                            <h3 class="font-weight-bolder">WHAT IS CLOUD COMPUTING?</h3>
-                                            <p class="lh-base">
-                                                Refers to the delivery of computing resources, including servers, storage, databases, 
-                                                networking, software, analytics, and intelligence, over the internet. Large clouds often have functions 
-                                                distributed over multiple locations, each of which is a data center.</p>
-                                            <div class="w-75 ml-sm-5">
-                                                <div class="d-inline float-left">
-                                                    <h5 class="font-weight-bold m-2">Cloud Computing Skills</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Automation</li>
-                                                            <li>Cloud Security</li>
-                                                            <li>DevOps</li>
-                                                            <li>Computer Architecture</li>
-                                                            <li>Machine Learning</li>
-                                                        </ul>
-                                                </div>
-                                                <div class="d-inline float-right">
-                                                    <h5 class="font-weight-bold m-2">Cloud Computing Job Titles</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Cloud Architect</li>
+                                                            <li>Back-end Developer</li>
+                                                            <li>Full Stack Developer</li>
+                                                            <li>Back-end Engineer</li>
                                                             <li>DevOps Engineer</li>
-                                                            <li>Cloud Security Specialist</li>
-                                                            <li>Cloud Operations Mnager</li>
-                                                            <li>Cloud Compliance Officer</li>
+                                                            <li>SQL Developer</li>
+                                                            <li><a href="https://www.indeed.com/career-advice/career-development/front-end-vs-back-end">See more...</a></li>
                                                         </ul>
                                                 </div>
                                             </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
-                                            </div>
                                         </div>
-                                    <!--MACHINE LEARNING-->
-                                        <div class="tab-pane container" id="machine">
-                                            <h3 class="font-weight-bolder">WHAT IS MACHINE LEARNING?</h3>
+                                    <!--DATABASE COURSE-->
+                                        <div class="tab-pane container" id="database">
+                                            <h3 class="font-weight-bolder">WHAT IS A DATABASE?</h3>
                                             <p class="lh-base">
-                                                A branch of artificial intelligence that involves the use of algorithms and statistical models to enable 
-                                                computers to improve their performance on a specific task over time, based on experience. Use and development of 
-                                                computer systems that are able to learn and adapt without following explicit instructions, by using algorithms 
-                                                and statistical models to analyze and draw inferences from patterns in data.</p>
-                                            <div class="w-75 ml-sm-5">
+                                                A database is a collection of useful data of one or more related organizations structured in a way to make data 
+                                                an asset to the organization. A database management system is a software designed to assist in maintaining and 
+                                                extracting large collections of data in a timely fashion. </p>
+                                            <div class="datacourse-width">
                                                 <div class="d-inline float-left">
-                                                    <h5 class="font-weight-bold m-2">Machine Learning Skills</h5>
+                                                    <h5 class="font-weight-bold m-2"> IDEs for DATABASE</h5>
                                                         <ul class="list-group p-0 m-3">
-                                                            <li>Deep Learning</li>
-                                                            <li>Artificial Neural Network</li>
-                                                            <li>Data Visualization</li>
-                                                            <li>Algortihm</li>
-                                                            <li>Statistics</li>
+                                                            <li>Visual Studio Code</li>
+                                                            <li>Oracle SQL Developer</li>
+                                                            <li>DataGrip</li>
+                                                            <li>PL/SQL Developer</li>
+                                                            <li>IntelliJ IDEA</li>
                                                         </ul>
                                                 </div>
                                                 <div class="d-inline float-right">
-                                                    <h5 class="font-weight-bold m-2">Machine Learning Job Titles</h5>
+                                                    <h5 class="font-weight-bold m-2">COURSE OUTLINE</h5>
                                                         <ul class="list-group p-0 m-3">
-                                                            <li>Data Scientist</li>
-                                                            <li>Machine Learning Research Scientist</li>
-                                                            <li>Data Analyst</li>
-                                                            <li>AI Research Scientist</li>
-                                                            <li>Machine Learning Engineer</li>
+                                                            <li>Learn the basics</li>
+                                                            <li>Information Management</li>
+                                                            <li>Database VS DBMS</li>
+                                                            <li>What is DBMS?</li>
+                                                            <!--DATABASE FILE >> https://drive.google.com/file/d/1eAj5GYqWHb3tM3TutnlR6hw8txp52zcJ/view?usp=drive_link-->
                                                         </ul>
                                                 </div>
                                             </div>
                                             <div class="button-width">
-                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
-                                            </div>
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
+                                    </div>
                                         </div>
-                                    <!--LINUX SYSTEM ADMINISTRATION-->
-                                        <div class="tab-pane container" id="linux">
-                                            <h3 class="font-weight-bolder">WHAT IS LINUX SYSTEM ADMINISTRATION?</h3>
-                                            <p class="lh-base"> 
-                                                Involves managing and maintaining Linux systems, including installing and configuring software, 
-                                                managing user accounts and security, troubleshooting system issues, and backups and recovery. </p>
-                                            <div class="w-75 ml-sm-5">
-                                                <div class="d-inline float-left">
-                                                    <h5 class="font-weight-bold m-2">Linux System Administration Skills</h5>
+                                    <!--PHP COURSE-->
+                                        <div class="tab-pane container active" id="php">
+                                            <h3 class="font-weight-bolder">WHAT IS PHP?</h3>
+                                            <p class="lh-base">
+                                                A relational database is a type of database that stores and provides access to data points that are related to 
+                                                one another. Relational databases store data in a series of tables. Interconnections between the tables are 
+                                                specified as foreign keys. A foreign key is a unique reference from one row in a relational table to another 
+                                                row in a table, which can be the same table but is most commonly a different table. </p>
+                                            <div class="course-width">
+                                                <div class="float-left p-3">
+                                                    <h5 class="font-weight-bold m-2"> IDEs for RELATIONAL DATABASE</h5>
                                                         <ul class="list-group p-0 m-3">
-                                                            <li>Command Line Interface</li>
-                                                            <li>Shell Scripting</li>
-                                                            <li>Network Fundamentals</li>
-                                                            <li>Management and Administration</li>
-                                                            <li>Automation and Virtualization</li>
+                                                            <li>MySQL Workbench</li>
+                                                            <li>HeidiSQL</li>
+                                                            <li>SQL Server Management Studio</li>
+                                                            <li>DataGrip</li>
                                                         </ul>
                                                 </div>
-                                                <div class="d-inline float-right">
-                                                    <h5 class="font-weight-bold m-2">Linux System Administration Job Titles</h5>
+                                                <div class="float-right p-3">
+                                                    <h5 class="font-weight-bold m-2">COURSE OUTLINE</h5>
                                                         <ul class="list-group p-0 m-3">
-                                                            <li>System Administrator</li>
-                                                            <li>DevOps Engineer</li>
-                                                            <li>IT Operations Specialist</li>
-                                                            <li>Cloud Systems Engineer</li>
-                                                            <li>System Analyst</li>
+                                                            <li>Learn the basics</li>
+                                                            <li>Relational Model and Mathematical Foundation</li>
+                                                            <li>Define, Query and Manipulate Relational Database</li>
+                                                            <li>Conceptual Database Modelling Methods</li>
+                                                            <li>Query Processing and Optimization</li>
                                                         </ul>
                                                 </div>
                                             </div>
                                             <div class="button-width">
-                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
-                                            </div>
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
+                                    </div>
                                         </div>
-                                    <!--DATA ANALYTICS-->
-                                        <div class="tab-pane container" id="datanalytics">
-                                            <h3 class="font-weight-bolder">WHAT IS DATA ANALYTICS?</h3>
-                                            <p class="lh-base"> 
-                                                Process of collecting and analyzing large sets of data to extract meaningful insights and make informed 
-                                                decisions. It involves a variety of techniques and tools, including statistical analysis, machine 
-                                                learning, data visualization, and predictive modeling. </p>
-                                            <div class="w-75 ml-sm-5">
-                                                <div class="d-inline float-left">
-                                                    <h5 class="font-weight-bold m-2">Data Analytics Skills</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Data Visualization</li>
-                                                            <li>Data Cleansing</li>
-                                                            <li>Business Intelligence</li>
-                                                            <li>Machine Learning</li>
-                                                            <li>Data Mining</li>
-                                                        </ul>
+                                    </div>
+                            </div>
+                    </div>
+
+                <!--SELF PACED PROGRAM COURSES-->
+                    <div class="dialog col position-relative text-center">
+                        <div class="d-inline-block">
+                            <img src="img/course.png" alt="img" style="height:150px; width:260px; padding-top: 10px;">
+                            <h4>Self-Paced Training Program</h4>
+                            <a class="button position-relative font-weight-bold" href="#modal3">Details<i class="fa-solid fa-arrow-up-right-from-square m-lg-1" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                <!--COURSE MODAL-->
+                    <div class="popup" id="modal3">
+                        <a class="popup__overlay" href="#"></a>
+                            <div class="popup__wrapper">
+                                <a class="popup__close" href="#"><i class="fa-regular fa-circle-xmark" aria-hidden="true"></i></a>
+                                    <nav>
+                                        <ul class="nav nav-tabs list-unstyled border-bottom p-3" id="tabContent">
+                                            <li class="nav-item">
+                                                <a href="#programAbout" data-toggle="tab">ABOUT</a>
+                                            </li>
+                                            <li class="dropdown" data-toggle="tab">
+                                                <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                                    PROGRAMS
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item-text" href="#gamedev" data-toggle="tab">GAME DEVELOPMENT &amp; ANIMATION</a></li>
+                                                    <li><a class="dropdown-item-text" href="#cisco" data-toggle="tab">CISCO WAN TECHNOLOGY</a></li>
+                                                    <li><a class="dropdown-item-text" href="#cloud" data-toggle="tab">CLOUD COMPUTING</a></li>
+                                                    <li><a class="dropdown-item-text" href="#machine" data-toggle="tab">MACHINE LEARNING</a></li>
+                                                    <li><a class="dropdown-item-text" href="#linux" data-toggle="tab">LINUX SYSTEM ADMINISTRATION</a></li>
+                                                    <li><a class="dropdown-item-text" href="#datanalytics" data-toggle="tab">DATA ANALYTICS</a></li>
+                                                    <li><a class="dropdown-item-text" href="#plc-1" data-toggle="tab">PLC PROGRAMMING LEVEL-1</a></li>
+                                                    <li><a class="dropdown-item-text" href="#plc-2" data-toggle="tab">PLC PROGRAMMING LEVEL-2</a></li>
+                                                    <li><a class="dropdown-item-text" href="#telecom" data-toggle="tab">INNOVATION IN TELECOMMUNICATION</a></li>
+                                                    <li><a class="dropdown-item-text" href="#industrial" data-toggle="tab">INDUSTRIAL PNUEMATIC SYSTEM</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                        <div class="tab-content p-3">
+                                            <!--ABOUT COURSE-->
+                                                <div class="tab-pane container active" id="programAbout">
+                                                    <h3 class="font-weight-bolder"> WHY CHOOSE OUR PROGRAMS? </h3>
+                                                    <p class="lh-base"> 
+                                                        Embarking on the training program offered by Erovoutika LMS is a transformative journey towards personal and 
+                                                        professional excellence. It stands out as a premier learning platform, offering a unique and innovative approach to education that goes beyond 
+                                                        traditional training methods.</p>
+                                                    <div class="w-75 ml-sm-5">
+                                                        <div class="d-inline">
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>
+                                                                        <span class="font-weight-bold">Cutting-edge Curriculum:</span> 
+                                                                        Erovoutika LMS prides itself on delivering a curriculum that is at the forefront of industry trends and technological advancements. </li>
+                                                                    <li>
+                                                                        <span class="font-weight-bold">Flexible Learning Paths:</span> 
+                                                                        Recognizing the diverse needs and schedules of learners, Erovoutika LMS offers flexible learning paths.</li>
+                                                                    <li>
+                                                                        <span class="font-weight-bold">Innovative Teaching Methodologies:</span> 
+                                                                        Employs state-of-the-art teaching methodologies, including interactive simulations, virtual labs, and real-world case studies.</li>
+                                                                    <li>
+                                                                        <span class="font-weight-bold">Industry-Expert Instructors:</span> 
+                                                                        The training program is led by a team of seasoned industry experts who bring a wealth of real-world experience to the virtual classroom. </li>
+                                                                    <li>
+                                                                        <span class="font-weight-bold">Personalized Learning Experience:</span>
+                                                                        The platform employs adaptive learning technologies to tailor the educational experience to individual needs, ensuring that participants can progress at their own pace and focus on areas that require additional attention.</li>
+                                                                </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="d-inline float-right">
-                                                    <h5 class="font-weight-bold m-2">Data Analytics Job Titles</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Business Intelligence Analyst</li>
-                                                            <li>Data Scientist/Analyst</li>
-                                                            <li>Big Data Engineer</li>
-                                                            <li>Data Warehouse Analyst</li>
-                                                            <li>Business Analyst</li>
-                                                        </ul>
+                                            <!--GAME DEVELOPMENT & ANIMATION-->
+                                                <div class="tab-pane container" id="gamedev">
+                                                    <h3 class="font-weight-bolder"> WHAT IS GAME DEVELOPMENT and ANIMATION? </h3>
+                                                    <p class="lh-base">
+                                                        Game development involves the creation of video games. It includes game design, programming, art, 
+                                                        and testing. Various tools and techniques are used in game development, including game engines, 
+                                                        game art software, and animation software.</p>
+                                                    <div class="w-80 ml-sm-5">
+                                                        <div class="d-inline float-left">
+                                                            <h5 class="font-weight-bold m-2">Game Development &amp; Animation Skills</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Programming languages like C++, Unity, and Unreal Engine</li>
+                                                                    <li>Design characters, environments, and special effects</li>
+                                                                    <li>Drawing, rigging, and compositing</li>
+                                                                    <li>knowledge of physics, mathematics, and music theory</li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="d-inline float-right">
+                                                            <h5 class="font-weight-bold m-2">Game Development &amp; Animation Job Titles</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>3D Designer</li>
+                                                                    <li>Game Developer</li>
+                                                                    <li>Motion Capture Artist</li>
+                                                                    <li>Animation Artist</li>
+                                                                    <li>Game Programmer</li>
+                                                                </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-width">
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
+                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
-                                            </div>
+                                            <!--CISCO WAN TECHNOLOGY-->
+                                                <div class="tab-pane container" id="cisco">
+                                                    <h3 class="font-weight-bolder">WHAT IS CISCO WAN TECHNOLOGY?</h3>
+                                                    <p class="lh-base">
+                                                        Refers to the set of networking protocols and devices used to create and maintain wide-area 
+                                                        networks (WANs). Cisco WAN technology includes products and services such as routers, switches, firewalls, 
+                                                        and VPNs that are designed to provide secure and reliable connectivity between WAN devices.</p>
+                                                    <div class="w-75 ml-sm-5">
+                                                        <div class="d-inline float-left">
+                                                            <h5 class="font-weight-bold m-2">Cisco Wan Technology Skills</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Infastructure requirements</li>
+                                                                    <li>Compnents of Wide and Local area networks</li>
+                                                                    <li>Network Operating System</li>
+                                                                    <li>Network Protocols</li>
+                                                                    <li>Diagnostic tools</li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="d-inline float-right">
+                                                            <h5 class="font-weight-bold m-2">Cisco Wan Technology Job Titles</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Network Engineer</li>
+                                                                    <li>Network Design Engineer</li>
+                                                                    <li>Network Architect</li>
+                                                                    <li>WAN Professional</li>
+                                                                    <li>Cisco Certified Internetwork Expert (CCIE)</li>
+                                                                </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-width">
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
+                                    </div>
+                                                </div>
+                                            <!--CLOUD COMPUTING-->
+                                                <div class="tab-pane container" id="cloud">
+                                                    <h3 class="font-weight-bolder">WHAT IS CLOUD COMPUTING?</h3>
+                                                    <p class="lh-base">
+                                                        Refers to the delivery of computing resources, including servers, storage, databases, 
+                                                        networking, software, analytics, and intelligence, over the internet. Large clouds often have functions 
+                                                        distributed over multiple locations, each of which is a data center.</p>
+                                                    <div class="w-75 ml-sm-5">
+                                                        <div class="d-inline float-left">
+                                                            <h5 class="font-weight-bold m-2">Cloud Computing Skills</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Automation</li>
+                                                                    <li>Cloud Security</li>
+                                                                    <li>DevOps</li>
+                                                                    <li>Computer Architecture</li>
+                                                                    <li>Machine Learning</li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="d-inline float-right">
+                                                            <h5 class="font-weight-bold m-2">Cloud Computing Job Titles</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Cloud Architect</li>
+                                                                    <li>DevOps Engineer</li>
+                                                                    <li>Cloud Security Specialist</li>
+                                                                    <li>Cloud Operations Mnager</li>
+                                                                    <li>Cloud Compliance Officer</li>
+                                                                </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-width">
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
+                                    </div>
+                                                </div>
+                                            <!--MACHINE LEARNING-->
+                                                <div class="tab-pane container" id="machine">
+                                                    <h3 class="font-weight-bolder">WHAT IS MACHINE LEARNING?</h3>
+                                                    <p class="lh-base">
+                                                        A branch of artificial intelligence that involves the use of algorithms and statistical models to enable 
+                                                        computers to improve their performance on a specific task over time, based on experience. Use and development of 
+                                                        computer systems that are able to learn and adapt without following explicit instructions, by using algorithms 
+                                                        and statistical models to analyze and draw inferences from patterns in data.</p>
+                                                    <div class="w-75 ml-sm-5">
+                                                        <div class="d-inline float-left">
+                                                            <h5 class="font-weight-bold m-2">Machine Learning Skills</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Deep Learning</li>
+                                                                    <li>Artificial Neural Network</li>
+                                                                    <li>Data Visualization</li>
+                                                                    <li>Algortihm</li>
+                                                                    <li>Statistics</li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="d-inline float-right">
+                                                            <h5 class="font-weight-bold m-2">Machine Learning Job Titles</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Data Scientist</li>
+                                                                    <li>Machine Learning Research Scientist</li>
+                                                                    <li>Data Analyst</li>
+                                                                    <li>AI Research Scientist</li>
+                                                                    <li>Machine Learning Engineer</li>
+                                                                </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-width">
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
+                                    </div>
+                                                </div>
+                                            <!--LINUX SYSTEM ADMINISTRATION-->
+                                                <div class="tab-pane container" id="linux">
+                                                    <h3 class="font-weight-bolder">WHAT IS LINUX SYSTEM ADMINISTRATION?</h3>
+                                                    <p class="lh-base"> 
+                                                        Involves managing and maintaining Linux systems, including installing and configuring software, 
+                                                        managing user accounts and security, troubleshooting system issues, and backups and recovery. </p>
+                                                    <div class="w-75 ml-sm-5">
+                                                        <div class="d-inline float-left">
+                                                            <h5 class="font-weight-bold m-2">Linux System Administration Skills</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Command Line Interface</li>
+                                                                    <li>Shell Scripting</li>
+                                                                    <li>Network Fundamentals</li>
+                                                                    <li>Management and Administration</li>
+                                                                    <li>Automation and Virtualization</li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="d-inline float-right">
+                                                            <h5 class="font-weight-bold m-2">Linux System Administration Job Titles</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>System Administrator</li>
+                                                                    <li>DevOps Engineer</li>
+                                                                    <li>IT Operations Specialist</li>
+                                                                    <li>Cloud Systems Engineer</li>
+                                                                    <li>System Analyst</li>
+                                                                </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-width">
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
+                                    </div>
+                                                </div>
+                                            <!--DATA ANALYTICS-->
+                                                <div class="tab-pane container" id="datanalytics">
+                                                    <h3 class="font-weight-bolder">WHAT IS DATA ANALYTICS?</h3>
+                                                    <p class="lh-base"> 
+                                                        Process of collecting and analyzing large sets of data to extract meaningful insights and make informed 
+                                                        decisions. It involves a variety of techniques and tools, including statistical analysis, machine 
+                                                        learning, data visualization, and predictive modeling. </p>
+                                                    <div class="w-75 ml-sm-5">
+                                                        <div class="d-inline float-left">
+                                                            <h5 class="font-weight-bold m-2">Data Analytics Skills</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Data Visualization</li>
+                                                                    <li>Data Cleansing</li>
+                                                                    <li>Business Intelligence</li>
+                                                                    <li>Machine Learning</li>
+                                                                    <li>Data Mining</li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="d-inline float-right">
+                                                            <h5 class="font-weight-bold m-2">Data Analytics Job Titles</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Business Intelligence Analyst</li>
+                                                                    <li>Data Scientist/Analyst</li>
+                                                                    <li>Big Data Engineer</li>
+                                                                    <li>Data Warehouse Analyst</li>
+                                                                    <li>Business Analyst</li>
+                                                                </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-width">
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
+                                    </div>
+                                                </div>
+                                            <!--PLC PROGRAMMING LEVEL1-->
+                                                <div class="tab-pane container" id="plc-1">
+                                                    <h3 class="font-weight-bolder">WHAT IS PLC PROGRAMMING LEVEL-1?</h3>
+                                                    <p class="lh-base"> 
+                                                        A digital computer used for process automation in various industries, A basic level of programming 
+                                                        language that allows operators to control and monitor the PLC system. They can program the PLC system 
+                                                        to perform specific tasks and automate processes.</p>
+                                                    <div class="w-75 ml-sm-5">
+                                                        <div class="d-inline float-left">
+                                                            <h5 class="font-weight-bold m-2">PLC Programming Level-1 Skills</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Hardware Components</li>
+                                                                    <li>Memory Types</li>
+                                                                    <li>CPU Operations</li>
+                                                                    <li>Diverse PLC Modules</li>
+                                                                    <li>Integrate PLC with STEP 7 Software</li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="d-inline float-right">
+                                                            <h5 class="font-weight-bold m-2">PLC Programming Level-1 Job Titles</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Control Systems Engineer</li>
+                                                                    <li>Machine Automation Specialist</li>
+                                                                    <li>Implementation Specialist</li>
+                                                                    <li>Automation Engineer</li>
+                                                                    <li>Principal Engineer</li>
+                                                                </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-width">
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
+                                    </div>
+                                                </div>
+                                            <!--PLC PROGRAMMING LEVEL2-->
+                                                <div class="tab-pane container" id="plc-2">
+                                                    <h3 class="font-weight-bolder">WHAT IS PLC PROGRAMMING LEVEL-2?</h3>
+                                                    <p class="lh-base"> 
+                                                        Refers to a more advanced level of programming compared to Level 1, It typically involves the use of 
+                                                        ladder logic diagrams, which are graphical representations of a program. Level 2 programming also allows 
+                                                        for more complex decision-making and troubleshooting capabilities.</p>
+                                                    <div class="w-75 ml-sm-5">
+                                                        <div class="d-inline float-left">
+                                                            <h5 class="font-weight-bold m-2">PLC Programming Level-2 Skills</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Ladder Logic</li>
+                                                                    <li>Structured Text Programming</li>
+                                                                    <li>Function Block Diagram</li>
+                                                                    <li>Sequential Function Chart</li>
+                                                                    <li>Graphical Programming Languages</li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="d-inline float-right">
+                                                            <h5 class="font-weight-bold m-2">PLC Programming Level-2 Job Titles</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Control Systems Engineer</li>
+                                                                    <li>Software Developer</li>
+                                                                    <li>Supervisory Control and <br> Data Acquisition (SCADA) Engineer</li>
+                                                                </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-width">
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
+                                    </div>
+                                                </div>
+                                            <!--INNOVATION IN TELECOMMUNICATION-->
+                                                <div class="tab-pane container" id="telecom">
+                                                    <h3 class="font-weight-bolder">WHAT IS INNOVATION IN TELECOMMUNICATION?</h3>
+                                                    <p class="lh-base"> 
+                                                        Refers to the development of new and improved ways to communicate using technology, this can include 
+                                                        new messaging platforms, faster internet speeds, more advanced mobile devices, and new types of network 
+                                                        infrastructure. </p>
+                                                    <div class="w-80 ml-sm-3 ">
+                                                        <div class="d-inline float-left">
+                                                            <h5 class="font-weight-bold m-2">Innovation in Telecommunication Skills</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>5G Networks</li>
+                                                                    <li>Internet of Things (IoT)</li>
+                                                                    <li>Artificial Intelligence</li>
+                                                                    <li>Network Architecture</li>
+                                                                    <li>Cybersecurity</li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="d-inline float-right">
+                                                            <h5 class="font-weight-bold m-2">Innovation in Telecommunication Job Titles</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Network Engineer</li>
+                                                                    <li>Software Developer</li>
+                                                                    <li>Data Analyst</li>
+                                                                    <li>5G Network Expert</li>
+                                                                    <li>Cloud System Specialist</li>
+                                                                </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-width">
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
+                                    </div>
+                                                </div>
+                                            <!--INDUSTRIAL PNEUMATIC SYSTEM-->
+                                                <div class="tab-pane container" id="industrial">
+                                                    <h3 class="font-weight-bolder">WHAT IS INDUSTRIAL PNEUMATIC SYSTEM?</h3>
+                                                    <p class="lh-base"> 
+                                                        A type of mechanical system that uses compressed gas (usually air) to transmit mechanical work or 
+                                                        energy to operate equipment or machinery in industrial settings. These systems are used in a wide range 
+                                                        of applications, including conveyor systems, actuators, valves, and compressors, among others. </p>
+                                                    <div class="w-75 ml-sm-5">
+                                                        <div class="d-inline float-left">
+                                                            <h5 class="font-weight-bold m-2">Industrial Pneumatic System Skills</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Design basic pneumatic circuits</li>
+                                                                    <li>Operate Pneumatic Systems</li>
+                                                                    <li>Install basic Pneumatic Systems</li>
+                                                                    <li>Troubleshooting and Maintenance</li>
+                                                                    <li>Repair Pneumatic Systems</li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="d-inline float-right">
+                                                            <h5 class="font-weight-bold m-2">Industrial Pneumatic System Job Titles</h5>
+                                                                <ul class="list-group p-0 m-3">
+                                                                    <li>Plant Manager</li>
+                                                                    <li>Mechanical Engineer</li>
+                                                                    <li>Pneumatic System Specialist</li>
+                                                                    <li>Industrial Process Engineer</li>
+                                                                    <li>Maintenance Technician</li>
+                                                                </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-width">
+                                        <!-- Change the button to an input element with type "submit" -->
+                                        <form method="post" action="">
+                                            <input type="submit" name="start" class="btn m-2" value="Start Learning" style="color: white">
+                                        </form>
+                                    </div>
+                                                </div>
                                         </div>
-                                    <!--PLC PROGRAMMING LEVEL1-->
-                                        <div class="tab-pane container" id="plc-1">
-                                            <h3 class="font-weight-bolder">WHAT IS PLC PROGRAMMING LEVEL-1?</h3>
-                                            <p class="lh-base"> 
-                                                A digital computer used for process automation in various industries, A basic level of programming 
-                                                language that allows operators to control and monitor the PLC system. They can program the PLC system 
-                                                to perform specific tasks and automate processes.</p>
-                                            <div class="w-75 ml-sm-5">
-                                                <div class="d-inline float-left">
-                                                    <h5 class="font-weight-bold m-2">PLC Programming Level-1 Skills</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Hardware Components</li>
-                                                            <li>Memory Types</li>
-                                                            <li>CPU Operations</li>
-                                                            <li>Diverse PLC Modules</li>
-                                                            <li>Integrate PLC with STEP 7 Software</li>
-                                                        </ul>
-                                                </div>
-                                                <div class="d-inline float-right">
-                                                    <h5 class="font-weight-bold m-2">PLC Programming Level-1 Job Titles</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Control Systems Engineer</li>
-                                                            <li>Machine Automation Specialist</li>
-                                                            <li>Implementation Specialist</li>
-                                                            <li>Automation Engineer</li>
-                                                            <li>Principal Engineer</li>
-                                                        </ul>
-                                                </div>
-                                            </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
-                                            </div>
-                                        </div>
-                                    <!--PLC PROGRAMMING LEVEL2-->
-                                        <div class="tab-pane container" id="plc-2">
-                                            <h3 class="font-weight-bolder">WHAT IS PLC PROGRAMMING LEVEL-2?</h3>
-                                            <p class="lh-base"> 
-                                                Refers to a more advanced level of programming compared to Level 1, It typically involves the use of 
-                                                ladder logic diagrams, which are graphical representations of a program. Level 2 programming also allows 
-                                                for more complex decision-making and troubleshooting capabilities.</p>
-                                            <div class="w-75 ml-sm-5">
-                                                <div class="d-inline float-left">
-                                                    <h5 class="font-weight-bold m-2">PLC Programming Level-2 Skills</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Ladder Logic</li>
-                                                            <li>Structured Text Programming</li>
-                                                            <li>Function Block Diagram</li>
-                                                            <li>Sequential Function Chart</li>
-                                                            <li>Graphical Programming Languages</li>
-                                                        </ul>
-                                                </div>
-                                                <div class="d-inline float-right">
-                                                    <h5 class="font-weight-bold m-2">PLC Programming Level-2 Job Titles</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Control Systems Engineer</li>
-                                                            <li>Software Developer</li>
-                                                            <li>Supervisory Control and <br/> Data Acquisition (SCADA) Engineer</li>
-                                                        </ul>
-                                                </div>
-                                            </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
-                                            </div>
-                                        </div>
-                                    <!--INNOVATION IN TELECOMMUNICATION-->
-                                        <div class="tab-pane container" id="telecom">
-                                            <h3 class="font-weight-bolder">WHAT IS INNOVATION IN TELECOMMUNICATION?</h3>
-                                            <p class="lh-base"> 
-                                                Refers to the development of new and improved ways to communicate using technology, this can include 
-                                                new messaging platforms, faster internet speeds, more advanced mobile devices, and new types of network 
-                                                infrastructure. </p>
-                                            <div class="w-80 ml-sm-3 ">
-                                                <div class="d-inline float-left">
-                                                    <h5 class="font-weight-bold m-2">Innovation in Telecommunication Skills</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>5G Networks</li>
-                                                            <li>Internet of Things (IoT)</li>
-                                                            <li>Artificial Intelligence</li>
-                                                            <li>Network Architecture</li>
-                                                            <li>Cybersecurity</li>
-                                                        </ul>
-                                                </div>
-                                                <div class="d-inline float-right">
-                                                    <h5 class="font-weight-bold m-2">Innovation in Telecommunication Job Titles</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Network Engineer</li>
-                                                            <li>Software Developer</li>
-                                                            <li>Data Analyst</li>
-                                                            <li>5G Network Expert</li>
-                                                            <li>Cloud System Specialist</li>
-                                                        </ul>
-                                                </div>
-                                            </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
-                                            </div>
-                                        </div>
-                                    <!--INDUSTRIAL PNEUMATIC SYSTEM-->
-                                        <div class="tab-pane container" id="industrial">
-                                            <h3 class="font-weight-bolder">WHAT IS INDUSTRIAL PNEUMATIC SYSTEM?</h3>
-                                            <p class="lh-base"> 
-                                                A type of mechanical system that uses compressed gas (usually air) to transmit mechanical work or 
-                                                energy to operate equipment or machinery in industrial settings. These systems are used in a wide range 
-                                                of applications, including conveyor systems, actuators, valves, and compressors, among others. </p>
-                                            <div class="w-75 ml-sm-5">
-                                                <div class="d-inline float-left">
-                                                    <h5 class="font-weight-bold m-2">Industrial Pneumatic System Skills</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Design basic pneumatic circuits</li>
-                                                            <li>Operate Pneumatic Systems</li>
-                                                            <li>Install basic Pneumatic Systems</li>
-                                                            <li>Troubleshooting and Maintenance</li>
-                                                            <li>Repair Pneumatic Systems</li>
-                                                        </ul>
-                                                </div>
-                                                <div class="d-inline float-right">
-                                                    <h5 class="font-weight-bold m-2">Industrial Pneumatic System Job Titles</h5>
-                                                        <ul class="list-group p-0 m-3">
-                                                            <li>Plant Manager</li>
-                                                            <li>Mechanical Engineer</li>
-                                                            <li>Pneumatic System Specialist</li>
-                                                            <li>Industrial Process Engineer</li>
-                                                            <li>Maintenance Technician</li>
-                                                        </ul>
-                                                </div>
-                                            </div>
-                                            <div class="button-width">
-                                                <div class="btn m-2"><a href="enroll.html">Start Learning</a></div>
-                                            </div>
-                                        </div>
-                                </div>
+                            </div>
                     </div>
             </div>
-        </div>
     </section>
 
     <!--GALLERY-->
@@ -1388,6 +1437,7 @@ footer {
 </footer>
 
 <?php require_once "../login-signup/login_signup.php"; ?>
+<?php require_once "../login-signup/payment.php"; ?>
 
 <script type="module" src=".js/main.js"></script>
 </body>
